@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00C3585024A0EEF800D09C75 /* GADBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */; };
 		00F284B924990437004C9B75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284B824990437004C9B75 /* AppDelegate.swift */; };
 		00F284BB24990437004C9B75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284BA24990437004C9B75 /* SceneDelegate.swift */; };
 		00F284BF24990438004C9B75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00F284BE24990438004C9B75 /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADBannerViewController.swift; sourceTree = "<group>"; };
 		00F284B524990437004C9B75 /* CrosswordSolverKing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrosswordSolverKing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F284B824990437004C9B75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00F284BA24990437004C9B75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				00F284FD24991065004C9B75 /* SearchBarView.swift */,
 				00F284F824991065004C9B75 /* SimpleWebView.swift */,
 				00F284FC24991065004C9B75 /* TextFilterRow.swift */,
+				00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				00F2850D24991065004C9B75 /* Filters.swift in Sources */,
 				00F2850E24991065004C9B75 /* Model.swift in Sources */,
 				00F2850624991065004C9B75 /* MenuButtonView.swift in Sources */,
+				00C3585024A0EEF800D09C75 /* GADBannerViewController.swift in Sources */,
 				00F2850524991065004C9B75 /* HelpView.swift in Sources */,
 				00F2850C24991065004C9B75 /* AboutView.swift in Sources */,
 				00F2850B24991065004C9B75 /* DefinitionView.swift in Sources */,

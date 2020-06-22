@@ -7,13 +7,13 @@
 //
 
 import SwiftUI
+import GoogleMobileAds
 
 struct MainView: View {
     @EnvironmentObject var model : Model
     @State private var showAbout = false
     @State private var menuLink : MenuViewLinks?
     
-
     init(){
         //Enable clear button on the text field
         //https://stackoverflow.com/questions/58200555/swiftui-add-clearbutton-to-textfield
@@ -34,10 +34,12 @@ struct MainView: View {
     }
 
     private var adSection : some View {
-        return Text("Lovely Ad")
-            .frame(minWidth:0, maxWidth: .infinity, maxHeight: 50)
-            .foregroundColor(Color.white)
-            .background(Color.blue)
+        return HStack {
+            Spacer()
+            GADBannerViewController()
+                .frame(width: kGADAdSizeBanner.size.width, height: kGADAdSizeBanner.size.height)
+            Spacer()
+        }
     }
     
     var body: some View {
