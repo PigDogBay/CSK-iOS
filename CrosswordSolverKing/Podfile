@@ -7,6 +7,7 @@ target 'CrosswordSolverKing' do
 
   # Pods for CrosswordSolverKing
   pod 'Google-Mobile-Ads-SDK'
+  pod 'PersonalizedAdConsent'
 
   target 'CrosswordSolverKingTests' do
     inherit! :search_paths

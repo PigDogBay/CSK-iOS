@@ -13,6 +13,8 @@ struct MainView: View {
     @EnvironmentObject var model : Model
     @State private var showAbout = false
     @State private var menuLink : MenuViewLinks?
+    @State var showEUConsent = true
+
     
     init(){
         //Enable clear button on the text field
@@ -51,6 +53,7 @@ struct MainView: View {
                 NavigationLink(destination: AboutView(),tag: MenuViewLinks.AboutLink, selection: $menuLink){EmptyView()}
                 NavigationLink(destination: HelpView(),tag: MenuViewLinks.HelpLink, selection: $menuLink){EmptyView()}
             }
+            .sheet(isPresented: $showEUConsent){EUAgreeView(isPresented: self.$showEUConsent)}
             .navigationBarTitle(Text("CSK"), displayMode: .inline)
             .navigationBarHidden(false)
             .navigationBarItems(leading: MainMenuView(menuLink: $menuLink) ,
