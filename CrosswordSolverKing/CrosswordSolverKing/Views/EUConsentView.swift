@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct EUConsentView: View {
-    @Binding var isPresented : Bool
+    @ObservedObject var euConsent : EUConsent
 
     var body: some View {
         Form {
@@ -36,7 +36,7 @@ struct EUConsentView: View {
                     .multilineTextAlignment(.center)
                     .padding(8)
             }
-            Button(action: pressYes){
+            Button(action: euConsent.personalizedAds){
                 HStack(){
                     Spacer()
                     Text("Yes, continue to see relevant ads")
@@ -47,7 +47,7 @@ struct EUConsentView: View {
             }
             .padding(.top, 16)
             .padding(.bottom, 16)
-            Button(action: pressNo){
+            Button(action: euConsent.nonPersonalizedAds){
                 HStack(){
                     Spacer()
                     Text("No, see ads that are less relevant")
@@ -60,18 +60,11 @@ struct EUConsentView: View {
             .padding(.bottom, 16)
         }
     }
-    
-    private func pressYes() {
-        self.isPresented = false
-    }
-    private func pressNo() {
-        self.isPresented = false
-    }
 
 }
 
 struct EUConsentView_Previews: PreviewProvider {
     static var previews: some View {
-        EUConsentView(isPresented: .constant(true))
+        EUConsentView(euConsent: EUConsent())
     }
 }

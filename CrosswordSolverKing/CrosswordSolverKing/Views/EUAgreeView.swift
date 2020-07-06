@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct EUAgreeView: View {
-    @Binding var isPresented : Bool
+    @ObservedObject var euConsent : EUConsent
 
     var body: some View {
         VStack {
@@ -27,7 +27,7 @@ struct EUAgreeView: View {
                 Text("We’ll partner with Google and use a unique identifier on your device to respect your data usage choice. You can change your choice anytime for in the About & Privacy section.")
                     .multilineTextAlignment(.center)
                     .padding(24)
-                Button(action: pressPrivacyPolicy){
+            Button(action: euConsent.showPrivacyPolicy){
                     Text("How Crossword Solver King uses your data")
                         .padding(.top,0)
                         .padding(.bottom,16)
@@ -38,7 +38,7 @@ struct EUAgreeView: View {
     
             HStack {
                 Spacer()
-                Button(action: pressYes){
+                Button(action: euConsent.back){
                         Text("< Back")
                             .font(.headline)
                             .padding(.top,16)
@@ -51,7 +51,7 @@ struct EUAgreeView: View {
                     
                 }
                 Spacer()
-                Button(action: pressNo){
+                Button(action: euConsent.agree){
                         Text("Agree")
                             .font(.headline)
                             .padding(.top,16)
@@ -67,21 +67,10 @@ struct EUAgreeView: View {
             }
         }
     }
-    
-    private func pressYes() {
-        self.isPresented = false
-    }
-    private func pressNo() {
-        self.isPresented = false
-    }
-    private func pressPrivacyPolicy(){
-        self.isPresented = false
-    }
-
 }
 
 struct EUAgreeView_Previews: PreviewProvider {
     static var previews: some View {
-        EUAgreeView(isPresented: .constant(true))
+        EUAgreeView(euConsent: EUConsent())
     }
 }

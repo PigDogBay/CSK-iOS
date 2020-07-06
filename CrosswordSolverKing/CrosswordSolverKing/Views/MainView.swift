@@ -13,7 +13,7 @@ struct MainView: View {
     @EnvironmentObject var model : Model
     @State private var showAbout = false
     @State private var menuLink : MenuViewLinks?
-    @State var showEUConsent = true
+    @ObservedObject private var euConsent = EUConsent()
 
     
     init(){
@@ -53,7 +53,7 @@ struct MainView: View {
                 NavigationLink(destination: AboutView(),tag: MenuViewLinks.AboutLink, selection: $menuLink){EmptyView()}
                 NavigationLink(destination: HelpView(),tag: MenuViewLinks.HelpLink, selection: $menuLink){EmptyView()}
             }
-            .sheet(isPresented: $showEUConsent){EUAgreeView(isPresented: self.$showEUConsent)}
+            .sheet(isPresented: self.$euConsent.showEUConsent){EUAgreeView(euConsent: self.euConsent)}
             .navigationBarTitle(Text("CSK"), displayMode: .inline)
             .navigationBarHidden(false)
             .navigationBarItems(leading: MainMenuView(menuLink: $menuLink) ,
