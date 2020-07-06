@@ -32,7 +32,7 @@
 		00F2850C24991065004C9B75 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2850024991065004C9B75 /* AboutView.swift */; };
 		00F2850D24991065004C9B75 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2850124991065004C9B75 /* Filters.swift */; };
 		00F2850E24991065004C9B75 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2850224991065004C9B75 /* Model.swift */; };
-		00FCDDDA24ADED1B00E4CFD3 /* EUConsentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCDDD924ADED1B00E4CFD3 /* EUConsentView.swift */; };
+		00FCDDDA24ADED1B00E4CFD3 /* EUAdChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCDDD924ADED1B00E4CFD3 /* EUAdChoiceView.swift */; };
 		188C7991FCB1ED87CE84FA7D /* Pods_CrosswordSolverKing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 723306CF63335F496D980B5E /* Pods_CrosswordSolverKing.framework */; };
 		88EE6AD4420F843C49EB7A06 /* Pods_CrosswordSolverKingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C580F06C4B150EBC842D918 /* Pods_CrosswordSolverKingTests.framework */; };
 		D5EA24CED867E03A4DDD0E6E /* Pods_CrosswordSolverKing_CrosswordSolverKingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C192B8187146D426BE0BFC /* Pods_CrosswordSolverKing_CrosswordSolverKingUITests.framework */; };
@@ -100,7 +100,7 @@
 		00F2850024991065004C9B75 /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		00F2850124991065004C9B75 /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		00F2850224991065004C9B75 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		00FCDDD924ADED1B00E4CFD3 /* EUConsentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUConsentView.swift; sourceTree = "<group>"; };
+		00FCDDD924ADED1B00E4CFD3 /* EUAdChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUAdChoiceView.swift; sourceTree = "<group>"; };
 		0C580F06C4B150EBC842D918 /* Pods_CrosswordSolverKingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrosswordSolverKingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41EEEA67AFCF26448CBA9A2B /* Pods-CrosswordSolverKing-CrosswordSolverKingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrosswordSolverKing-CrosswordSolverKingUITests.debug.xcconfig"; path = "Target Support Files/Pods-CrosswordSolverKing-CrosswordSolverKingUITests/Pods-CrosswordSolverKing-CrosswordSolverKingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5907F4D60326D2DB07B7D6D1 /* Pods-CrosswordSolverKingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrosswordSolverKingTests.debug.xcconfig"; path = "Target Support Files/Pods-CrosswordSolverKingTests/Pods-CrosswordSolverKingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 				00F284FE24991065004C9B75 /* FiltersView.swift */,
 				00F284F924991065004C9B75 /* HelpView.swift */,
 				00F284FB24991065004C9B75 /* MainView.swift */,
-				00FCDDD924ADED1B00E4CFD3 /* EUConsentView.swift */,
+				00FCDDD924ADED1B00E4CFD3 /* EUAdChoiceView.swift */,
 				00C71C3C24AF7B1900FA3969 /* EUAgreeView.swift */,
 			);
 			path = Views;
@@ -518,7 +518,7 @@
 				00F2850624991065004C9B75 /* MenuButtonView.swift in Sources */,
 				00C71C3D24AF7B1900FA3969 /* EUAgreeView.swift in Sources */,
 				00C3585024A0EEF800D09C75 /* GADBannerViewController.swift in Sources */,
-				00FCDDDA24ADED1B00E4CFD3 /* EUConsentView.swift in Sources */,
+				00FCDDDA24ADED1B00E4CFD3 /* EUAdChoiceView.swift in Sources */,
 				00F2850524991065004C9B75 /* HelpView.swift in Sources */,
 				0033162224B340D700DBBF32 /* EUConsent.swift in Sources */,
 				00F2850C24991065004C9B75 /* AboutView.swift in Sources */,

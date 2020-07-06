@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct EUConsentView: View {
+struct EUAdChoiceView: View {
     @ObservedObject var euConsent : EUConsent
 
     var body: some View {
@@ -65,6 +65,6 @@ struct EUConsentView: View {
 
 struct EUConsentView_Previews: PreviewProvider {
     static var previews: some View {
-        EUConsentView(euConsent: EUConsent())
+        EUAdChoiceView(euConsent: EUConsent())
     }
 }
