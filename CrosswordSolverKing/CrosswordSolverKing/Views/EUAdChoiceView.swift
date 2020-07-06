@@ -63,7 +63,7 @@ struct EUAdChoiceView: View {
 
 }
 
-struct EUConsentView_Previews: PreviewProvider {
+struct EUAdChoiceView_Previews: PreviewProvider {
     static var previews: some View {
         EUAdChoiceView(euConsent: EUConsent())
     }

@@ -53,7 +53,7 @@ struct MainView: View {
                 NavigationLink(destination: AboutView(),tag: MenuViewLinks.AboutLink, selection: $menuLink){EmptyView()}
                 NavigationLink(destination: HelpView(),tag: MenuViewLinks.HelpLink, selection: $menuLink){EmptyView()}
             }
-            .sheet(isPresented: self.$euConsent.showEUConsent){EUAgreeView(euConsent: self.euConsent)}
+            .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}
             .navigationBarTitle(Text("CSK"), displayMode: .inline)
             .navigationBarHidden(false)
             .navigationBarItems(leading: MainMenuView(menuLink: $menuLink) ,

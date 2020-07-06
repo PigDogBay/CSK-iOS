@@ -10,15 +10,18 @@ import Foundation
 
 class EUConsent : ObservableObject{
     @Published var showEUConsent = true
+    @Published var showAdChoice = true
     
     func personalizedAds(){
         showEUConsent = false
     }
     
     func nonPersonalizedAds(){
+        showAdChoice = false
     }
     
     func back(){
+        showAdChoice = true
         
     }
     func agree(){
