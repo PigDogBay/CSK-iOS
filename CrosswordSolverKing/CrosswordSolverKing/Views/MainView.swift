@@ -49,7 +49,9 @@ struct MainView: View {
             VStack(){
                 SearchBarView()
                 listSection
-                adSection
+                if !euConsent.showEUConsent{
+                    adSection
+                }
                 NavigationLink(destination: AboutView(),tag: MenuViewLinks.AboutLink, selection: $menuLink){EmptyView()}
                 NavigationLink(destination: HelpView(),tag: MenuViewLinks.HelpLink, selection: $menuLink){EmptyView()}
             }
