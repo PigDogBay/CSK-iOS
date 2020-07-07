@@ -13,26 +13,15 @@ struct EUAgreeView: View {
 
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                Image("EUConsentIcon")
-                    .clipShape(Circle())
-                    .shadow(radius: 10)
-                Text("Crossword Solver King")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-                Spacer()
-            }
-                Text("We’ll partner with Google and use a unique identifier on your device to respect your data usage choice. You can change your choice anytime for in the About & Privacy section.")
-                    .multilineTextAlignment(.center)
-                    .padding(24)
+            EUConsentTitle().padding(16)
+            
+            Text("We’ll partner with Google and use a unique identifier on your device to respect your data usage choice. You can change your choice anytime for in the About & Privacy section.")
+                .multilineTextAlignment(.center)
+                .padding(EdgeInsets(top: 16, leading: 8, bottom: 16, trailing: 8))
+
             Button(action: euConsent.showPrivacyPolicy){
                     Text("How Crossword Solver King uses your data")
-                        .padding(.top,0)
-                        .padding(.bottom,16)
-                        .padding(.leading,24)
-                        .padding(.trailing,24)
+                        .padding(EdgeInsets(top: 16, leading: 8, bottom: 24, trailing: 8))
                         .multilineTextAlignment(.center)
                 }
     
@@ -41,10 +30,7 @@ struct EUAgreeView: View {
                 Button(action: euConsent.back){
                         Text("< Back")
                             .font(.headline)
-                            .padding(.top,16)
-                            .padding(.bottom,16)
-                            .padding(.leading,24)
-                            .padding(.trailing,24)
+                            .padding(EdgeInsets(top: 16, leading: 24, bottom: 16, trailing: 24))
                             .overlay(
                                 RoundedRectangle(cornerRadius: 8)
                                     .stroke(Color.accentColor, lineWidth: 1))
@@ -54,10 +40,7 @@ struct EUAgreeView: View {
                 Button(action: euConsent.agree){
                         Text("Agree")
                             .font(.headline)
-                            .padding(.top,16)
-                            .padding(.bottom,16)
-                            .padding(.leading,24)
-                            .padding(.trailing,24)
+                            .padding(EdgeInsets(top: 16, leading: 28, bottom: 16, trailing: 28))
                             .foregroundColor(.white)
                             .background(Color.accentColor)
                     .cornerRadius(8)

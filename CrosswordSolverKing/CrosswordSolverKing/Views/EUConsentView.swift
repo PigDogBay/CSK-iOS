@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+
 struct EUConsentView: View {
     @ObservedObject var euConsent : EUConsent
 
@@ -20,6 +21,24 @@ struct EUConsentView: View {
         }
     }
 }
+
+struct EUConsentTitle : View {
+    var body : some View {
+        HStack {
+            Spacer()
+            Image("EUConsentIcon")
+                .clipShape(Circle())
+                .shadow(radius: 10)
+            Text("Crossword Solver King")
+                .font(.title)
+                .fontWeight(.bold)
+                .multilineTextAlignment(.center)
+            Spacer()
+        }
+    }
+}
+
+
 
 struct EUConsentView_Previews: PreviewProvider {
     static var previews: some View {

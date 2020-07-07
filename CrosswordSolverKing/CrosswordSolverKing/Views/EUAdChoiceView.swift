@@ -13,16 +13,7 @@ struct EUAdChoiceView: View {
 
     var body: some View {
         Form {
-            HStack {
-                Spacer()
-                Image("EUConsentIcon")
-                    .clipShape(Circle())
-                    .shadow(radius: 10)
-                Text("Crossword Solver King")
-                    .font(.title)
-                    .fontWeight(.bold)
-                Spacer()
-            }.padding(16)
+            EUConsentTitle().padding(16)
             VStack {
                 Text("We care about your privacy and data security. We keep this app free by showing ads.")
                     .multilineTextAlignment(.center)
