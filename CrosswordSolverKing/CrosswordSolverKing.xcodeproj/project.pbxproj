@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0033162224B340D700DBBF32 /* EUConsent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0033162124B340D700DBBF32 /* EUConsent.swift */; };
 		0033162424B3488B00DBBF32 /* EUConsentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0033162324B3488B00DBBF32 /* EUConsentView.swift */; };
+		004AF96624B4CC3C00C9780F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004AF96524B4CC3C00C9780F /* Settings.swift */; };
 		00C3585024A0EEF800D09C75 /* GADBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */; };
 		00C71C3D24AF7B1900FA3969 /* EUAgreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C71C3C24AF7B1900FA3969 /* EUAgreeView.swift */; };
 		00F284B924990437004C9B75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284B824990437004C9B75 /* AppDelegate.swift */; };
@@ -73,6 +74,7 @@
 /* Begin PBXFileReference section */
 		0033162124B340D700DBBF32 /* EUConsent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUConsent.swift; sourceTree = "<group>"; };
 		0033162324B3488B00DBBF32 /* EUConsentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUConsentView.swift; sourceTree = "<group>"; };
+		004AF96524B4CC3C00C9780F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADBannerViewController.swift; sourceTree = "<group>"; };
 		00C71C3C24AF7B1900FA3969 /* EUAgreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUAgreeView.swift; sourceTree = "<group>"; };
 		00F284B524990437004C9B75 /* CrosswordSolverKing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrosswordSolverKing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -253,6 +255,7 @@
 				00F2850124991065004C9B75 /* Filters.swift */,
 				00F2850224991065004C9B75 /* Model.swift */,
 				0033162124B340D700DBBF32 /* EUConsent.swift */,
+				004AF96524B4CC3C00C9780F /* Settings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				00F2850C24991065004C9B75 /* AboutView.swift in Sources */,
 				00F2850B24991065004C9B75 /* DefinitionView.swift in Sources */,
 				00F2850924991065004C9B75 /* SearchBarView.swift in Sources */,
+				004AF96624B4CC3C00C9780F /* Settings.swift in Sources */,
 				00F2850424991065004C9B75 /* SimpleWebView.swift in Sources */,
 				00F2850324991065004C9B75 /* FilterPicker.swift in Sources */,
 			);
