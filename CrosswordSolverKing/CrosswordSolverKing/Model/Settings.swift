@@ -21,6 +21,7 @@ class Settings
     private let resultsLimitKey = "resultsLimit"
     private let isProKey = "isProFlag"
     private let useNonPersonalizedAdsKey = "useNonPersonalisedAds"
+    private let showEUConsentDialogKey = "showEUConsentDialog"
     
     private let defaultWordList = "words"
     
@@ -137,6 +138,19 @@ class Settings
             }
         }
     }
+    
+    var showEUConsentDialog : Bool {
+        get{
+            return UserDefaults.standard.bool(forKey: showEUConsentDialogKey)
+        }
+        set(flag) {
+            if flag != showEUConsentDialog {
+                let defaults = UserDefaults.standard
+                defaults.set(flag, forKey: showEUConsentDialogKey)
+                defaults.synchronize()
+            }
+        }
+    }
 
     func registerDefaultSettings() {
         let defaultSettings : [ String : Any] = [definitionKey : "google define",
@@ -147,6 +161,7 @@ class Settings
                                isProKey : false,
                                showSubAnagramsKey : true,
                                resultsLimitKey : 5000,
+                               showEUConsentDialogKey : true,
                                useNonPersonalizedAdsKey : false]
         UserDefaults.standard.register(defaults: defaultSettings)
     }

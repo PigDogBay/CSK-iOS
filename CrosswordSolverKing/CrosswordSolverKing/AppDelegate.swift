@@ -12,6 +12,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let settings = Settings()
+        settings.registerDefaultSettings()
         Ads.setup()
         // Override point for customization after application launch.
         return true

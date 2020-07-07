@@ -9,11 +9,17 @@
 import Foundation
 
 class EUConsent : ObservableObject{
-    @Published var showEUConsent = true
+    @Published var showEUConsent : Bool
     @Published var showAdChoice = true
+    
+    init() {
+        let settings = Settings()
+        showEUConsent = settings.showEUConsentDialog
+    }
     
     func personalizedAds(){
         showEUConsent = false
+        saveSettings(showNonPersonalized: false)
     }
     
     func nonPersonalizedAds(){
@@ -26,8 +32,15 @@ class EUConsent : ObservableObject{
     }
     func agree(){
         showEUConsent = false
-
+        saveSettings(showNonPersonalized: true)
     }
+    
+    private func saveSettings(showNonPersonalized : Bool){
+        let settings = Settings()
+        settings.showEUConsentDialog = false
+        settings.useNonPersonalizedAds = showNonPersonalized
+    }
+    
     
     func showPrivacyPolicy(){
             //TODO open in safari
