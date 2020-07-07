@@ -1,7 +1,7 @@
 PODS:
-  - Google-Mobile-Ads-SDK (7.60.0):
+  - Google-Mobile-Ads-SDK (7.61.0):
     - GoogleAppMeasurement (~> 6.0)
-  - GoogleAppMeasurement (6.6.0):
+  - GoogleAppMeasurement (6.6.1):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
     - GoogleUtilities/Network (~> 6.0)
@@ -29,12 +29,10 @@ PODS:
     - nanopb/encode (= 1.30905.0)
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
-  - PersonalizedAdConsent (1.0.5)
   - PromisesObjC (1.2.9)
 
 DEPENDENCIES:
   - Google-Mobile-Ads-SDK
-  - PersonalizedAdConsent
 
 SPEC REPOS:
   trunk:
@@ -42,17 +40,15 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleUtilities
     - nanopb
-    - PersonalizedAdConsent
     - PromisesObjC
 
 SPEC CHECKSUMS:
-  Google-Mobile-Ads-SDK: d70efb31e7ea19fe99d466dc5d4788966b6914f8
-  GoogleAppMeasurement: 67458367830514fb20fd9e233496f1eef9d90185
+  Google-Mobile-Ads-SDK: 4c3b24b04293b4bb370b2cb392cdd3ee97c87752
+  GoogleAppMeasurement: 2fd5c5a56c069db635c8e7b92d4809a9591d0a69
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
-  PersonalizedAdConsent: dbecabb3467df967c16d9cebc2ef4a8890e4bbd8
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
 
-PODFILE CHECKSUM: 221980ad5e3b94913b4e476400ffa253678338ab
+PODFILE CHECKSUM: 4ea726de45a929dcf81eb86822bf9aaf963f30ad
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3
