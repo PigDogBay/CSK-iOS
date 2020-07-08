@@ -15,7 +15,7 @@ struct EUAdChoiceView: View {
         Form {
             EUConsentTitle().padding(16)
             VStack {
-                Text("We care about your privacy and data security. We keep this app free by showing ads.")
+                Text("We care about your privacy and data security. We keep this app free by showing a small banner ad at the bottom of the screen.")
                     .multilineTextAlignment(.center)
                     .padding(8)
                 Text("Can we continue to use your data to tailor ads for you?")
