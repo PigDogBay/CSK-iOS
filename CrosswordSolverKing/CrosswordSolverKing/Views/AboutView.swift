@@ -114,8 +114,10 @@ struct AboutView: View {
     private func showLegal(){
     }
     private func showPrivacyPolicy(){
+        UIApplication.shared.open(URL(string: Model.privacyURL)!, options: [:])
     }
     private func showGooglePrivacyPolicy(){
+        UIApplication.shared.open(URL(string: "https://www.google.com/policies/technologies/partner-sites/")!, options: [:])
     }
     private func recommend(){
     }

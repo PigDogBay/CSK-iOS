@@ -6,7 +6,7 @@
 //  Copyright © 2020 Mark Bailey. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class EUConsent : ObservableObject{
     @Published var showEUConsent : Bool
@@ -43,7 +43,7 @@ class EUConsent : ObservableObject{
     
     
     func showPrivacyPolicy(){
-            //TODO open in safari
+        UIApplication.shared.open(URL(string: Model.privacyURL)!, options: [:])
     }
 
 }

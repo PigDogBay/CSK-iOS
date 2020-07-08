@@ -10,6 +10,9 @@ import Combine
 import Foundation
 
 class Model : ObservableObject {
+    static let privacyURL = "https://pigdogbay.blogspot.co.uk/2018/05/privacy-policy.html"
+    static let itunesAppURL = "https://itunes.apple.com/app/id973923699"
+
     private let crosswordMatches = ["magee","mages","maggs","magic","magma","magog","magoo","magot","magus","mcgee","megan","miggs","might"]
 
     enum AppStates {
