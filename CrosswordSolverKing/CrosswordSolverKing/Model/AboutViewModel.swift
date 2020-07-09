@@ -25,9 +25,6 @@ class AboutViewModel : ObservableObject {
         UIApplication.shared.open(URL(string: "https://www.google.com/policies/technologies/partner-sites/")!, options: [:])
     }
     
-    func recommend(){
-    }
-    
     func rate(){
         UIApplication.shared.open(URL(string: Model.itunesAppURL)!, options: [:])
     }

@@ -77,10 +77,6 @@ struct AboutView: View {
                 .font(.body)
             HStack {
                 Spacer()
-                Button(action: viewModel.recommend){
-                    Text("RECOMMEND")
-                        .modifier(AboutButtonMod())
-                }
                 Button(action: viewModel.rate){
                     Text("RATE")
                         .modifier(AboutButtonMod())
