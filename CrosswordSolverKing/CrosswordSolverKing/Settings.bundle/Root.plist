@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>StringsTable</key>
+    <string>Root</string>
+    <key>PreferenceSpecifiers</key>
+    <array>
+        <dict>
+            <key>Titles</key>
+            <array>
+                <string>Cambridge</string>
+                <string>Chambers</string>
+                <string>Collins</string>
+                <string>Dictionary.com</string>
+                <string>Google Define</string>
+                <string>Google Dictionary</string>
+                <string>Lexico</string>
+                <string>Merriam-Webster</string>
+                <string>Merriam-Webster Thesaurus</string>
+                <string>Thesaurus.com</string>
+                <string>Wiktionary</string>
+                <string>Wikipedia</string>
+                <string>Word Game Dictionary</string>
+            </array>
+            <key>Values</key>
+            <array>
+                <string>cambridge</string>
+                <string>chambers</string>
+                <string>collins</string>
+                <string>dictionary.com</string>
+                <string>google define</string>
+                <string>google</string>
+                <string>lexico</string>
+                <string>merriam-webster</string>
+                <string>merriam-webster thesaurus</string>
+                <string>thesaurus.com</string>
+                <string>wiktionary</string>
+                <string>wikipedia</string>
+                <string>word game dictionary</string>
+            </array>
+            <key>Type</key>
+            <string>PSMultiValueSpecifier</string>
+            <key>Title</key>
+            <string>Dictionary definition</string>
+            <key>Key</key>
+            <string>definition</string>
+            <key>DefaultValue</key>
+            <string>google define</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>Automatically show keyboard</string>
+            <key>Key</key>
+            <string>showKeyboard</string>
+            <key>DefaultValue</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>Allow long press on results</string>
+            <key>Key</key>
+            <string>longPressEnabled</string>
+            <key>DefaultValue</key>
+            <true/>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSGroupSpecifier</string>
+            <key>FooterText</key>
+            <string>Use a monospaced font for the query field and results</string>
+            <key>Title</key>
+            <string>Appearance</string>
+        </dict>
+        <dict>
+            <key>Values</key>
+            <array>
+                <string>black</string>
+                <string>red</string>
+                <string>green</string>
+                <string>blue</string>
+            </array>
+            <key>Titles</key>
+            <array>
+                <string>Black (none)</string>
+                <string>Red</string>
+                <string>Green</string>
+                <string>Blue</string>
+            </array>
+            <key>Type</key>
+            <string>PSMultiValueSpecifier</string>
+            <key>Title</key>
+            <string>Letter highlighting</string>
+            <key>Key</key>
+            <string>highlight</string>
+            <key>DefaultValue</key>
+            <string>red</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>Use monospaced font</string>
+            <key>Key</key>
+            <string>useMonospacedFont</string>
+            <key>DefaultValue</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>FooterText</key>
+            <string>The standard word list has 310,000 words, select TWL or SOWPODS word lists for Scrabble games.</string>
+            <key>Type</key>
+            <string>PSGroupSpecifier</string>
+            <key>Title</key>
+            <string>Search Settings</string>
+        </dict>
+        <dict>
+            <key>Titles</key>
+            <array>
+                <string>180k words - TWL (US Scrabble)</string>
+                <string>270k words - SOWPODS (World Scrabble)</string>
+                <string>310k words - SCOWL</string>
+            </array>
+            <key>Values</key>
+            <array>
+                <string>twl</string>
+                <string>sowpods</string>
+                <string>words</string>
+            </array>
+            <key>Type</key>
+            <string>PSMultiValueSpecifier</string>
+            <key>Title</key>
+            <string>Word list</string>
+            <key>Key</key>
+            <string>wordList</string>
+            <key>DefaultValue</key>
+            <string>words</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>Show sub-anagrams</string>
+            <key>Key</key>
+            <string>showSubAnagrams</string>
+            <key>DefaultValue</key>
+            <true/>
+        </dict>
+        <dict>
+            <key>Titles</key>
+            <array>
+                <string>100 words</string>
+                <string>500 words</string>
+                <string>1000 words</string>
+                <string>5000 words</string>
+            </array>
+            <key>Values</key>
+            <array>
+                <string>100</string>
+                <string>500</string>
+                <string>1000</string>
+                <string>5000</string>
+            </array>
+            <key>Type</key>
+            <string>PSMultiValueSpecifier</string>
+            <key>Title</key>
+            <string>Results limit</string>
+            <key>Key</key>
+            <string>resultsLimit</string>
+            <key>DefaultValue</key>
+            <string>5000</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSGroupSpecifier</string>
+            <key>Title</key>
+            <string>Information</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSTitleValueSpecifier</string>
+            <key>Title</key>
+            <string>Version</string>
+            <key>Key</key>
+            <string>version</string>
+            <key>DefaultValue</key>
+            <string>1.07</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSChildPaneSpecifier</string>
+            <key>Title</key>
+            <string>Acknowledgements</string>
+            <key>File</key>
+            <string>Acknowledgements</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSChildPaneSpecifier</string>
+            <key>Title</key>
+            <string>Privacy Policy</string>
+            <key>File</key>
+            <string>Privacy</string>
+        </dict>
+    </array>
+</dict>
+</plist>
+

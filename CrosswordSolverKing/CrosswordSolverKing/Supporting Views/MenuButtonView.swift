@@ -11,6 +11,7 @@ import SwiftUI
 enum MenuViewLinks : Int{
     case AboutLink
     case HelpLink
+    case SettingsLink
 }
 
 struct MainMenuView : View {
@@ -23,7 +24,8 @@ struct MainMenuView : View {
         }.actionSheet(isPresented: $showingActionSheet){
             ActionSheet(title: Text("Main Menu"), message: nil, buttons: [
                 .default(Text("Help")){self.menuLink = .HelpLink},
-                .default(Text("About")){self.menuLink = .AboutLink},
+                .default(Text("About & Privacy")){self.menuLink = .AboutLink},
+                .default(Text("Settings")){self.menuLink = .SettingsLink},
                 .cancel()
             ])
         }

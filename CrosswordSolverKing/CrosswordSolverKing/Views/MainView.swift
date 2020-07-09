@@ -11,8 +11,7 @@ import GoogleMobileAds
 
 struct MainView: View {
     @EnvironmentObject var model : Model
-    @State private var showAbout = false
-    @State private var menuLink : MenuViewLinks?
+    @ObservedObject private var viewModel = MainViewModel()
     @ObservedObject private var euConsent = EUConsent()
 
     
@@ -52,13 +51,13 @@ struct MainView: View {
                 if !euConsent.showEUConsent{
                     adSection
                 }
-                NavigationLink(destination: AboutView(),tag: MenuViewLinks.AboutLink, selection: $menuLink){EmptyView()}
-                NavigationLink(destination: HelpView(),tag: MenuViewLinks.HelpLink, selection: $menuLink){EmptyView()}
+                NavigationLink(destination: AboutView(),tag: MenuViewLinks.AboutLink, selection: $viewModel.menuLink){EmptyView()}
+                NavigationLink(destination: HelpView(),tag: MenuViewLinks.HelpLink, selection: $viewModel.menuLink){EmptyView()}
             }
             .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}
             .navigationBarTitle(Text("CSK"), displayMode: .inline)
             .navigationBarHidden(false)
-            .navigationBarItems(leading: MainMenuView(menuLink: $menuLink) ,
+            .navigationBarItems(leading: MainMenuView(menuLink: $viewModel.menuLink) ,
                                 trailing: NavigationLink(destination: FiltersView(filters: model.filters)){Text("Filters")})
         }.navigationViewStyle(StackNavigationViewStyle())
     }
