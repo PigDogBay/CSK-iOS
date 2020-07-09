@@ -11,6 +11,7 @@
 		0033162424B3488B00DBBF32 /* EUConsentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0033162324B3488B00DBBF32 /* EUConsentView.swift */; };
 		00469B5824B736BA000DBAF4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00469B5724B736BA000DBAF4 /* Settings.bundle */; };
 		00469B5B24B73DFC000DBAF4 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00469B5A24B73DFC000DBAF4 /* MainViewModel.swift */; };
+		00469B5D24B74EE1000DBAF4 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00469B5C24B74EE1000DBAF4 /* AboutViewModel.swift */; };
 		004AF96624B4CC3C00C9780F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004AF96524B4CC3C00C9780F /* Settings.swift */; };
 		00C3585024A0EEF800D09C75 /* GADBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */; };
 		00C71C3D24AF7B1900FA3969 /* EUAgreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C71C3C24AF7B1900FA3969 /* EUAgreeView.swift */; };
@@ -78,6 +79,7 @@
 		0033162324B3488B00DBBF32 /* EUConsentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUConsentView.swift; sourceTree = "<group>"; };
 		00469B5724B736BA000DBAF4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		00469B5A24B73DFC000DBAF4 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		00469B5C24B74EE1000DBAF4 /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
 		004AF96524B4CC3C00C9780F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADBannerViewController.swift; sourceTree = "<group>"; };
 		00C71C3C24AF7B1900FA3969 /* EUAgreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUAgreeView.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 		00F284F424990EF2004C9B75 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				00469B5C24B74EE1000DBAF4 /* AboutViewModel.swift */,
 				00F284F024990D1B004C9B75 /* Ads.swift */,
 				00F2850124991065004C9B75 /* Filters.swift */,
 				00F2850224991065004C9B75 /* Model.swift */,
@@ -529,6 +532,7 @@
 				00F284BB24990437004C9B75 /* SceneDelegate.swift in Sources */,
 				00F2850D24991065004C9B75 /* Filters.swift in Sources */,
 				00F2850E24991065004C9B75 /* Model.swift in Sources */,
+				00469B5D24B74EE1000DBAF4 /* AboutViewModel.swift in Sources */,
 				00F2850624991065004C9B75 /* MenuButtonView.swift in Sources */,
 				00C71C3D24AF7B1900FA3969 /* EUAgreeView.swift in Sources */,
 				00C3585024A0EEF800D09C75 /* GADBannerViewController.swift in Sources */,

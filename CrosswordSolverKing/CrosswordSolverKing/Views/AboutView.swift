@@ -10,7 +10,7 @@ import SwiftUI
 
 struct AboutView: View {
     
-    @State private var showMeRelevantAds = true
+    @ObservedObject private var viewModel = AboutViewModel()
 
     private var infoSection: some View {
         VStack(alignment: .leading, spacing: 8){
@@ -25,7 +25,7 @@ struct AboutView: View {
 
             HStack {
                 Spacer()
-                Button(action: showLegal){
+                Button(action: viewModel.showLegal){
                     Text("LEGAL")
                         .modifier(AboutButtonMod())
                 }
@@ -42,7 +42,7 @@ struct AboutView: View {
 
             HStack {
                 Spacer()
-                Button(action: showPrivacyPolicy){
+                Button(action: viewModel.showPrivacyPolicy){
                     Text("PRIVACY POLICY")
                         .modifier(AboutButtonMod())
                 }
@@ -59,15 +59,15 @@ struct AboutView: View {
 
             HStack {
                 Spacer()
-                Button(action: showGooglePrivacyPolicy){
+                Button(action: viewModel.showGooglePrivacyPolicy){
                     Text("FIND OUT MORE")
                         .modifier(AboutButtonMod())
                 }
             }
             Text("This app will use your data to tailor ads to you. Our partners will collect data and use an unique identifier on your device to show you ads. You select here if we can continue to use your data to tailor ads for you.")
                 .font(.body)
-            Toggle(isOn: $showMeRelevantAds) {
-                if showMeRelevantAds {
+            Toggle(isOn: $viewModel.showMeRelevantAds) {
+                if viewModel.showMeRelevantAds {
                     Text("Show me relevant ads")
                 } else {
                     Text("Show me ads that are less relevant")
@@ -83,15 +83,15 @@ struct AboutView: View {
                 .font(.body)
             HStack {
                 Spacer()
-                Button(action: recommend){
+                Button(action: viewModel.recommend){
                     Text("RECOMMEND")
                         .modifier(AboutButtonMod())
                 }
-                Button(action: feedback){
+                Button(action: viewModel.feedback){
                     Text("FEEDBACK")
                         .modifier(AboutButtonMod())
                 }.padding(.leading, 16)
-                Button(action: rate){
+                Button(action: viewModel.rate){
                     Text("RATE")
                         .modifier(AboutButtonMod())
                 }.padding(.leading, 16)
@@ -109,21 +109,7 @@ struct AboutView: View {
                 helpOutSection
             }.padding(.top, 16)
         }.navigationBarTitle(Text("About"), displayMode: .inline)
-    }
-
-    private func showLegal(){
-    }
-    private func showPrivacyPolicy(){
-        UIApplication.shared.open(URL(string: Model.privacyURL)!, options: [:])
-    }
-    private func showGooglePrivacyPolicy(){
-        UIApplication.shared.open(URL(string: "https://www.google.com/policies/technologies/partner-sites/")!, options: [:])
-    }
-    private func recommend(){
-    }
-    private func feedback() {
-    }
-    private func rate(){
+        .onDisappear(perform: viewModel.viewDisappear)
     }
 }
 
