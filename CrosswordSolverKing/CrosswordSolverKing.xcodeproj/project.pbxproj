@@ -81,7 +81,7 @@
 		004AF96524B4CC3C00C9780F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADBannerViewController.swift; sourceTree = "<group>"; };
 		00C71C3C24AF7B1900FA3969 /* EUAgreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUAgreeView.swift; sourceTree = "<group>"; };
-		00F284B524990437004C9B75 /* CrosswordSolverKing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrosswordSolverKing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00F284B524990437004C9B75 /* Crossword Solver King.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crossword Solver King.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F284B824990437004C9B75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00F284BA24990437004C9B75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		00F284BE24990438004C9B75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 		00F284B624990437004C9B75 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				00F284B524990437004C9B75 /* CrosswordSolverKing.app */,
+				00F284B524990437004C9B75 /* Crossword Solver King.app */,
 				00F284CB24990438004C9B75 /* CrosswordSolverKingTests.xctest */,
 				00F284D624990438004C9B75 /* CrosswordSolverKingUITests.xctest */,
 			);
@@ -299,7 +299,7 @@
 			);
 			name = CrosswordSolverKing;
 			productName = CrosswordSolverKing;
-			productReference = 00F284B524990437004C9B75 /* CrosswordSolverKing.app */;
+			productReference = 00F284B524990437004C9B75 /* Crossword Solver King.app */;
 			productType = "com.apple.product-type.application";
 		};
 		00F284CA24990438004C9B75 /* CrosswordSolverKingTests */ = {
@@ -717,7 +717,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pigdogbay.CrosswordSolverKing;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Crossword Solver King";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -738,7 +738,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pigdogbay.CrosswordSolverKing;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Crossword Solver King";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
