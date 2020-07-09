@@ -22,14 +22,6 @@ struct AboutView: View {
                 .font(.body)
             Text("©MPD Bailey Technology 2020")
                 .font(.body)
-
-            HStack {
-                Spacer()
-                Button(action: viewModel.showLegal){
-                    Text("LEGAL")
-                        .modifier(AboutButtonMod())
-                }
-            }
         }
     }
     

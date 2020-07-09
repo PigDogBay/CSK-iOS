@@ -17,9 +17,6 @@ class AboutViewModel : ObservableObject {
         showMeRelevantAds = !settings.useNonPersonalizedAds
     }
     
-    func showLegal(){
-    }
-    
     func showPrivacyPolicy(){
         UIApplication.shared.open(URL(string: Model.privacyURL)!, options: [:])
     }
