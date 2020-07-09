@@ -28,10 +28,8 @@ class AboutViewModel : ObservableObject {
     func recommend(){
     }
     
-    func feedback() {
-    }
-    
     func rate(){
+        UIApplication.shared.open(URL(string: Model.itunesAppURL)!, options: [:])
     }
 
     func viewDisappear() {

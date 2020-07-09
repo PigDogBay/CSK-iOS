@@ -20,6 +20,8 @@ struct AboutView: View {
                 .font(.body)
             Text("www.mpdbailey.co.uk")
                 .font(.body)
+            Text("pigdogbay@yahoo.co.uk")
+                .font(.body)
             Text("©MPD Bailey Technology 2020")
                 .font(.body)
         }
@@ -79,10 +81,6 @@ struct AboutView: View {
                     Text("RECOMMEND")
                         .modifier(AboutButtonMod())
                 }
-                Button(action: viewModel.feedback){
-                    Text("FEEDBACK")
-                        .modifier(AboutButtonMod())
-                }.padding(.leading, 16)
                 Button(action: viewModel.rate){
                     Text("RATE")
                         .modifier(AboutButtonMod())
