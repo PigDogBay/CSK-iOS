@@ -39,7 +39,7 @@ struct GADBannerViewController: UIViewControllerRepresentable {
         view.rootViewController = viewController
         viewController.view.addSubview(view)
         viewController.view.frame = CGRect(origin: .zero, size: kGADAdSizeBanner.size)
-        view.load(Ads.createRequest(useNpa: false))
+        view.load(Ads.createRequest())
         return viewController
     }
 

@@ -25,8 +25,9 @@ struct Ads
         GADMobileAds.sharedInstance().start(completionHandler: nil)
     }
     
-    static func createRequest(useNpa : Bool) -> GADRequest{
+    static func createRequest() -> GADRequest{
         let request = GADRequest()
+        let useNpa = Settings().useNonPersonalizedAds
         if useNpa {
             let extras = GADExtras()
             extras.additionalParameters = ["npa": "1"]
