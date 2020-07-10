@@ -19,12 +19,11 @@ enum AppErrors : Error {
     case loadError
 }
 
-class Model : ObservableObject {
+class Model : ObservableObject,WordListCallback {
+    
     static let appId = "id1503152101"
     static let privacyURL = "https://pigdogbay.blogspot.co.uk/2018/05/privacy-policy.html"
     static let itunesAppURL = "https://itunes.apple.com/app/id1503152101"
-
-    private let crosswordMatches = ["magee","mages","maggs","magic","magma","magog","magoo","magot","magus","mcgee","megan","miggs","might"]
 
     @Published var query = ""
     @Published var matches : [String] = []
@@ -33,12 +32,10 @@ class Model : ObservableObject {
     let wordList = WordList()
     let wordSearch : WordSearch
     let wordFormatter = WordFormatter()
-
     
     private let scheduler = DispatchQueue.global(qos: .background)
     private var disposables = Set<AnyCancellable>()
     private let passthrough = PassthroughSubject<String,Never>()
-    private var signalBreak = false
     
     let filters = Filters()
 
@@ -52,8 +49,8 @@ class Model : ObservableObject {
 
         $query
             .dropFirst(1)
-            .handleEvents(receiveOutput: {_ in self.signalBreak = true}) //cancel any existing searches if user still typing
-            .debounce(for: .seconds(0.5), scheduler: scheduler) //Search will run on background queue
+            .handleEvents(receiveOutput: {_ in self.wordList.stopSearch()}) //cancel any existing searches if user still typing
+            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
             .filter{$0 == self.query} //ignore any intermediate searches
             .sink(receiveValue: {self.search(searchQuery: $0)})
             .store(in: &disposables)
@@ -84,20 +81,38 @@ class Model : ObservableObject {
             }
         }
     }
+    
     func search(searchQuery : String){
-        signalBreak = false
+        appState = .searching
+        var processedQuery = query;
+        processedQuery = self.wordSearch.preProcessQuery(processedQuery)
+        let searchType = self.wordSearch.getQueryType(processedQuery)
+        processedQuery = self.wordSearch.postProcessQuery(processedQuery, type: searchType)
+        wordFormatter.newSearch(processedQuery, searchType)
+        //let filterPipeline = filterFactory.createChainedCallback(lastCallback: self)
+        //filter.updateFilterCount()
         matches.removeAll()
-        for i in 1...5000{
-            if (signalBreak) {
-                break
-            }
-            passthrough.send("\(i)\(searchQuery)")
-//            do {
-//                usleep(500000)
-//            }
-        }
+        searchPublisher(query: processedQuery, searchType: searchType)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: {_ in },  receiveValue: { self.appState = $0})
+            .store(in: &disposables)
     }
     
+    private func searchPublisher(query : String, searchType : SearchType) -> Future<AppStates, Never> {
+        return Future<AppStates, Never> { promise in
+            self.scheduler.async {
+                self.wordSearch.runQuery(query, type: searchType, callback: self)
+                promise(.success(.finished))
+            }
+        }
+    }
+
+    //WordListCallback - TODO maybe create a custom publisher to stream the results
+    func update(_ result: String) {
+        let formatted = wordFormatter.format(result)
+        passthrough.send(formatted)
+    }
+
     func clear() {
         matches.removeAll()
     }
