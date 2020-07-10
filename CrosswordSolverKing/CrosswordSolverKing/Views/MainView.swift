@@ -13,6 +13,7 @@ struct MainView: View {
     @EnvironmentObject var model : Model
     @ObservedObject private var viewModel = MainViewModel()
     @ObservedObject private var euConsent = EUConsent()
+    @ObservedObject private var aboutVM = AboutViewModel()
 
     
     init(){
@@ -37,7 +38,7 @@ struct MainView: View {
     private var adSection : some View {
         return HStack {
             Spacer()
-            GADBannerViewController()
+            GADBannerViewController(viewModel: aboutVM)
                 .frame(width: kGADAdSizeBanner.size.width, height: kGADAdSizeBanner.size.height)
             Spacer()
         }
@@ -51,7 +52,7 @@ struct MainView: View {
                 if !euConsent.showEUConsent{
                     adSection
                 }
-                NavigationLink(destination: AboutView(),tag: MenuViewLinks.AboutLink, selection: $viewModel.menuLink){EmptyView()}
+                NavigationLink(destination: AboutView(viewModel: self.aboutVM),tag: MenuViewLinks.AboutLink, selection: $viewModel.menuLink){EmptyView()}
                 NavigationLink(destination: HelpView(),tag: MenuViewLinks.HelpLink, selection: $viewModel.menuLink){EmptyView()}
             }
             .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct AboutView: View {
     
-    @ObservedObject private var viewModel = AboutViewModel()
+    @ObservedObject var viewModel : AboutViewModel
 
     private var infoSection: some View {
         VStack(alignment: .leading, spacing: 8){
@@ -109,6 +109,6 @@ struct AboutButtonMod : ViewModifier {
 
 struct AboutView_Previews: PreviewProvider {
     static var previews: some View {
-        AboutView()
+        AboutView(viewModel: AboutViewModel())
     }
 }

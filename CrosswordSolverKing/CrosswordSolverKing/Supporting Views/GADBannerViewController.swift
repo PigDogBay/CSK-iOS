@@ -32,6 +32,10 @@ This code uses standard banner ads, adaptive banners are troublesome
  
 */
 struct GADBannerViewController: UIViewControllerRepresentable {
+
+    //Need to respond to user ad preference changes made in the AboutView
+    @ObservedObject var viewModel : AboutViewModel
+
     func makeUIViewController(context: Context) -> UIViewController {
         let view = GADBannerView(adSize: kGADAdSizeBanner)
         let viewController = UIViewController()
@@ -43,5 +47,14 @@ struct GADBannerViewController: UIViewControllerRepresentable {
         return viewController
     }
 
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context){}
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context){
+        if viewModel.isAdReloadRequired {
+            if uiViewController.view.subviews.count>0 {
+                if let bannerView = uiViewController.view.subviews[0] as? GADBannerView {
+                    bannerView.load(Ads.createRequest())
+                }
+            }
+            viewModel.isAdReloadRequired = false
+        }
+    }
 }

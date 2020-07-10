@@ -11,6 +11,7 @@ import Combine
 
 class AboutViewModel : ObservableObject {
     @Published var showMeRelevantAds = true
+    @Published var isAdReloadRequired = false
     
     init(){
         let settings = Settings()
@@ -31,6 +32,9 @@ class AboutViewModel : ObservableObject {
 
     func viewDisappear() {
         let settings = Settings()
+        if settings.useNonPersonalizedAds == showMeRelevantAds {
+            isAdReloadRequired = true
+        }
         settings.useNonPersonalizedAds = !showMeRelevantAds
     }
     
