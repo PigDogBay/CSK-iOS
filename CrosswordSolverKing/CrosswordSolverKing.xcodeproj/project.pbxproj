@@ -13,6 +13,7 @@
 		00469B5B24B73DFC000DBAF4 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00469B5A24B73DFC000DBAF4 /* MainViewModel.swift */; };
 		00469B5D24B74EE1000DBAF4 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00469B5C24B74EE1000DBAF4 /* AboutViewModel.swift */; };
 		004AF96624B4CC3C00C9780F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004AF96524B4CC3C00C9780F /* Settings.swift */; };
+		005D83BD24B8925E00EA5FFD /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 005D83BC24B8925E00EA5FFD /* words.txt */; };
 		00C3585024A0EEF800D09C75 /* GADBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */; };
 		00C71C3D24AF7B1900FA3969 /* EUAgreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C71C3C24AF7B1900FA3969 /* EUAgreeView.swift */; };
 		00F284B924990437004C9B75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284B824990437004C9B75 /* AppDelegate.swift */; };
@@ -81,6 +82,7 @@
 		00469B5A24B73DFC000DBAF4 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		00469B5C24B74EE1000DBAF4 /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
 		004AF96524B4CC3C00C9780F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		005D83BC24B8925E00EA5FFD /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 		00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADBannerViewController.swift; sourceTree = "<group>"; };
 		00C71C3C24AF7B1900FA3969 /* EUAgreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUAgreeView.swift; sourceTree = "<group>"; };
 		00F284B524990437004C9B75 /* Crossword Solver King.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crossword Solver King.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +181,7 @@
 				00F284BE24990438004C9B75 /* Assets.xcassets */,
 				00F284C324990438004C9B75 /* LaunchScreen.storyboard */,
 				00F284C624990438004C9B75 /* Info.plist */,
+				005D83BC24B8925E00EA5FFD /* words.txt */,
 				00469B5724B736BA000DBAF4 /* Settings.bundle */,
 				00F284B824990437004C9B75 /* AppDelegate.swift */,
 				00F284BA24990437004C9B75 /* SceneDelegate.swift */,
@@ -395,6 +398,7 @@
 				00469B5824B736BA000DBAF4 /* Settings.bundle in Resources */,
 				00F284C524990438004C9B75 /* LaunchScreen.storyboard in Resources */,
 				00F284C224990438004C9B75 /* Preview Assets.xcassets in Resources */,
+				005D83BD24B8925E00EA5FFD /* words.txt in Resources */,
 				00F284BF24990438004C9B75 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
