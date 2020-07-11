@@ -10,8 +10,10 @@ import Foundation
 
 struct DefinitionViewModel {
     let word : String
-
+    
     func lookupUrl() -> URLRequest {
-        return URLRequest(url: URL(string: "https://www.google.com/search?q=define:\(word)")!)
+        let settings = Settings()
+        let url = settings.getDefinitionUrl(word: word)
+        return URLRequest(url: URL(string: url)!)
     }
 }
