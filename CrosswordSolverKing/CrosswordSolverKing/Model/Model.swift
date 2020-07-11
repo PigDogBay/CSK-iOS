@@ -35,6 +35,8 @@ class Model : ObservableObject,WordListCallback {
     
     private let scheduler = DispatchQueue.global(qos: .background)
     private var disposables = Set<AnyCancellable>()
+    //Cannot place the search futures in a set as they will never be removed, since only one search at a time, can just use a property to store its reference
+    private var temporaryDisposable : AnyCancellable?
     private let passthrough = PassthroughSubject<String,Never>()
     
     let filters = Filters()
@@ -55,7 +57,7 @@ class Model : ObservableObject,WordListCallback {
             .sink(receiveValue: {self.search(searchQuery: $0)})
             .store(in: &disposables)
 
-        loadPublisher()
+        temporaryDisposable = loadPublisher()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: {
                 switch $0 {
@@ -64,7 +66,6 @@ class Model : ObservableObject,WordListCallback {
                 case .failure( _):
                     self.appState = .error
                 }},  receiveValue: { self.wordList.wordlist = $0})
-            .store(in: &disposables)
     }
 
     func loadPublisher() -> Future<[String], AppErrors> {
@@ -92,10 +93,9 @@ class Model : ObservableObject,WordListCallback {
         //let filterPipeline = filterFactory.createChainedCallback(lastCallback: self)
         //filter.updateFilterCount()
         matches.removeAll()
-        searchPublisher(query: processedQuery, searchType: searchType)
+        temporaryDisposable = searchPublisher(query: processedQuery, searchType: searchType)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: {_ in },  receiveValue: { self.appState = $0})
-            .store(in: &disposables)
     }
     
     private func searchPublisher(query : String, searchType : SearchType) -> Future<AppStates, Never> {
