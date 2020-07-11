@@ -109,15 +109,10 @@ class Model : ObservableObject,WordListCallback {
 
     //WordListCallback - TODO maybe create a custom publisher to stream the results
     func update(_ result: String) {
-        let formatted = wordFormatter.format(result)
-        passthrough.send(formatted)
+        passthrough.send(result)
     }
 
     func clear() {
         matches.removeAll()
-    }
-    
-    func lookupUrl(match : String) -> URLRequest {
-        return URLRequest(url: URL(string: "https://www.google.com/search?q=define:\(match)")!)
     }
 }

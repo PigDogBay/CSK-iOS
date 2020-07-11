@@ -14,7 +14,6 @@ struct MainView: View {
     @ObservedObject private var viewModel = MainViewModel()
     @ObservedObject private var euConsent = EUConsent()
     @ObservedObject private var aboutVM = AboutViewModel()
-
     
     init(){
         //Enable clear button on the text field
@@ -25,8 +24,8 @@ struct MainView: View {
     private var listSection : some View {
         return List {
             ForEach(model.matches, id: \.self) {match in
-                NavigationLink(destination: DefinitionView(match: match)){
-                    Text(match)
+                NavigationLink(destination: DefinitionView(viewModel: DefinitionViewModel(word: match))){
+                    Text(self.model.wordFormatter.format(match))
                 }
             }
         }

@@ -9,16 +9,15 @@
 import SwiftUI
 
 struct DefinitionView: View {
-    var match : String
-    @EnvironmentObject var model : Model
+    let viewModel : DefinitionViewModel
     var body: some View {
-        SimpleWebView(urlRequest: model.lookupUrl(match: match))
-        .navigationBarTitle(Text(match), displayMode: .inline)
+        SimpleWebView(urlRequest: viewModel.lookupUrl())
+            .navigationBarTitle(Text(viewModel.word), displayMode: .inline)
     }
 }
 
 struct DefinitionView_Previews: PreviewProvider {
     static var previews: some View {
-        DefinitionView(match: "preview").environmentObject(Model())
+        DefinitionView(viewModel: DefinitionViewModel(word: "preview"))
     }
 }
