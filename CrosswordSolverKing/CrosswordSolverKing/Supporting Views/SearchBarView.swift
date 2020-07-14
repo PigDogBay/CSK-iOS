@@ -13,9 +13,9 @@ struct SearchBarView : View {
 
     var body: some View {
         TextField("Enter letters", text: $model.query, onCommit: {self.searchPressed()})
-            .padding(EdgeInsets(top: 32, leading: 8, bottom: 16, trailing: 8))
-            .font(.system(.body, design: .monospaced))
-            .frame(height: 40)
+            .padding(EdgeInsets(top: 24, leading: 12, bottom: 8, trailing: 12))
+            .font(.system(.title, design: .monospaced))
+            .frame(height: 60)
             .keyboardType(.emailAddress)
             .disableAutocorrection(true)
             .autocapitalization(.none)
