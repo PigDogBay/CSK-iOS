@@ -53,8 +53,8 @@ class Filters : ObservableObject {
         suffix = ""
         contains = ""
         excludes = ""
-        contains = ""
-        excludes = ""
+        containsWord = ""
+        excludesWord = ""
         pattern = ""
         regExp = ""
     }
