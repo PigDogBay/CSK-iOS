@@ -23,8 +23,18 @@ class Filters : ObservableObject {
     @Published var lessThan = 0
     @Published var moreThan = 0
     @Published var equalTo = 0
-
+    
+    @Published var performSearch = false
     private(set) var filterCount : Int = 0
+    
+    func viewAppear(){
+        performSearch = false
+    }
+    
+    func viewDisappear() {
+        updateFilterCount()
+        performSearch = filterCount > 0
+    }
     
     func updateFilterCount() {
         var count = 0

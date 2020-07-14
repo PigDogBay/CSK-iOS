@@ -56,15 +56,15 @@ struct FiltersView: View {
             letterFilters
             wordFilters
             prefixSuffixFilters
-            sizeFilters
             expertFilters
-        }.navigationBarTitle(Text("Filters"), displayMode: .inline)
-            .navigationBarItems(trailing: Button(action: filters.reset){ Text("Reset")})
-
+            sizeFilters
+        }.onAppear(perform: filters.viewAppear)
+        .onDisappear(perform: filters.viewDisappear)
+        .navigationBarTitle(Text("Filters"), displayMode: .inline)
+        .navigationBarItems(trailing: Button(action: filters.reset){ Text("Reset")})
         .gesture(DragGesture().onChanged { _ in
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
         })
-
     }
 }
 
