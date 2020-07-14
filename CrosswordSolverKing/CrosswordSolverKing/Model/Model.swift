@@ -12,7 +12,7 @@ import SwiftUtils
 
 enum AppStates
 {
-    case uninitialized,loading, ready, searching, finished, error
+    case uninitialized,ready, searching, finished, error
 }
 
 enum AppErrors : Error {
@@ -53,7 +53,7 @@ class Model : ObservableObject,WordListCallback {
             .dropFirst(1)
             .handleEvents(receiveOutput: {_ in self.wordList.stopSearch()}) //cancel any existing searches if user still typing
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
-            .filter{$0 == self.query} //ignore any intermediate searches
+            .filter{$0 == self.query && (self.appState == .ready || self.appState == .finished)} //ignore any intermediate searches
             .sink(receiveValue: {self.search(searchQuery: $0)})
             .store(in: &disposables)
 
@@ -111,7 +111,6 @@ class Model : ObservableObject,WordListCallback {
         }
     }
 
-    //WordListCallback - TODO maybe create a custom publisher to stream the results
     func update(_ result: String) {
         passthrough.send(result)
     }
