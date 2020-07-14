@@ -43,23 +43,28 @@ struct MainView: View {
         }
     }
     
+    @ViewBuilder
     var body: some View {
-        NavigationView {
-            VStack(){
-                SearchBarView()
-                listSection
-                if !euConsent.showEUConsent{
-                    adSection
+        if model.appState == .uninitialized {
+            SplashScreen()
+        } else {
+            NavigationView {
+                VStack(){
+                    SearchBarView()
+                    listSection
+                    if !euConsent.showEUConsent{
+                        adSection
+                    }
+                    NavigationLink(destination: AboutView(viewModel: self.aboutVM),tag: MenuViewLinks.AboutLink, selection: $viewModel.menuLink){EmptyView()}
+                    NavigationLink(destination: HelpView(),tag: MenuViewLinks.HelpLink, selection: $viewModel.menuLink){EmptyView()}
                 }
-                NavigationLink(destination: AboutView(viewModel: self.aboutVM),tag: MenuViewLinks.AboutLink, selection: $viewModel.menuLink){EmptyView()}
-                NavigationLink(destination: HelpView(),tag: MenuViewLinks.HelpLink, selection: $viewModel.menuLink){EmptyView()}
-            }
-            .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}
-            .navigationBarTitle(Text("CSK"), displayMode: .inline)
-            .navigationBarHidden(false)
-            .navigationBarItems(leading: MainMenuView(menuLink: $viewModel.menuLink) ,
-                                trailing: NavigationLink(destination: FiltersView(filters: model.filters)){Text("Filters")})
-        }.navigationViewStyle(StackNavigationViewStyle())
+                .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}
+                .navigationBarTitle(Text("CSK"), displayMode: .inline)
+                .navigationBarHidden(false)
+                .navigationBarItems(leading: MainMenuView(menuLink: $viewModel.menuLink) ,
+                                    trailing: NavigationLink(destination: FiltersView(filters: model.filters)){Text("Filters")})
+            }.navigationViewStyle(StackNavigationViewStyle())
+        }
     }
 }
 

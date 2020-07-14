@@ -17,6 +17,7 @@
 		00A458A724B9C7B900240913 /* DefinitionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A458A624B9C7B900240913 /* DefinitionViewModel.swift */; };
 		00C3585024A0EEF800D09C75 /* GADBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */; };
 		00C71C3D24AF7B1900FA3969 /* EUAgreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C71C3C24AF7B1900FA3969 /* EUAgreeView.swift */; };
+		00C7D74A24BDC25E00353176 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C7D74924BDC25E00353176 /* SplashScreen.swift */; };
 		00F284B924990437004C9B75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284B824990437004C9B75 /* AppDelegate.swift */; };
 		00F284BB24990437004C9B75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284BA24990437004C9B75 /* SceneDelegate.swift */; };
 		00F284BF24990438004C9B75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00F284BE24990438004C9B75 /* Assets.xcassets */; };
@@ -87,6 +88,7 @@
 		00A458A624B9C7B900240913 /* DefinitionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionViewModel.swift; sourceTree = "<group>"; };
 		00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADBannerViewController.swift; sourceTree = "<group>"; };
 		00C71C3C24AF7B1900FA3969 /* EUAgreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUAgreeView.swift; sourceTree = "<group>"; };
+		00C7D74924BDC25E00353176 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		00F284B524990437004C9B75 /* Crossword Solver King.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crossword Solver King.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F284B824990437004C9B75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00F284BA24990437004C9B75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				00FCDDD924ADED1B00E4CFD3 /* EUAdChoiceView.swift */,
 				00C71C3C24AF7B1900FA3969 /* EUAgreeView.swift */,
 				0033162324B3488B00DBBF32 /* EUConsentView.swift */,
+				00C7D74924BDC25E00353176 /* SplashScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				00F2850C24991065004C9B75 /* AboutView.swift in Sources */,
 				00F2850B24991065004C9B75 /* DefinitionView.swift in Sources */,
 				00F2850924991065004C9B75 /* SearchBarView.swift in Sources */,
+				00C7D74A24BDC25E00353176 /* SplashScreen.swift in Sources */,
 				004AF96624B4CC3C00C9780F /* Settings.swift in Sources */,
 				00F2850424991065004C9B75 /* SimpleWebView.swift in Sources */,
 				00F2850324991065004C9B75 /* FilterPicker.swift in Sources */,
