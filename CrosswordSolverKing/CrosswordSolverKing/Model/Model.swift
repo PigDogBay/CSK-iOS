@@ -90,18 +90,18 @@ class Model : ObservableObject,WordListCallback {
         let searchType = self.wordSearch.getQueryType(processedQuery)
         processedQuery = self.wordSearch.postProcessQuery(processedQuery, type: searchType)
         wordFormatter.newSearch(processedQuery, searchType)
-        //let filterPipeline = filterFactory.createChainedCallback(lastCallback: self)
-        //filter.updateFilterCount()
+        let filterPipeline = filters.createChainedCallback(lastCallback: self)
+        filters.updateFilterCount()
         matches.removeAll()
-        temporaryDisposable = searchPublisher(query: processedQuery, searchType: searchType)
+        temporaryDisposable = searchPublisher(query: processedQuery, searchType: searchType, callback: filterPipeline)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: {_ in },  receiveValue: { self.appState = $0})
     }
     
-    private func searchPublisher(query : String, searchType : SearchType) -> Future<AppStates, Never> {
+    private func searchPublisher(query : String, searchType : SearchType, callback : WordListCallback) -> Future<AppStates, Never> {
         return Future<AppStates, Never> { promise in
             self.scheduler.async {
-                self.wordSearch.runQuery(query, type: searchType, callback: self)
+                self.wordSearch.runQuery(query, type: searchType, callback: callback)
                 promise(.success(.finished))
             }
         }
