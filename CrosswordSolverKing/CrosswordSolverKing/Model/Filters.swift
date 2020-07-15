@@ -33,7 +33,7 @@ class Filters : ObservableObject {
     
     func viewDisappear() {
         updateFilterCount()
-        performSearch = filterCount > 0
+        performSearch = performSearch || filterCount > 0
     }
     
     func updateFilterCount() {
@@ -67,6 +67,8 @@ class Filters : ObservableObject {
         excludesWord = ""
         pattern = ""
         regExp = ""
+        
+        performSearch = true
     }
 
     func createChainedCallback(lastCallback: WordListCallback) -> WordListCallback {
