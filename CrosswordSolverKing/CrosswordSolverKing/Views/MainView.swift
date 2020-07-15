@@ -21,6 +21,10 @@ struct MainView: View {
         UITextField.appearance().clearButtonMode = .whileEditing
     }
     
+    private var statusSection : some View {
+        return Text(viewModel.getStatusText(model: model))
+    }
+    
     private var listSection : some View {
         return List {
             ForEach(model.matches, id: \.self) {match in
@@ -51,6 +55,7 @@ struct MainView: View {
             NavigationView {
                 VStack(){
                     SearchBarView()
+                    statusSection
                     listSection
                     if !euConsent.showEUConsent{
                         adSection

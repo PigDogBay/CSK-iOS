@@ -41,4 +41,31 @@ class MainViewModel : ObservableObject {
             application.open(url,options: [:],completionHandler: nil)
         }
     }
+    
+    func getStatusText(model : Model) -> String{
+        switch model.appState {
+        case .uninitialized:
+            return "Loading"
+        case .ready:
+            return ""
+        case .searching:
+            if model.filters.filterCount > 1 {
+                return "Searching (\(model.filters.filterCount) Filters Active)"
+            }
+            if model.filters.filterCount > 0 {
+                return "Searching (\(model.filters.filterCount) Filter Active)"
+            }
+            return "Searching"
+        case .finished:
+            if model.query == "" {
+                return ""
+            }
+            if model.filters.filterCount > 0 {
+                return "Matches: \(model.matches.count) Filters: \(model.filters.filterCount)"
+            }
+            return "Matches: \(model.matches.count)"
+        case .error:
+            return "Restart the app"
+        }
+    }
 }
