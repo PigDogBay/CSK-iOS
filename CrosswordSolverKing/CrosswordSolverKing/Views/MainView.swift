@@ -55,8 +55,12 @@ struct MainView: View {
             NavigationView {
                 VStack(){
                     SearchBarView()
-                    statusSection
-                    listSection
+                    if model.query == "" {
+                        TipsView()
+                    } else {
+                        statusSection
+                        listSection
+                    }
                     if !euConsent.showEUConsent{
                         adSection
                     }

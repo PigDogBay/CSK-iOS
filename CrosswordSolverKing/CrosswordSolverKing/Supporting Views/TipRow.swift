@@ -9,16 +9,16 @@
 import SwiftUI
 
 struct TipRow: View {
-    let title : String
-    let description : String
+    let tip : Tip
     var body: some View {
         HStack {
             Image(systemName: "lightbulb")
-                .font(Font.system(.largeTitle).bold())
+                .font(Font.system(.largeTitle))
+                .foregroundColor(Color.yellow)
                 .padding(8)
             VStack(alignment: .leading){
-                Text(title).font(.title)
-                Text(description).font(.footnote)
+                Text(tip.title).font(.title)
+                Text(tip.description).font(.footnote)
             }
             Spacer()
         }
@@ -28,8 +28,9 @@ struct TipRow: View {
 struct TipRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TipRow(title: "Cr?sswords", description: "Press space for unknown letters")
-            TipRow(title: "Anagrams",description: "Enter your letters")
+            TipRow(tip: TipData[0])
+            TipRow(tip: TipData[1])
+            TipRow(tip: TipData[2])
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }
