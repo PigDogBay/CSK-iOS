@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0021164624C5CA670033F3EB /* TipRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0021164524C5CA670033F3EB /* TipRow.swift */; };
 		0033162224B340D700DBBF32 /* EUConsent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0033162124B340D700DBBF32 /* EUConsent.swift */; };
 		0033162424B3488B00DBBF32 /* EUConsentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0033162324B3488B00DBBF32 /* EUConsentView.swift */; };
 		00469B5824B736BA000DBAF4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00469B5724B736BA000DBAF4 /* Settings.bundle */; };
@@ -78,6 +79,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0021164524C5CA670033F3EB /* TipRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipRow.swift; sourceTree = "<group>"; };
 		0033162124B340D700DBBF32 /* EUConsent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUConsent.swift; sourceTree = "<group>"; };
 		0033162324B3488B00DBBF32 /* EUConsentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUConsentView.swift; sourceTree = "<group>"; };
 		00469B5724B736BA000DBAF4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				00F284F824991065004C9B75 /* SimpleWebView.swift */,
 				00F284FC24991065004C9B75 /* TextFilterRow.swift */,
 				00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */,
+				0021164524C5CA670033F3EB /* TipRow.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				00F2850524991065004C9B75 /* HelpView.swift in Sources */,
 				0033162224B340D700DBBF32 /* EUConsent.swift in Sources */,
 				00F2850C24991065004C9B75 /* AboutView.swift in Sources */,
+				0021164624C5CA670033F3EB /* TipRow.swift in Sources */,
 				00F2850B24991065004C9B75 /* DefinitionView.swift in Sources */,
 				00F2850924991065004C9B75 /* SearchBarView.swift in Sources */,
 				00C7D74A24BDC25E00353176 /* SplashScreen.swift in Sources */,
