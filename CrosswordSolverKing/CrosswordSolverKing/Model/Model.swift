@@ -117,4 +117,11 @@ class Model : ObservableObject,WordListCallback {
     func clear() {
         matches.removeAll()
     }
+    
+    func reset(){
+        if self.appState == .ready || self.appState == .finished {
+            query = ""
+            filters.reset()
+        }
+    }
 }

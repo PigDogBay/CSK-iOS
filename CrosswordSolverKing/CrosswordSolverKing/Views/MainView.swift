@@ -64,12 +64,11 @@ struct MainView: View {
                     if !euConsent.showEUConsent{
                         adSection
                     }
-                    NavigationLink(destination: AboutView(viewModel: self.aboutVM),tag: MenuViewLinks.AboutLink, selection: $viewModel.menuLink){EmptyView()}
                 }
                 .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}
                 .navigationBarTitle(Text("CSK"), displayMode: .inline)
                 .navigationBarHidden(false)
-                .navigationBarItems(leading: MainMenuView(menuLink: $viewModel.menuLink) ,
+                .navigationBarItems(leading: Button(action: model.reset){Text("Reset")},
                                     trailing: NavigationLink(destination: FiltersView(filters: model.filters)){Text("Filters")})
             }.navigationViewStyle(StackNavigationViewStyle())
         }
