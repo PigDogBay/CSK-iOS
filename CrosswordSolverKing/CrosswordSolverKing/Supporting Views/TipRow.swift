@@ -18,7 +18,7 @@ struct TipRow: View {
                 .padding(8)
             VStack(alignment: .leading){
                 Text(tip.title).font(.title)
-                Text(tip.description).font(.footnote)
+                Text(tip.subtitle).font(.footnote)
             }
             Spacer()
         }
@@ -28,9 +28,9 @@ struct TipRow: View {
 struct TipRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TipRow(tip: TipData[0])
-            TipRow(tip: TipData[1])
-            TipRow(tip: TipData[2])
+            TipRow(tip: tipsData[0])
+            TipRow(tip: tipsData[1])
+            TipRow(tip: tipsData[2])
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }

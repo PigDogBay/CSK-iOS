@@ -11,7 +11,7 @@ import SwiftUI
 struct TipsView: View {
     var body: some View {
         List {
-            ForEach(TipData) { tip in
+            ForEach(tipsData) { tip in
                 NavigationLink(destination: HelpView()){
                     TipRow(tip: tip)
                 }
