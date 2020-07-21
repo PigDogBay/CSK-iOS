@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct HelpView: View {
+    @Binding var showTip : Bool
     let tip : Tip
     var body: some View {
         Form {
@@ -28,12 +29,12 @@ struct HelpView: View {
     }
     
     func showMe(){
-        
+        showTip = false
     }
 }
 
 struct HelpView_Previews: PreviewProvider {
     static var previews: some View {
-        HelpView(tip: tipsData[0])
+        HelpView(showTip: .constant(true), tip: tipsData[0])
     }
 }
