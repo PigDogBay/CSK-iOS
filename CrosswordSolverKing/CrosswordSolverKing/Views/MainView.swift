@@ -56,7 +56,7 @@ struct MainView: View {
                 VStack(){
                     SearchBarView()
                     if model.query == "" {
-                        TipsView()
+                        TipsView(aboutVM: self.aboutVM)
                     } else {
                         statusSection
                         listSection
