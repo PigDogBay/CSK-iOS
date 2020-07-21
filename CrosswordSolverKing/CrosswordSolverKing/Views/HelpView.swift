@@ -24,6 +24,9 @@ struct HelpView: View {
             }
             Text(viewModel.tip.description)
         }
+        .onDisappear{
+            self.viewModel.onDisappear()
+        }
         .navigationBarTitle(Text("Help"), displayMode: .inline)
         .navigationBarItems(trailing: Button(action: viewModel.showMe){ Text("Show Me")})
     }
@@ -31,6 +34,6 @@ struct HelpView: View {
 
 struct HelpView_Previews: PreviewProvider {
     static var previews: some View {
-        HelpView(viewModel: HelpViewModel(tip: tipsData[0]))
+        HelpView(viewModel: HelpViewModel(tip: tipsData[0], model: Model()))
     }
 }

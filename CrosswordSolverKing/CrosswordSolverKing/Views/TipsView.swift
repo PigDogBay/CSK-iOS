@@ -9,10 +9,12 @@
 import SwiftUI
 
 struct TipsView: View {
+    @EnvironmentObject var model : Model
+    
     var body: some View {
         List {
             ForEach(tipsData) { tip in
-                LinkedTipRow(viewModel: HelpViewModel(tip: tip))
+                LinkedTipRow(viewModel: HelpViewModel(tip: tip, model: self.model))
             }
         }.gesture(DragGesture().onChanged { _ in
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
@@ -20,6 +22,10 @@ struct TipsView: View {
     }
 }
 
+/*
+ LinkedTipRow binds the TipRow and NavigationLink to showTip
+ which allows TipRow to pop the view when the show me button is pressed.
+ */
 struct LinkedTipRow : View {
     @ObservedObject var viewModel : HelpViewModel
     var body : some View {
@@ -31,6 +37,6 @@ struct LinkedTipRow : View {
 
 struct TipsView_Previews: PreviewProvider {
     static var previews: some View {
-        TipsView()
+        TipsView().environmentObject(Model())
     }
 }
