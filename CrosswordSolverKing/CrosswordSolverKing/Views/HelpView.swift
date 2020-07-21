@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct HelpView: View {
-    @Binding var showTip : Bool
-    let tip : Tip
+    @ObservedObject var viewModel : HelpViewModel
+    
     var body: some View {
         Form {
             HStack {
@@ -19,22 +19,18 @@ struct HelpView: View {
                     .font(Font.system(.largeTitle))
                     .foregroundColor(Color.yellow)
                     .padding(8)
-                Text(tip.title).font(.largeTitle)
+                Text(viewModel.tip.title).font(.largeTitle)
                 Spacer()
             }
-            Text(tip.description)
+            Text(viewModel.tip.description)
         }
         .navigationBarTitle(Text("Help"), displayMode: .inline)
-        .navigationBarItems(trailing: Button(action: showMe){ Text("Show Me")})
-    }
-    
-    func showMe(){
-        showTip = false
+        .navigationBarItems(trailing: Button(action: viewModel.showMe){ Text("Show Me")})
     }
 }
 
 struct HelpView_Previews: PreviewProvider {
     static var previews: some View {
-        HelpView(showTip: .constant(true), tip: tipsData[0])
+        HelpView(viewModel: HelpViewModel(tip: tipsData[0]))
     }
 }

@@ -12,7 +12,7 @@ struct TipsView: View {
     var body: some View {
         List {
             ForEach(tipsData) { tip in
-                LinkedTipRow(tip: tip)
+                LinkedTipRow(viewModel: HelpViewModel(tip: tip))
             }
         }.gesture(DragGesture().onChanged { _ in
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
@@ -21,11 +21,10 @@ struct TipsView: View {
 }
 
 struct LinkedTipRow : View {
-    @State var showTip = false
-    let tip : Tip
+    @ObservedObject var viewModel : HelpViewModel
     var body : some View {
-        NavigationLink(destination: HelpView(showTip: $showTip, tip: tip), isActive: $showTip){
-            TipRow(tip: tip)
+        NavigationLink(destination: HelpView(viewModel: viewModel), isActive: $viewModel.showTip){
+            TipRow(tip: viewModel.tip)
         }
     }
 }
