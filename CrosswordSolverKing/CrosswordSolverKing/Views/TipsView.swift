@@ -12,7 +12,7 @@ struct TipsView: View {
     var body: some View {
         List {
             ForEach(tipsData) { tip in
-                NavigationLink(destination: HelpView()){
+                NavigationLink(destination: HelpView(tip: tip)){
                     TipRow(tip: tip)
                 }
             }

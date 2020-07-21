@@ -65,7 +65,6 @@ struct MainView: View {
                         adSection
                     }
                     NavigationLink(destination: AboutView(viewModel: self.aboutVM),tag: MenuViewLinks.AboutLink, selection: $viewModel.menuLink){EmptyView()}
-                    NavigationLink(destination: HelpView(),tag: MenuViewLinks.HelpLink, selection: $viewModel.menuLink){EmptyView()}
                 }
                 .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}
                 .navigationBarTitle(Text("CSK"), displayMode: .inline)
