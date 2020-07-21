@@ -38,7 +38,6 @@
 		00F2850324991065004C9B75 /* FilterPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284F724991065004C9B75 /* FilterPicker.swift */; };
 		00F2850424991065004C9B75 /* SimpleWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284F824991065004C9B75 /* SimpleWebView.swift */; };
 		00F2850524991065004C9B75 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284F924991065004C9B75 /* HelpView.swift */; };
-		00F2850624991065004C9B75 /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284FA24991065004C9B75 /* MenuButtonView.swift */; };
 		00F2850724991065004C9B75 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284FB24991065004C9B75 /* MainView.swift */; };
 		00F2850824991065004C9B75 /* TextFilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284FC24991065004C9B75 /* TextFilterRow.swift */; };
 		00F2850924991065004C9B75 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284FD24991065004C9B75 /* SearchBarView.swift */; };
@@ -121,7 +120,6 @@
 		00F284F724991065004C9B75 /* FilterPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterPicker.swift; sourceTree = "<group>"; };
 		00F284F824991065004C9B75 /* SimpleWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleWebView.swift; sourceTree = "<group>"; };
 		00F284F924991065004C9B75 /* HelpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
-		00F284FA24991065004C9B75 /* MenuButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
 		00F284FB24991065004C9B75 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		00F284FC24991065004C9B75 /* TextFilterRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFilterRow.swift; sourceTree = "<group>"; };
 		00F284FD24991065004C9B75 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -270,7 +268,6 @@
 			isa = PBXGroup;
 			children = (
 				00F284F724991065004C9B75 /* FilterPicker.swift */,
-				00F284FA24991065004C9B75 /* MenuButtonView.swift */,
 				00F284FD24991065004C9B75 /* SearchBarView.swift */,
 				00F284F824991065004C9B75 /* SimpleWebView.swift */,
 				00F284FC24991065004C9B75 /* TextFilterRow.swift */,
@@ -568,7 +565,6 @@
 				00F2850E24991065004C9B75 /* Model.swift in Sources */,
 				00A458A724B9C7B900240913 /* DefinitionViewModel.swift in Sources */,
 				00469B5D24B74EE1000DBAF4 /* AboutViewModel.swift in Sources */,
-				00F2850624991065004C9B75 /* MenuButtonView.swift in Sources */,
 				00C71C3D24AF7B1900FA3969 /* EUAgreeView.swift in Sources */,
 				00C3585024A0EEF800D09C75 /* GADBannerViewController.swift in Sources */,
 				00FCDDDA24ADED1B00E4CFD3 /* EUAdChoiceView.swift in Sources */,
