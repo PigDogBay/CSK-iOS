@@ -15,6 +15,7 @@
 		003F58BF24C6EBAD002BADC6 /* tips.json in Resources */ = {isa = PBXBuildFile; fileRef = 003F58BE24C6EBAD002BADC6 /* tips.json */; };
 		003F58C324C71895002BADC6 /* HelpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003F58C224C71895002BADC6 /* HelpViewModel.swift */; };
 		003F58C524C72EC2002BADC6 /* AboutRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003F58C424C72EC2002BADC6 /* AboutRow.swift */; };
+		003F58C724C734FE002BADC6 /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003F58C624C734FE002BADC6 /* SettingsRow.swift */; };
 		00469B5824B736BA000DBAF4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00469B5724B736BA000DBAF4 /* Settings.bundle */; };
 		00469B5B24B73DFC000DBAF4 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00469B5A24B73DFC000DBAF4 /* MainViewModel.swift */; };
 		00469B5D24B74EE1000DBAF4 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00469B5C24B74EE1000DBAF4 /* AboutViewModel.swift */; };
@@ -92,6 +93,7 @@
 		003F58BE24C6EBAD002BADC6 /* tips.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tips.json; sourceTree = "<group>"; };
 		003F58C224C71895002BADC6 /* HelpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewModel.swift; sourceTree = "<group>"; };
 		003F58C424C72EC2002BADC6 /* AboutRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRow.swift; sourceTree = "<group>"; };
+		003F58C624C734FE002BADC6 /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
 		00469B5724B736BA000DBAF4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		00469B5A24B73DFC000DBAF4 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		00469B5C24B74EE1000DBAF4 /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */,
 				0021164524C5CA670033F3EB /* TipRow.swift */,
 				003F58C424C72EC2002BADC6 /* AboutRow.swift */,
+				003F58C624C734FE002BADC6 /* SettingsRow.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				00C71C3D24AF7B1900FA3969 /* EUAgreeView.swift in Sources */,
 				00C3585024A0EEF800D09C75 /* GADBannerViewController.swift in Sources */,
 				00FCDDDA24ADED1B00E4CFD3 /* EUAdChoiceView.swift in Sources */,
+				003F58C724C734FE002BADC6 /* SettingsRow.swift in Sources */,
 				0021164824C5CFF50033F3EB /* TipsView.swift in Sources */,
 				003F58C524C72EC2002BADC6 /* AboutRow.swift in Sources */,
 				00F2850524991065004C9B75 /* HelpView.swift in Sources */,

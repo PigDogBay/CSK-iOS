@@ -20,6 +20,7 @@ struct TipsView: View {
             NavigationLink(destination: AboutView(viewModel: aboutVM)){
                 AboutRow()
             }
+            SettingsRow()
         }.gesture(DragGesture().onChanged { _ in
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
         })
