@@ -12,7 +12,11 @@ struct SearchBarView : View {
     @EnvironmentObject var model : Model
 
     var body: some View {
-        TextField("Enter letters", text: $model.query, onCommit: {self.searchPressed()})
+        let binding = Binding(
+            get: {self.model.query},
+            set: {self.model.setQueryFrom(typed: $0)})
+        
+        return TextField("Enter letters", text: binding)
             .padding(EdgeInsets(top: 24, leading: 12, bottom: 8, trailing: 12))
             .font(.system(.title, design: .monospaced))
             .frame(height: 60)
@@ -20,12 +24,6 @@ struct SearchBarView : View {
             .disableAutocorrection(true)
             .autocapitalization(.none)
             .textFieldStyle(RoundedBorderTextFieldStyle())
-    }
-    
-    func searchPressed(){
-        //This code should be in MainVM
-//        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
-//        model.search()
     }
 }
 
