@@ -43,9 +43,9 @@
     },
     {
         "id" : 1007,
-        "title" : "Multiword Anagrams",
+        "title" : "Two-Word-Anagrams",
         "subtitle" : "Use - to separate jumbled words",
         "description" : "",
-        "showMe" : "james-bond-spy"
+        "showMe" : "james-bond"
     }
 ]
