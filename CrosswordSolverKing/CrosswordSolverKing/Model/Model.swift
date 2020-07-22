@@ -122,6 +122,8 @@ class Model : ObservableObject,WordListCallback {
         if self.appState == .ready || self.appState == .finished {
             query = ""
             filters.reset()
+        } else {
+            wordList.stopSearch()
         }
     }
     
