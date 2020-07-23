@@ -107,7 +107,6 @@ class Model : ObservableObject,WordListCallback {
             return
         }
         appState = .searching
-        matchesCount = 0
         var processedQuery = self.wordSearch.preProcessQuery(searchQuery)
         let searchType = self.wordSearch.getQueryType(processedQuery)
         processedQuery = self.wordSearch.postProcessQuery(processedQuery, type: searchType)
@@ -122,14 +121,19 @@ class Model : ObservableObject,WordListCallback {
     private func searchPublisher(query : String, searchType : SearchType, callback : WordListCallback) -> Future<AppStates, Never> {
         return Future<AppStates, Never> { promise in
             self.scheduler.async {
+                self.matchesCount = 0
                 self.wordSearch.runQuery(query, type: searchType, callback: callback)
                 promise(.success(.finished))
             }
         }
     }
     
+    /*
+     This code is called from the background queue
+     */
     func update(_ result: String) {
         passthrough.send(result)
+        //terminate runQuery() if results limit is hit
         matchesCount = matchesCount + 1
         if matchesCount == resultsLimit {
             wordList.stopSearch()
