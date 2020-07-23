@@ -49,14 +49,8 @@ struct MainView: View {
         }
     }
     
-    private func printView(msg : String) -> some View {
-        print(msg)
-        return EmptyView()
-    }
-    
     @ViewBuilder
     var body: some View {
-        printView(msg: "Update Main Screen")
         if viewModel.screen == .Splash {
             SplashScreen()
         } else {
