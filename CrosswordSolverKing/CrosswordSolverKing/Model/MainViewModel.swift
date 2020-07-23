@@ -25,28 +25,27 @@ class MainViewModel : ObservableObject {
         //The screen state needs to update when appState changes or when query changes from an empty string. So to merge the publishers
         //I will need to transform them to publishers that return the same type.
         let appStatePublisher = model.$appState
-            .map { appState -> MainScreens in
-                if appState == .uninitialized {
-                    return .Splash
-                } else if self.model.query == "" {
-                    return .Tips
-                }
-                return .Matches
-            }
+            .map { appState -> MainScreens in self.getMainScreen(appState: appState, query: self.model.query)}
         
         model.$query
-            .map { query -> MainScreens in
-                if self.model.appState == .uninitialized {
-                    return .Splash
-                } else if query == "" {
-                    return .Tips
-                }
-                return .Matches
-            }.merge(with: appStatePublisher)
+            .map { query -> MainScreens in self.getMainScreen(appState: self.model.appState, query: query)}
+            .merge(with: appStatePublisher)
             .removeDuplicates()
             .receive(on: DispatchQueue.main)
             .sink(receiveValue:{screen in self.screen = screen})
             .store(in: &disposables)
+    }
+    
+    /*
+        Main screen is determined by app state and query
+     */
+    private func getMainScreen(appState : AppStates, query : String) -> MainScreens {
+        if appState == .uninitialized {
+            return .Splash
+        } else if query == "" {
+            return .Tips
+        }
+        return .Matches
     }
 
     func getStatusText() -> String{
