@@ -31,7 +31,7 @@ struct MainView: View {
         return List {
             ForEach(model.matches, id: \.self) {match in
                 NavigationLink(destination: DefinitionView(viewModel: DefinitionViewModel(word: match))){
-                    Text(self.model.wordFormatter.format(match))
+                    Text(self.viewModel.format(match: match))
                 }
             }
         }
@@ -76,8 +76,8 @@ struct MainView: View {
                 .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}
                 .navigationBarTitle(Text("CSK"), displayMode: .inline)
                 .navigationBarHidden(false)
-                .navigationBarItems(leading: Button(action: model.reset){Text("Reset")},
-                                    trailing: NavigationLink(destination: FiltersView(filters: model.filters)){Text("Filters")})
+                .navigationBarItems(leading: Button(action: viewModel.model.reset){Text("Reset")},
+                                    trailing: NavigationLink(destination: FiltersView(filters: viewModel.model.filters)){Text("Filters")})
             }.navigationViewStyle(StackNavigationViewStyle())
         }
     }
