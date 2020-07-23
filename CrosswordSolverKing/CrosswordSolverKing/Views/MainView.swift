@@ -62,9 +62,9 @@ struct MainView: View {
         } else {
             NavigationView {
                 VStack(){
-                    SearchBarView(viewModel: viewModel)
+                    SearchBarView()
                     if viewModel.screen == .Tips {
-                        TipsView(aboutVM: self.aboutVM, mainVM: viewModel)
+                        TipsView(aboutVM: self.aboutVM)
                     } else {
                         statusSection
                         listSection

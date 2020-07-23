@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SearchBarView : View {
-    @ObservedObject var viewModel : MainViewModel
+    @EnvironmentObject var viewModel : MainViewModel
 
     var body: some View {
         let binding = Binding(
@@ -29,6 +29,6 @@ struct SearchBarView : View {
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBarView(viewModel: MainViewModel())
+        SearchBarView().environmentObject(MainViewModel())
     }
 }
