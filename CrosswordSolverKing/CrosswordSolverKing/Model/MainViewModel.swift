@@ -19,8 +19,8 @@ class MainViewModel : ObservableObject {
 
     @Published var screen : MainScreens = .Splash
     
-    init(model : Model){
-        self.model = model
+    init(){
+        self.model = Model()
         
         //The screen state needs to update when appState changes or when query changes from an empty string. So to merge the publishers
         //I will need to transform them to publishers that return the same type.

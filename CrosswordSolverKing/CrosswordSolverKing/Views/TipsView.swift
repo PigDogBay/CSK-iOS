@@ -42,6 +42,6 @@ struct LinkedTipRow : View {
 
 struct TipsView_Previews: PreviewProvider {
     static var previews: some View {
-        TipsView(aboutVM: AboutViewModel(), mainVM: MainViewModel(model: Model()))
+        TipsView(aboutVM: AboutViewModel(), mainVM: MainViewModel())
     }
 }

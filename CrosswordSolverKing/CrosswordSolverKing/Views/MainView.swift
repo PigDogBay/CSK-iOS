@@ -15,12 +15,12 @@ struct MainView: View {
     @ObservedObject private var euConsent = EUConsent()
     @ObservedObject private var aboutVM = AboutViewModel()
     
-    init(model : Model){
+    init(viewModel : MainViewModel){
         //Enable clear button on the text field
         //https://stackoverflow.com/questions/58200555/swiftui-add-clearbutton-to-textfield
         UITextField.appearance().clearButtonMode = .whileEditing
-        self.model = model
-        viewModel = MainViewModel(model: model)
+        self.model = viewModel.model
+        self.viewModel = viewModel
     }
     
     private var statusSection : some View {
@@ -85,6 +85,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(model:Model())
+        MainView(viewModel: MainViewModel())
     }
 }
