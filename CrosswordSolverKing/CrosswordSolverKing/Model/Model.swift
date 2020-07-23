@@ -84,7 +84,6 @@ class Model : ObservableObject,WordListCallback {
         self.wordSearch.findCodewords = true
         self.wordSearch.findThreeWordAnagrams = true
         self.wordSearch.findSubAnagrams = settings.showSubAnagrams
-        print("Results limit \(resultsLimit)")
     }
 
     func loadPublisher() -> Future<[String], AppErrors> {
