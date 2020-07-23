@@ -49,15 +49,21 @@ struct MainView: View {
         }
     }
     
+    private func printView(msg : String) -> some View {
+        print(msg)
+        return EmptyView()
+    }
+    
     @ViewBuilder
     var body: some View {
-        if model.appState == .uninitialized {
+        printView(msg: "Update Main Screen")
+        if viewModel.screen == .Splash {
             SplashScreen()
         } else {
             NavigationView {
                 VStack(){
                     SearchBarView()
-                    if model.query == "" {
+                    if viewModel.screen == .Tips {
                         TipsView(aboutVM: self.aboutVM)
                     } else {
                         statusSection
