@@ -10,8 +10,13 @@ import UIKit
 import Combine
 
 class MainViewModel : ObservableObject {
+    let model : Model
+    
+    init(model : Model){
+        self.model = model
+    }
 
-    func getStatusText(model : Model) -> String{
+    func getStatusText() -> String{
         switch model.appState {
         case .uninitialized:
             return "Loading"
