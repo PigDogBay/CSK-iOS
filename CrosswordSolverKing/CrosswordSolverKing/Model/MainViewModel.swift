@@ -22,37 +22,30 @@ class MainViewModel : ObservableObject {
     init(model : Model){
         self.model = model
         
-        model.$appState
-            .receive(on: DispatchQueue.main)
-            .sink(receiveValue:
-                {   appState in
-                    if appState == .uninitialized {
-                        self.screen = .Splash
-                    } else if self.model.query == "" {
-                        self.screen = .Tips
-                    } else {
-                        self.screen = .Matches
-                    }
-                })
-        .store(in: &disposables)
+        //The screen state needs to update when appState changes or when query changes from an empty string. So to merge the publishers
+        //I will need to transform them to publishers that return the same type.
+        let appStatePublisher = model.$appState
+            .map { appState -> MainScreens in
+                if appState == .uninitialized {
+                    return .Splash
+                } else if self.model.query == "" {
+                    return .Tips
+                }
+                return .Matches
+            }
         
         model.$query
+            .map { query -> MainScreens in
+                if self.model.appState == .uninitialized {
+                    return .Splash
+                } else if query == "" {
+                    return .Tips
+                }
+                return .Matches
+            }.merge(with: appStatePublisher)
+            .removeDuplicates()
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue:
-                {   query in
-                    if self.model.appState == .uninitialized {
-                        self.screen = .Splash
-                    } else if self.model.query == "" {
-                        self.screen = .Tips
-                    } else {
-                        self.screen = .Matches
-                    }
-                })
-        .store(in: &disposables)
-
-        //TODO: - remove - just debug
-        $screen
-            .sink(receiveValue: {print("\($0)")})
+            .sink(receiveValue:{screen in self.screen = screen})
             .store(in: &disposables)
     }
 
