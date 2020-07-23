@@ -9,12 +9,12 @@
 import SwiftUI
 
 struct SearchBarView : View {
-    @EnvironmentObject var model : Model
+    @ObservedObject var viewModel : MainViewModel
 
     var body: some View {
         let binding = Binding(
-            get: {self.model.query},
-            set: {self.model.setQueryFrom(typed: $0)})
+            get: {self.viewModel.model.query},
+            set: {self.viewModel.setQueryFrom(typed: $0)})
         
         return TextField("Enter letters", text: binding)
             .padding(EdgeInsets(top: 24, leading: 12, bottom: 8, trailing: 12))
@@ -29,6 +29,6 @@ struct SearchBarView : View {
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBarView().environmentObject(Model())
+        SearchBarView(viewModel: MainViewModel(model: Model()))
     }
 }

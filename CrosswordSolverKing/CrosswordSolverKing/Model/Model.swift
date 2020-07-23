@@ -130,9 +130,4 @@ class Model : ObservableObject,WordListCallback {
             wordList.stopSearch()
         }
     }
-    
-    //Replaced spaces/full stops with a question mark
-    func setQueryFrom(typed : String) {
-        self.query = typed.replacingOccurrences(of: " ", with: "?").replacingOccurrences(of: ".", with: "?")
-    }
 }

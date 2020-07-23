@@ -62,7 +62,7 @@ struct MainView: View {
         } else {
             NavigationView {
                 VStack(){
-                    SearchBarView()
+                    SearchBarView(viewModel: viewModel)
                     if viewModel.screen == .Tips {
                         TipsView(aboutVM: self.aboutVM)
                     } else {

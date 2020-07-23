@@ -74,4 +74,12 @@ class MainViewModel : ObservableObject {
             return "Restart the app"
         }
     }
+    
+    //Replaced spaces/full stops with a question mark
+    func setQueryFrom(typed : String) {
+        model.query = typed.replacingOccurrences(of: " ", with: "?").replacingOccurrences(of: ".", with: "?")
+        //Notify view that the query has changed
+        self.objectWillChange.send()
+    }
+
 }
