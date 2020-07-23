@@ -38,12 +38,16 @@ class Model : ObservableObject,WordListCallback {
     //Cannot place the search futures in a set as they will never be removed, since only one search at a time, can just use a property to store its reference
     private var temporaryDisposable : AnyCancellable?
     private let passthrough = PassthroughSubject<String,Never>()
-    
+    private var resultsLimit = 5000
+    //Background queue only - stops the search when the results limit is hit
+    private var matchesCount = 0
+
     let filters = Filters()
 
     init(){
         self.wordSearch = WordSearch(wordList: self.wordList)
-
+        applySettings()
+        
         passthrough
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: {self.matches.append($0)})
@@ -73,6 +77,16 @@ class Model : ObservableObject,WordListCallback {
             .store(in: &disposables)
     }
 
+    private func applySettings(){
+        let settings = Settings()
+        self.wordFormatter.highlightColor = settings.highlight
+        self.resultsLimit = settings.resultsLimit
+        self.wordSearch.findCodewords = true
+        self.wordSearch.findThreeWordAnagrams = true
+        self.wordSearch.findSubAnagrams = settings.showSubAnagrams
+        print("Results limit \(resultsLimit)")
+    }
+
     func loadPublisher() -> Future<[String], AppErrors> {
         return Future<[String],AppErrors> { promise  in
             self.scheduler.async {
@@ -94,6 +108,7 @@ class Model : ObservableObject,WordListCallback {
             return
         }
         appState = .searching
+        matchesCount = 0
         var processedQuery = self.wordSearch.preProcessQuery(searchQuery)
         let searchType = self.wordSearch.getQueryType(processedQuery)
         processedQuery = self.wordSearch.postProcessQuery(processedQuery, type: searchType)
@@ -113,9 +128,13 @@ class Model : ObservableObject,WordListCallback {
             }
         }
     }
-
+    
     func update(_ result: String) {
         passthrough.send(result)
+        matchesCount = matchesCount + 1
+        if matchesCount == resultsLimit {
+            wordList.stopSearch()
+        }
     }
 
     func clear() {
