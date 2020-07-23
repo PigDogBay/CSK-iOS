@@ -89,6 +89,10 @@ class Model : ObservableObject,WordListCallback {
     }
     
     func search(searchQuery : String){
+        if searchQuery == "" {
+            appState = .ready
+            return
+        }
         appState = .searching
         var processedQuery = self.wordSearch.preProcessQuery(searchQuery)
         let searchType = self.wordSearch.getQueryType(processedQuery)
