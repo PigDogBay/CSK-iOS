@@ -18,6 +18,7 @@ class MainViewModel : ObservableObject {
     private var disposables = Set<AnyCancellable>()
 
     @Published var screen : MainScreens = .Splash
+    @Published var topLeftButton = ""
     
     init(){
         self.model = Model()
@@ -34,6 +35,18 @@ class MainViewModel : ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink(receiveValue:{screen in self.screen = screen})
             .store(in: &disposables)
+        
+        model.$appState
+            .receive(on: DispatchQueue.main)
+            .map{appState -> String in
+                if appState == .searching {
+                    return "Stop"
+                } else {
+                    return "Reset"
+                }}
+            .sink(receiveValue: {value in self.topLeftButton = value})
+            .store(in: &disposables)
+
     }
     
     /*

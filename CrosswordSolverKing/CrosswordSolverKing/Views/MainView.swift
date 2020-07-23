@@ -70,7 +70,7 @@ struct MainView: View {
                 .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}
                 .navigationBarTitle(Text("CSK"), displayMode: .inline)
                 .navigationBarHidden(false)
-                .navigationBarItems(leading: Button(action: viewModel.model.reset){Text("Reset")},
+                .navigationBarItems(leading: Button(action: viewModel.model.reset){Text(viewModel.topLeftButton)},
                                     trailing: NavigationLink(destination: FiltersView(filters: viewModel.model.filters)){Text("Filters")})
             }.navigationViewStyle(StackNavigationViewStyle())
         }
