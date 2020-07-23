@@ -81,5 +81,9 @@ class MainViewModel : ObservableObject {
         //Notify view that the query has changed
         self.objectWillChange.send()
     }
+    
+    func setQueryFrom(tip : String){
+        model.query = tip
+    }
 
 }
