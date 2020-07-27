@@ -10,7 +10,6 @@ import SwiftUI
 import GoogleMobileAds
 
 struct MainView: View {
-    @ObservedObject var model : Model
     @ObservedObject private var viewModel : MainViewModel
     @ObservedObject private var euConsent = EUConsent()
     @ObservedObject private var aboutVM = AboutViewModel()
@@ -19,7 +18,6 @@ struct MainView: View {
         //Enable clear button on the text field
         //https://stackoverflow.com/questions/58200555/swiftui-add-clearbutton-to-textfield
         UITextField.appearance().clearButtonMode = .whileEditing
-        self.model = viewModel.model
         self.viewModel = viewModel
     }
     
@@ -29,7 +27,7 @@ struct MainView: View {
     
     private var listSection : some View {
         return List {
-            ForEach(model.matches, id: \.self) {match in
+            ForEach(viewModel.model.matches, id: \.self) {match in
                 NavigationLink(destination: DefinitionView(viewModel: DefinitionViewModel(word: match))){
                     Text(self.viewModel.format(match: match))
                 }

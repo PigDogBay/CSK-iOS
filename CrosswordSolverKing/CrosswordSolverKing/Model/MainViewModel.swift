@@ -14,6 +14,8 @@ enum MainScreens {
 }
 
 class MainViewModel : ObservableObject {
+    private static let MAX_UPDATES = 60
+    
     let model : Model
     private var disposables = Set<AnyCancellable>()
 
@@ -46,7 +48,14 @@ class MainViewModel : ObservableObject {
                 }}
             .sink(receiveValue: {value in self.topLeftButton = value})
             .store(in: &disposables)
-
+        
+        //The view does not observe changes in the model, so need to listen for new matches
+        //and send update notifications so that the view can show matches as they are found.
+        model.$matches
+            .receive(on: DispatchQueue.main)
+            .filter{_ in self.model.appState == .searching && self.model.matches.count < MainViewModel.MAX_UPDATES}
+            .sink(receiveValue: {_ in self.objectWillChange.send()})
+            .store(in: &disposables)
     }
     
     /*
