@@ -3,49 +3,72 @@
         "id" : 1001,
         "title" : "Crossw?rds",
         "subtitle" : "Press space for unknown letters",
-        "description" : "Suscipit inceptos est felis purus aenean aliquet adipiscing diam venenatis, augue nibh duis neque aliquam tellus condimentum sagittis vivamus, cras ante etiam sit conubia elit tempus accumsan libero, mattis per erat habitasse cubilia ligula penatibus curae. Sagittis lorem augue arcu blandit libero molestie non ullamcorper, finibus imperdiet iaculis ad quam per luctus neque, ligula curae mauris parturient diam auctor eleifend laoreet ridiculus, hendrerit adipiscing sociosqu pretium nec velit aliquam. Inceptos egestas maecenas imperdiet eget id donec nisl curae congue, massa tortor vivamus ridiculus integer porta ultrices venenatis aliquet, curabitur et posuere blandit magnis dictum auctor lacinia, eleifend dolor in ornare vulputate ipsum morbi felis. Faucibus cursus malesuada orci ultrices diam nisl taciti torquent, tempor eros suspendisse euismod condimentum dis velit mi tristique, a quis etiam dignissim dictum porttitor lobortis ad fermentum, sapien consectetur dui dolor purus elit pharetra. Interdum mattis sapien ac orci vestibulum vulputate laoreet proin hac, maecenas mollis ridiculus morbi praesent cubilia vitae ligula vel, sem semper volutpat curae mauris justo nisl luctus, non eros primis ultrices nascetur erat varius integer.",
+        "description" : "As you fill out a crossword you can use this app to find answers to a clue when you have some of the clue's letters. Press space for unknown letters(?) and type in any known letters in the order they appear.",
+        "example" : "magic, megan, mcgee",
+        "advanced" : "Consonants, especially JKMQWXZ are really good for narrowing down the number of matches. Depending on the clue you can guess the ending of a word, try: s, ed or ing. A cryptic clue may give you some of the letters, use the Contains filter to narrow down the search.",
         "showMe" : "m?g??"
     },
     {
         "id" : 1002,
         "title" : "Shortcuts",
         "subtitle" : "Use numbers for multiple unknowns",
-        "description" : "",
+        "description" : "For crossword answers with lots of unknown letters, you can use numbers to save on typing, eg type z9 instead of z?????????",
+        "example" : "zombielike, zookeepers",
+        "advanced" : "To avoid confusion with Codeword searches, do not use 1 instead of ?",
         "showMe" : "z9"
     },
     {
         "id" : 1003,
         "title" : "Codewords",
         "subtitle" : "Use 1,2,3 to represent the same letters",
-        "description" : "",
+        "description" : "Codewords / Cryptoquotes / Cryptograms are puzzles where you have to work out the letter for each number 1 to 26. For example 23 18 15 15 9 2 2 9. We can see that 15, 9 and 2 are used more than once which we can make good use of, the app just needs to know which letters are used more than once. Lets say we know 23 = c, so we enter c?112332, where 1,2,3 represent the unknown letters that are used more than once",
+        "example" : "cassette, pallette, commesse",
+        "advanced" : "As you find letters you can use the Excludes filter and enter the letters you have already found. So in the above example, if we already have p and m then we can rule out pallette and commesse. If you have no letters that are used more than once, then set the Distinct filter to All letters are different",
         "showMe" : "??112332"
     },
     {
         "id" : 1004,
         "title" : "Anagrams",
         "subtitle" : "Enter your jumbled letters",
-        "description" : "",
+        "description" : "Just enter the letters and the app will then search for any words that are composed of those letters. The app will first find complete anagrams that use all of the letters and then sub-anagrams which use some of the letters, any unused letters will appear in brackets.",
+        "example" : "astronomer, maestro (onr)",
+        "advanced" : "Scrabble players can use the Pattern filter to fit their letters on the board.",
         "showMe" : "moonstarer"
     },
     {
         "id" : 1005,
         "title" : "Blank Letters+",
         "subtitle" : "For anagrams use + as any letter",
-        "description" : "",
+        "description" : "For anagrams you can specify a wildcard letter using + which can be any letter. This is useful for Scrabble (use + for the blank tile) and cases where you know most of the letters in a jumbled word.",
+        "example" : "scabbard, absorbs (c)",
+        "advanced" : "You can use + more than once, eg +++ for 3 blank letters, be careful though as the app will find lots of matches - up to 5000! Use filters to reduce the number of results found, the Pattern filter is useful if you can fix the position of certain letters. Use the Equal To filter to find words of a certain length.",
         "showMe" : "scrabb++"
     },
     {
         "id" : 1006,
-        "title" : "Prefix@Suffix",
-        "subtitle" : "Use @ for 1 or more unknown letters",
-        "description" : "",
-        "showMe" : "super@ted"
+        "title" : "Supergrams",
+        "subtitle" : "Use * as one or more blank letters",
+        "description" : "Supergrams will find words that contain all of your letters. Type * after your letters, to tell the app to do a supergram search",
+        "example" : "breathtakingly, heartbreakingly",
+        "advanced" : "In the example above, breathtakingly contains the letters kayleigh and brttan.",
+        "showMe" : "kayleigh*"
     },
     {
         "id" : 1007,
-        "title" : "Two-Word-Anagrams",
+        "title" : "Prefix@Suffix",
+        "subtitle" : "Use @ for 1 or more unknown letters",
+        "description" : "A pattern search similar to crosswords where @ represents 1 or more unknown letters",
+        "example" : "supersophisticated, superheated",
+        "advanced" : "You can mix ? and @ in your search, enter sup@x? to find supergalaxy",
+        "showMe" : "super@ted"
+    },
+    {
+        "id" : 1008,
+        "title" : "Two-Word Anagrams",
         "subtitle" : "Use - to separate jumbled words",
-        "description" : "",
+        "description" : "In the example james-bond, the - splits the letters into two words of length 4 and 5 letters. The app will find 4 and 5 letter words whose combined letters make up jamesbond. Further more the app will search for other size combinations, eg 3-6, 2-7",
+        "example" : "jabs demon, admen jobs",
+        "advanced" : "The app will also perform 3 word anagram searches but generally these will return huge number of matches.",
         "showMe" : "james-bond"
     }
 ]

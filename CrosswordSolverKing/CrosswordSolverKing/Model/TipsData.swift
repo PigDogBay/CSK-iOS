@@ -15,6 +15,8 @@ struct Tip : Identifiable, Codable{
     var title : String
     var subtitle : String
     var description : String
+    var example : String
+    var advanced : String
     var showMe : String
 }
 
