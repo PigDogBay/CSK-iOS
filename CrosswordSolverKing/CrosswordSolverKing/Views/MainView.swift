@@ -64,6 +64,8 @@ struct MainView: View {
                         adSection
                     }
                 }
+                .onAppear(perform: viewModel.onAppear)
+                .onDisappear(perform: viewModel.onDisappear)
                 .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}
                 .navigationBarTitle(Text("CSK"), displayMode: .inline)
                 .navigationBarHidden(false)

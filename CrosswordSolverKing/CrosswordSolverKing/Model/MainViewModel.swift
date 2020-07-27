@@ -58,6 +58,13 @@ class MainViewModel : ObservableObject {
             .store(in: &disposables)
     }
     
+    func onDisappear(){
+        model.stopSearch()
+    }
+    
+    func onAppear(){
+    }
+    
     /*
         Main screen is determined by app state and query
      */

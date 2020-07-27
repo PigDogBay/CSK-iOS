@@ -149,7 +149,11 @@ class Model : ObservableObject,WordListCallback {
             query = ""
             filters.reset()
         } else {
-            wordList.stopSearch()
+            stopSearch()
         }
+    }
+    
+    func stopSearch(){
+        wordList.stopSearch()
     }
 }
