@@ -3,7 +3,7 @@
         "id" : 1001,
         "title" : "Crossw?rds",
         "subtitle" : "Press space for unknown letters",
-        "description" : "As you fill out a crossword you can use this app to find answers to a clue when you have some of the clue's letters. Press space for unknown letters(?) and type in any known letters in the order they appear.",
+        "description" : "As you fill out a crossword you can find answers to a clue when you have some of the clue's letters. Press space for unknown letters(?) and type in any known letters in the order they appear.",
         "example" : "magic, megan, mcgee",
         "advanced" : "Consonants, especially JKMQWXZ are really good for narrowing down the number of matches. Depending on the clue you can guess the ending of a word, try: s, ed or ing. A cryptic clue may give you some of the letters, use the Contains filter to narrow down the search.",
         "showMe" : "m?g??"
