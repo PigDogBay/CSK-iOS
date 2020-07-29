@@ -17,7 +17,9 @@ struct TipsView: View {
             ForEach(tipsData) { tip in
                 LinkedTipRow(viewModel: HelpViewModel(tip: tip, mainVM: self.mainVM))
             }
-            FilterRow()
+            NavigationLink(destination: FilterHelpView()){
+                FilterRow()
+            }
             NavigationLink(destination: AboutView(viewModel: aboutVM)){
                 AboutRow()
             }
