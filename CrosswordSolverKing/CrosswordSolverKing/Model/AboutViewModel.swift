@@ -8,10 +8,15 @@
 
 import UIKit
 import Combine
+import MessageUI
+import SwiftUtils
 
 class AboutViewModel : ObservableObject {
     @Published var showMeRelevantAds = true
     @Published var isAdReloadRequired = false
+    @Published var result: Result<MFMailComposeResult, Error>? = nil
+    @Published var isMailVCPressented = false
+    @Published var showNoEmailAlert = false
     
     init(){
         let settings = Settings()
@@ -30,6 +35,16 @@ class AboutViewModel : ObservableObject {
         UIApplication.shared.open(URL(string: Strings.itunesAppURL)!, options: [:])
     }
 
+    func feedback(){
+        if MFMailComposeViewController.canSendMail() {
+            isMailVCPressented = true
+        } else if let emailUrl = mpdbCreateEmailUrl(to: Strings.emailAddress, subject: Strings.feedbackSubject, body: "")  {
+            UIApplication.shared.open(emailUrl)
+        } else {
+            showNoEmailAlert = true
+        }
+    }
+
     func viewDisappear() {
         let settings = Settings()
         if settings.useNonPersonalizedAds == showMeRelevantAds {
@@ -37,5 +52,4 @@ class AboutViewModel : ObservableObject {
         }
         settings.useNonPersonalizedAds = !showMeRelevantAds
     }
-    
 }

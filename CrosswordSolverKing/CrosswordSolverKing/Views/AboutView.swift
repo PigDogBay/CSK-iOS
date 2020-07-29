@@ -20,10 +20,17 @@ struct AboutView: View {
                 .font(.body)
             Text(Strings.webAddress)
                 .font(.body)
-            Text(Strings.emailAddress)
-                .font(.body)
+            Button(action: viewModel.feedback){
+                Text(Strings.emailAddress)
+                    .font(.body)
+                    .underline()
+            }
             Text("©MPD Bailey Technology 2020")
                 .font(.body)
+        }
+        .sheet(isPresented: $viewModel.isMailVCPressented, content: {MailView(recipient: Strings.emailAddress, subject: Strings.feedbackSubject, result: self.$viewModel.result)})
+        .alert(isPresented: $viewModel.showNoEmailAlert){
+            Alert(title: Text("Email Not Supported"), message: Text("Please email me at: \(Strings.emailAddress)"), dismissButton: .default(Text("OK")))
         }
     }
     
