@@ -7,18 +7,11 @@
 //
 
 import SwiftUI
+import SwiftUtils
 
 struct SettingsRow: View {
-    func showSettings(){
-        let application = UIApplication.shared
-        let url = URL(string: UIApplication.openSettingsURLString)! as URL
-        if application.canOpenURL(url){
-            application.open(url,options: [:],completionHandler: nil)
-        }
-    }
-    
     var body: some View {
-        Button(action: showSettings){
+        Button(action: mpdbShowSettings){
             HStack {
                 Image(systemName: "gear")
                     .font(Font.system(.largeTitle))
