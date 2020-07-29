@@ -11,7 +11,7 @@ import SwiftUI
 struct AboutRow: View {
     var body: some View {
         HStack {
-            Image(systemName: "shield.lefthalf.fill")
+            Image(systemName: "checkmark.shield")
                 .font(Font.system(.largeTitle))
                 .foregroundColor(Color.blue)
                 .padding(8)

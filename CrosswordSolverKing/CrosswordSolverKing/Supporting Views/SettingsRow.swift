@@ -15,7 +15,7 @@ struct SettingsRow: View {
             HStack {
                 Image(systemName: "gear")
                     .font(Font.system(.largeTitle))
-                    .foregroundColor(Color.green)
+                    .foregroundColor(Color.blue)
                     .padding(8)
                 VStack(alignment: .leading){
                     Text("Settings").font(.title)
