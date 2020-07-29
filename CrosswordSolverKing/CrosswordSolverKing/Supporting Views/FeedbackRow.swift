@@ -7,26 +7,12 @@
 //
 
 import SwiftUI
-import MessageUI
-import SwiftUtils
 
 struct FeedbackRow: View {
-    @State var result: Result<MFMailComposeResult, Error>? = nil
-    @State private var isPressented = false
-    @State private var showAlert = false
-    
-    func feedback(){
-        if MFMailComposeViewController.canSendMail() {
-            isPressented = true
-        } else if let emailUrl = mpdbCreateEmailUrl(to: Strings.emailAddress, subject: Strings.feedbackSubject, body: "")  {
-            UIApplication.shared.open(emailUrl)
-        } else {
-            showAlert = true
-        }
-    }
+    @ObservedObject private var viewModel = AboutViewModel()
     
     var body: some View {
-        Button(action: feedback){
+        Button(action: viewModel.feedback){
             HStack {
                 Image(systemName: "envelope")
                     .font(Font.system(.largeTitle))
@@ -39,8 +25,8 @@ struct FeedbackRow: View {
                 Spacer()
             }
         }
-        .sheet(isPresented: $isPressented, content: {MailView(recipient: Strings.emailAddress, subject: Strings.feedbackSubject, result: self.$result)})
-        .alert(isPresented: $showAlert){
+        .sheet(isPresented: $viewModel.isMailVCPressented, content: {MailView(recipient: Strings.emailAddress, subject: Strings.feedbackSubject, result: self.$viewModel.result)})
+        .alert(isPresented: $viewModel.showNoEmailAlert){
             Alert(title: Text("Email Not Supported"), message: Text("Please email me at: \(Strings.emailAddress)"), dismissButton: .default(Text("OK")))
         }
     }
