@@ -8,11 +8,12 @@
 
 import Foundation
 struct Strings {
+    static var version : String {Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String }
     static let appId = "id1503152101"
     static let privacyURL = "https://pigdogbay.blogspot.co.uk/2018/05/privacy-policy.html"
     static let itunesAppURL = "https://itunes.apple.com/app/id1503152101"
     static let emailAddress = "mpdbailey.technology@gmail.com"
-    static let feedbackSubject = "CSK iOS v1.00 Feedback"
+    static let webAddress = "www.mpdbailey.co.uk"
+    static let feedbackSubject = "CSK iOS v\(Strings.version)"
     static let tellFriends = "Take a look at Crossword Solver King "+Strings.itunesAppURL
-
 }
