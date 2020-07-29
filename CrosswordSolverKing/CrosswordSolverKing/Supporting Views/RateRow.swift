@@ -7,18 +7,22 @@
 //
 
 import SwiftUI
+import SwiftUtils
+
 struct RateRow: View {
     var body: some View {
-        HStack {
-            Image(systemName: "star")
-                .font(Font.system(.largeTitle))
-                .foregroundColor(Color.red)
-                .padding(8)
-            VStack(alignment: .leading){
-                Text("Rate").font(.title)
-                Text("Rate the app on the App Store").font(.footnote)
+        Button(action: Ratings(appId: Strings.appId).viewOnAppStore){
+            HStack {
+                Image(systemName: "star")
+                    .font(Font.system(.largeTitle))
+                    .foregroundColor(Color.red)
+                    .padding(8)
+                VStack(alignment: .leading){
+                    Text("Rate").font(.title)
+                    Text("Rate the app on the App Store").font(.footnote)
+                }
+                Spacer()
             }
-            Spacer()
         }
     }
 }

@@ -19,7 +19,7 @@ class AboutViewModel : ObservableObject {
     }
     
     func showPrivacyPolicy(){
-        UIApplication.shared.open(URL(string: Model.privacyURL)!, options: [:])
+        UIApplication.shared.open(URL(string: Strings.privacyURL)!, options: [:])
     }
     
     func showGooglePrivacyPolicy(){
@@ -27,7 +27,7 @@ class AboutViewModel : ObservableObject {
     }
     
     func rate(){
-        UIApplication.shared.open(URL(string: Model.itunesAppURL)!, options: [:])
+        UIApplication.shared.open(URL(string: Strings.itunesAppURL)!, options: [:])
     }
 
     func viewDisappear() {

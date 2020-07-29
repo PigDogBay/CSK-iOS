@@ -21,10 +21,6 @@ enum AppErrors : Error {
 
 class Model : ObservableObject,WordListCallback {
     
-    static let appId = "id1503152101"
-    static let privacyURL = "https://pigdogbay.blogspot.co.uk/2018/05/privacy-policy.html"
-    static let itunesAppURL = "https://itunes.apple.com/app/id1503152101"
-
     @Published var query = ""
     @Published var matches : [String] = []
     @Published var appState = AppStates.uninitialized

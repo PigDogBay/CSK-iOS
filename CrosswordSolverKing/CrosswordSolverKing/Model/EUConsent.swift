@@ -43,7 +43,7 @@ class EUConsent : ObservableObject{
     
     
     func showPrivacyPolicy(){
-        UIApplication.shared.open(URL(string: Model.privacyURL)!, options: [:])
+        UIApplication.shared.open(URL(string: Strings.privacyURL)!, options: [:])
     }
 
 }
