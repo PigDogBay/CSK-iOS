@@ -19,6 +19,7 @@
 		00469B5824B736BA000DBAF4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00469B5724B736BA000DBAF4 /* Settings.bundle */; };
 		00469B5B24B73DFC000DBAF4 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00469B5A24B73DFC000DBAF4 /* MainViewModel.swift */; };
 		00469B5D24B74EE1000DBAF4 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00469B5C24B74EE1000DBAF4 /* AboutViewModel.swift */; };
+		0047249024D1A13A00CAF363 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047248F24D1A13A00CAF363 /* ActivityViewController.swift */; };
 		004AF96624B4CC3C00C9780F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004AF96524B4CC3C00C9780F /* Settings.swift */; };
 		005D83BD24B8925E00EA5FFD /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 005D83BC24B8925E00EA5FFD /* words.txt */; };
 		00A458A724B9C7B900240913 /* DefinitionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A458A624B9C7B900240913 /* DefinitionViewModel.swift */; };
@@ -101,6 +102,7 @@
 		00469B5724B736BA000DBAF4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		00469B5A24B73DFC000DBAF4 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		00469B5C24B74EE1000DBAF4 /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
+		0047248F24D1A13A00CAF363 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		004AF96524B4CC3C00C9780F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		005D83BC24B8925E00EA5FFD /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 		00A458A624B9C7B900240913 /* DefinitionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionViewModel.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				00F284F824991065004C9B75 /* SimpleWebView.swift */,
 				00F284FC24991065004C9B75 /* TextFilterRow.swift */,
 				00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */,
+				0047248F24D1A13A00CAF363 /* ActivityViewController.swift */,
 				00F2BCD224D0786A006B448D /* MailView.swift */,
 				0021164524C5CA670033F3EB /* TipRow.swift */,
 				003F58C424C72EC2002BADC6 /* AboutRow.swift */,
@@ -572,6 +575,7 @@
 				003F58C324C71895002BADC6 /* HelpViewModel.swift in Sources */,
 				00F2850724991065004C9B75 /* MainView.swift in Sources */,
 				00F284B924990437004C9B75 /* AppDelegate.swift in Sources */,
+				0047249024D1A13A00CAF363 /* ActivityViewController.swift in Sources */,
 				00F2850824991065004C9B75 /* TextFilterRow.swift in Sources */,
 				00F2850A24991065004C9B75 /* FiltersView.swift in Sources */,
 				00F2BCD324D0786A006B448D /* MailView.swift in Sources */,

@@ -11,17 +11,28 @@ import SwiftUI
 
 
 struct TellFriendRow: View {
+    @State private var isPresented: Bool = false
+    
+    func tellFriend(){
+        isPresented = true
+    }
+    
     var body: some View {
-        HStack {
-            Image(systemName: "heart")
-                .font(Font.system(.largeTitle))
-                .foregroundColor(Color.red)
-                .padding(8)
-            VStack(alignment: .leading){
-                Text("Tell a friend").font(.title)
-                Text("Message your friends about the app").font(.footnote)
+        Button(action: tellFriend){
+            HStack {
+                Image(systemName: "heart")
+                    .font(Font.system(.largeTitle))
+                    .foregroundColor(Color.red)
+                    .padding(8)
+                VStack(alignment: .leading){
+                    Text("Tell a friend").font(.title)
+                    Text("Message your friends about the app").font(.footnote)
+                }
+                Spacer()
             }
-            Spacer()
+        }
+        .sheet(isPresented: $isPresented){
+            ActivityViewController(activityItems: [Strings.tellFriends])
         }
     }
 }

@@ -13,5 +13,6 @@ struct Strings {
     static let itunesAppURL = "https://itunes.apple.com/app/id1503152101"
     static let emailAddress = "mpdbailey.technology@gmail.com"
     static let feedbackSubject = "CSK iOS v1.00 Feedback"
+    static let tellFriends = "Take a look at Crossword Solver King "+Strings.itunesAppURL
 
 }
