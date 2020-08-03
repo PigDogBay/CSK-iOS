@@ -21,6 +21,7 @@ class MainViewModel : ObservableObject {
 
     @Published var screen : MainScreens = .Splash
     @Published var topLeftButton = ""
+    @Published var isPortrait = true
     
     init(){
         self.model = Model()
