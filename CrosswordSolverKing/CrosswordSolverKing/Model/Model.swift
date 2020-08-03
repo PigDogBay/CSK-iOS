@@ -66,11 +66,6 @@ class Model : ObservableObject,WordListCallback {
                 case .failure( _):
                     self.appState = .error
                 }},  receiveValue: { self.wordList.wordlist = $0})
-        
-        filters.$performSearch
-            .filter{$0 == true}
-            .sink(receiveValue: {_ in self.search(searchQuery: self.query)})
-            .store(in: &disposables)
     }
 
     private func applySettings(){
@@ -112,6 +107,13 @@ class Model : ObservableObject,WordListCallback {
         temporaryDisposable = searchPublisher(query: processedQuery, searchType: searchType, callback: filterPipeline)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: {_ in },  receiveValue: { self.appState = $0})
+    }
+    
+    func applyFilters(){
+        if filters.isSearchRequired{
+            filters.isSearchRequired = false
+            search(searchQuery: query)
+        }
     }
     
     private func searchPublisher(query : String, searchType : SearchType, callback : WordListCallback) -> Future<AppStates, Never> {

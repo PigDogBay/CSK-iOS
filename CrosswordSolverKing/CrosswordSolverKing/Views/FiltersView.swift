@@ -59,7 +59,6 @@ struct FiltersView: View {
             expertFilters
             sizeFilters
         }.onAppear(perform: filters.viewAppear)
-        .onDisappear(perform: filters.viewDisappear)
         .navigationBarTitle(Text("Filters"), displayMode: .inline)
         .navigationBarItems(trailing: Button(action: filters.reset){ Text("Reset")})
         .gesture(DragGesture().onChanged { _ in

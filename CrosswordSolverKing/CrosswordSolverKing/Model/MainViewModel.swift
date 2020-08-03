@@ -63,6 +63,8 @@ class MainViewModel : ObservableObject {
     }
     
     func onAppear(){
+        //May have appeared from the filter screen, so apply any filters
+        model.applyFilters()
     }
     
     /*

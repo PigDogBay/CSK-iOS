@@ -24,19 +24,9 @@ class Filters : ObservableObject {
     @Published var moreThan = 0
     @Published var equalTo = 0
     
-    @Published var performSearch = false
-    private(set) var filterCount : Int = 0
-    
-    func viewAppear(){
-        performSearch = false
-    }
-    
-    func viewDisappear() {
-        updateFilterCount()
-        performSearch = performSearch || filterCount > 0
-    }
-    
-    func updateFilterCount() {
+    var isSearchRequired = false
+
+    var filterCount : Int {
         var count = 0
         if moreThan != 0 { count = count + 1}
         if lessThan != 0 { count = count + 1}
@@ -50,11 +40,15 @@ class Filters : ObservableObject {
         if excludesWord != "" { count = count + 1}
         if pattern != "" { count = count + 1}
         if regExp != "" { count = count + 1}
-        self.filterCount = count
+        return count
+    }
+    
+    func viewAppear(){
+        //Always perform a new search when the filters have been shown
+        isSearchRequired = true
     }
     
     func reset() {
-        filterCount = 0
         moreThan = 0
         lessThan = 0
         equalTo = 0
@@ -67,8 +61,6 @@ class Filters : ObservableObject {
         excludesWord = ""
         pattern = ""
         regExp = ""
-        
-        performSearch = true
     }
 
     func createChainedCallback(lastCallback: WordListCallback) -> WordListCallback {
