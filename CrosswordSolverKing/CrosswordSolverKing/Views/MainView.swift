@@ -37,11 +37,11 @@ struct MainView: View {
         })
     }
 
-    private var adSection : some View {
-        return HStack {
+    private func adSection(gadSize : GADAdSize) -> some View {
+        HStack {
             Spacer()
-            GADBannerViewController(viewModel: aboutVM)
-                .frame(width: kGADAdSizeBanner.size.width, height: kGADAdSizeBanner.size.height)
+            GADBannerViewController(viewModel: aboutVM, gadSize: gadSize)
+                .frame(width: gadSize.size.width, height: gadSize.size.height)
             Spacer()
         }
     }
@@ -52,16 +52,22 @@ struct MainView: View {
             SplashScreen()
         } else {
             NavigationView {
-                VStack(){
-                    SearchBarView()
-                    if viewModel.screen == .Tips {
-                        TipsView(aboutVM: self.aboutVM)
-                    } else {
-                        statusSection
-                        listSection
-                    }
-                    if !euConsent.showEUConsent{
-                        adSection
+                GeometryReader { geo in
+                    VStack(){
+                        SearchBarView()
+                        if self.viewModel.screen == .Tips {
+                            TipsView(aboutVM: self.aboutVM)
+                        } else {
+                            self.statusSection
+                            self.listSection
+                        }
+                        if !self.euConsent.showEUConsent{
+                            if self.viewModel.isPortrait {
+                                self.adSection(gadSize: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(geo.size.width))
+                            } else {
+                                self.adSection(gadSize: GADLandscapeAnchoredAdaptiveBannerAdSizeWithWidth(geo.size.width))
+                            }
+                        }
                     }
                 }
                 .onAppear(perform: viewModel.onAppear)

@@ -35,14 +35,15 @@ struct GADBannerViewController: UIViewControllerRepresentable {
 
     //Need to respond to user ad preference changes made in the AboutView
     @ObservedObject var viewModel : AboutViewModel
+    let gadSize : GADAdSize
 
     func makeUIViewController(context: Context) -> UIViewController {
-        let view = GADBannerView(adSize: kGADAdSizeBanner)
+        let view = GADBannerView(adSize: gadSize)
         let viewController = UIViewController()
         view.adUnitID = Ads.bannerAdId
         view.rootViewController = viewController
         viewController.view.addSubview(view)
-        viewController.view.frame = CGRect(origin: .zero, size: kGADAdSizeBanner.size)
+        viewController.view.frame = CGRect(origin: .zero, size: gadSize.size)
         view.load(Ads.createRequest())
         return viewController
     }
