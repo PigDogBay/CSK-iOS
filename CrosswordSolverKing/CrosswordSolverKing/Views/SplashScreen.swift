@@ -13,7 +13,7 @@ struct SplashScreen: View {
         VStack {
             Spacer()
             EUConsentTitle()
-                .frame(width: 300, height:200)
+                .padding()
             Spacer()
             Text("Copyright © MPD Bailey Technology 2020.\nAll rights reserved.")
                 .multilineTextAlignment(.center)

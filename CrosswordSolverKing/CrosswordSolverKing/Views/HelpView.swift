@@ -30,7 +30,7 @@ struct HelpView: View {
                     .font(.headline)
                     .underline()
                     .padding(.top, 8)
-                    .padding(.bottom, 8)
+                    .padding(.bottom, 16)
                 Text("Try ")+Text(viewModel.tip.showMe).foregroundColor(.blue) + Text(" to find:")
                 Text(viewModel.tip.example)
                     .foregroundColor(.red)
@@ -50,12 +50,12 @@ struct HelpView: View {
                     .font(.headline)
                     .underline()
                     .padding(.top, 8)
-                    .padding(.bottom, 8)
+                    .padding(.bottom, 16)
 
                 Text(viewModel.tip.advanced)
                     .font(.body)
             }
-            .padding(8)
+            .padding()
         }
         .onDisappear{
             self.viewModel.onDisappear()
