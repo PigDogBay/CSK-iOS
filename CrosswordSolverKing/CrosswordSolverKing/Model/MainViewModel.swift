@@ -75,11 +75,11 @@ class MainViewModel : ObservableObject {
         isShowing = true
         //May have appeared from the filter screen, so apply any filters
         model.applyFilters()
-        updateAdBannerOrientation()
+        applyOrientationChanges()
     }
     
     ///Ad banner will need reloading if the orientation changed when the view was not showing
-    private func updateAdBannerOrientation(){
+    private func applyOrientationChanges(){
         switch orientationState {
         case .NoChange:
             break
@@ -94,7 +94,7 @@ class MainViewModel : ObservableObject {
     
     ///Will need to delay orientation changes if the view is not showing
     /// - Parameter isPortrait: true if current orientation is portrait
-    func setPortrait(isPortrait : Bool){
+    func onOrientationChange(isPortrait : Bool){
         if isShowing {
             orientationState = .NoChange
             self.isPortrait = isPortrait
