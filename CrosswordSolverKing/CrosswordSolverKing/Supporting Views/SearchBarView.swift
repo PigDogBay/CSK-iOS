@@ -9,8 +9,12 @@
 import SwiftUI
 
 struct SearchBarView : View {
-    @EnvironmentObject var viewModel : MainViewModel
-
+    @ObservedObject var viewModel : SearchBarViewModel
+    
+    init(model : Model){
+        self.viewModel = SearchBarViewModel(model: model)
+    }
+    
     var body: some View {
         let binding = Binding(
             get: {self.viewModel.model.query},
@@ -29,6 +33,6 @@ struct SearchBarView : View {
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBarView().environmentObject(MainViewModel())
+        SearchBarView(model: Model())
     }
 }

@@ -9,13 +9,13 @@
 import SwiftUI
 
 struct TipsView: View {
-    @EnvironmentObject var mainVM : MainViewModel
+    @EnvironmentObject var model : Model
     @ObservedObject var aboutVM : AboutViewModel
 
     var body: some View {
         List {
             ForEach(tipsData) { tip in
-                LinkedTipRow(viewModel: HelpViewModel(tip: tip, mainVM: self.mainVM))
+                LinkedTipRow(viewModel: HelpViewModel(tip: tip, model: self.model))
             }
             NavigationLink(destination: FilterHelpView()){
                 FilterRow()

@@ -11,19 +11,19 @@ import Foundation
 class HelpViewModel : ObservableObject {
     @Published var showTip = false
     let tip : Tip
-    let mainVM : MainViewModel
+    let model : Model
     
     var showMePressed = false
     
-    init(tip : Tip, mainVM : MainViewModel){
+    init(tip : Tip, model : Model){
         self.tip = tip
-        self.mainVM  = mainVM
+        self.model = model
     }
     func onDisappear() {
         //TODO if main screen not showing search will fail
         //maybe create a showMe Publisher that waits until the main screen is visible and then searches
         if showMePressed {
-            mainVM.setQueryFrom(tip: tip.showMe)
+            model.query = tip.showMe
             showMePressed = false
         }
     }

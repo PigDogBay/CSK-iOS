@@ -23,6 +23,7 @@
 		0047249224D1BC0200CAF363 /* FilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047249124D1BC0200CAF363 /* FilterRow.swift */; };
 		0047249424D1C1DF00CAF363 /* FilterHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047249324D1C1DF00CAF363 /* FilterHelpView.swift */; };
 		004AF96624B4CC3C00C9780F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004AF96524B4CC3C00C9780F /* Settings.swift */; };
+		004D88B924D9775E00C6FDA3 /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D88B824D9775E00C6FDA3 /* SearchBarViewModel.swift */; };
 		005D83BD24B8925E00EA5FFD /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 005D83BC24B8925E00EA5FFD /* words.txt */; };
 		00A458A724B9C7B900240913 /* DefinitionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A458A624B9C7B900240913 /* DefinitionViewModel.swift */; };
 		00C3585024A0EEF800D09C75 /* GADBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */; };
@@ -108,6 +109,7 @@
 		0047249124D1BC0200CAF363 /* FilterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRow.swift; sourceTree = "<group>"; };
 		0047249324D1C1DF00CAF363 /* FilterHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHelpView.swift; sourceTree = "<group>"; };
 		004AF96524B4CC3C00C9780F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		004D88B824D9775E00C6FDA3 /* SearchBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModel.swift; sourceTree = "<group>"; };
 		005D83BC24B8925E00EA5FFD /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 		00A458A624B9C7B900240913 /* DefinitionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionViewModel.swift; sourceTree = "<group>"; };
 		00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADBannerViewController.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				0021164924C5D0360033F3EB /* TipsData.swift */,
 				003F58C224C71895002BADC6 /* HelpViewModel.swift */,
 				00F2BCDA24D083A0006B448D /* Strings.swift */,
+				004D88B824D9775E00C6FDA3 /* SearchBarViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				00F2BCD524D07E28006B448D /* RateRow.swift in Sources */,
 				004AF96624B4CC3C00C9780F /* Settings.swift in Sources */,
 				00F2850424991065004C9B75 /* SimpleWebView.swift in Sources */,
+				004D88B924D9775E00C6FDA3 /* SearchBarViewModel.swift in Sources */,
 				00F2850324991065004C9B75 /* FilterPicker.swift in Sources */,
 				00469B5B24B73DFC000DBAF4 /* MainViewModel.swift in Sources */,
 			);
