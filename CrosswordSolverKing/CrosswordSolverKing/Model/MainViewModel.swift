@@ -110,8 +110,4 @@ class MainViewModel : ObservableObject {
     func format(match : String) -> String {
         return model.wordFormatter.format(match)
     }
-    
-    func setQueryFrom(tip : String){
-        model.query = tip
-    }
 }
