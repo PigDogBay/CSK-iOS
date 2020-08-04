@@ -21,7 +21,7 @@ struct SearchBarView : View {
             set: {self.viewModel.setQueryFrom(typed: $0)})
         
         return TextField("Enter letters", text: binding)
-            .padding(EdgeInsets(top: 24, leading: 12, bottom: 8, trailing: 12))
+            .padding()
             .font(.system(.title, design: .monospaced))
             .frame(height: 60)
             .keyboardType(.emailAddress)
