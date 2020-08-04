@@ -13,11 +13,18 @@ enum MainScreens {
     case Splash, Tips, Matches
 }
 
+///Need to delay orientation changes if the view is not visible so that the ad banner can reload if necessary
+enum OrientationChangeStates {
+    case NoChange, ChangeToPortrait, ChangeToLandscape
+}
+
 class MainViewModel : ObservableObject {
     private static let MAX_UPDATES = 60
     
     let model : Model
     private var disposables = Set<AnyCancellable>()
+    private var isShowing = true
+    private var orientationState : OrientationChangeStates = .NoChange
 
     @Published var screen : MainScreens = .Splash
     @Published var topLeftButton = ""
@@ -60,17 +67,46 @@ class MainViewModel : ObservableObject {
     }
     
     func onDisappear(){
+        isShowing = false
         model.stopSearch()
     }
     
     func onAppear(){
+        isShowing = true
         //May have appeared from the filter screen, so apply any filters
         model.applyFilters()
+        updateAdBannerOrientation()
     }
     
-    /*
-        Main screen is determined by app state and query
-     */
+    ///Ad banner will need reloading if the orientation changed when the view was not showing
+    private func updateAdBannerOrientation(){
+        switch orientationState {
+        case .NoChange:
+            break
+        case .ChangeToPortrait:
+            isPortrait = true
+        case .ChangeToLandscape:
+            isPortrait = false
+        }
+        orientationState = .NoChange
+
+    }
+    
+    ///Will need to delay orientation changes if the view is not showing
+    /// - Parameter isPortrait: true if current orientation is portrait
+    func setPortrait(isPortrait : Bool){
+        if isShowing {
+            orientationState = .NoChange
+            self.isPortrait = isPortrait
+        } else {
+            orientationState = isPortrait ? .ChangeToPortrait : .ChangeToLandscape
+        }
+    }
+
+    
+    ///Main screen is determined by `app state` and `query`
+    /// - parameter appState: current state of the model
+    /// - parameter query: search query
     private func getMainScreen(appState : AppStates, query : String) -> MainScreens {
         if appState == .uninitialized {
             return .Splash

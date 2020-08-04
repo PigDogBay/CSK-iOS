@@ -31,7 +31,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     func windowScene(_ windowScene: UIWindowScene, didUpdate previousCoordinateSpace: UICoordinateSpace, interfaceOrientation previousInterfaceOrientation: UIInterfaceOrientation, traitCollection previousTraitCollection: UITraitCollection) {
-        mainVM.isPortrait = windowScene.interfaceOrientation.isPortrait
+        //Post orientation changes so that the adaptive ad banner can resize itself
+        mainVM.setPortrait(isPortrait: windowScene.interfaceOrientation.isPortrait)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
