@@ -110,13 +110,6 @@ class MainViewModel : ObservableObject {
     func format(match : String) -> String {
         return model.wordFormatter.format(match)
     }
-
-    //Replaced spaces/full stops with a question mark
-    func setQueryFrom(typed : String) {
-        model.query = typed.replacingOccurrences(of: " ", with: "?").replacingOccurrences(of: ".", with: "?")
-        //Notify view that the query has changed
-        self.objectWillChange.send()
-    }
     
     func setQueryFrom(tip : String){
         model.query = tip
