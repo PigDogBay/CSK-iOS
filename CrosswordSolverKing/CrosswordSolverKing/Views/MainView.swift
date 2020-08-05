@@ -28,8 +28,20 @@ struct MainView: View {
     private var listSection : some View {
         return List {
             ForEach(viewModel.model.matches, id: \.self) {match in
-                NavigationLink(destination: DefinitionView(viewModel: DefinitionViewModel(word: match))){
+                NavigationLink(destination: DefinitionView(model: DefaultDefintion(word: match))){
                     Text(self.viewModel.format(match: match))
+                        .contextMenu{
+                            Button(action: {self.viewModel.contextMenu(word: match, provider: .Collins) }){Text("Collins")}
+                            Button(action: {self.viewModel.contextMenu(word: match, provider: .Dictionary) }){Text("Dictionary.com")}
+                            Button(action: {self.viewModel.contextMenu(word: match, provider: .GoogleDefinition) }){Text("Google Definition")}
+                            Button(action: {self.viewModel.contextMenu(word: match, provider: .Lexico) }){Text("Lexico")}
+                            Button(action: {self.viewModel.contextMenu(word: match, provider: .MerriamWebster) }){Text("Merriam-Webster")}
+                            Button(action: {self.viewModel.contextMenu(word: match, provider: .MWThesaurus) }){Text("M-W Thesaurus")}
+                            Button(action: {self.viewModel.contextMenu(word: match, provider: .Thesaurus) }){Text("Thesaurus.com")}
+                            Button(action: {self.viewModel.contextMenu(word: match, provider: .Wikipedia) }){Text("Wikipedia")}
+                            Button(action: {self.viewModel.contextMenu(word: match, provider: .Wiktionary) }){Text("Wiktionary")}
+                            Button(action: {self.viewModel.contextMenu(word: match, provider: .WordGameDictionary) }){Text("Word Game Dictionary")}
+                        }
                 }
             }
         }
@@ -61,6 +73,8 @@ struct MainView: View {
                         } else {
                             self.statusSection
                             self.listSection
+                            //Triggered from the context menu on a match
+                            NavigationLink("Lookup", destination: DefinitionView(model: self.viewModel.createDefinitionViewModel()), isActive: self.$viewModel.isDefinitionViewActive)
                         }
                         if !self.euConsent.showEUConsent{
                             if self.viewModel.isPortrait {

@@ -25,10 +25,13 @@ class MainViewModel : ObservableObject {
     private var disposables = Set<AnyCancellable>()
     private var isShowing = true
     private var orientationState : OrientationChangeStates = .NoChange
+    private var contextDefinitionProvider : DefinitionProviders = .Default
+    private var contextDefinitionWord = "crossword"
 
     @Published var screen : MainScreens = .Splash
     @Published var topLeftButton = ""
     @Published var isPortrait = true
+    @Published var isDefinitionViewActive = false
     
     init(){
         self.model = Model()
@@ -145,5 +148,15 @@ class MainViewModel : ObservableObject {
     
     func format(match : String) -> String {
         return model.wordFormatter.format(match)
+    }
+    
+    func contextMenu(word : String, provider : DefinitionProviders){
+        self.contextDefinitionWord = word
+        self.contextDefinitionProvider = provider
+        self.isDefinitionViewActive = true
+    }
+    
+    func createDefinitionViewModel() -> DefinitionModel {
+        return ContextDefintion(word: contextDefinitionWord, provider: contextDefinitionProvider)
     }
 }
