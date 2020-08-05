@@ -15,16 +15,19 @@ enum DefinitionProviders {
 
 protocol DefinitionModel {
     var word : String { get }
-    func lookupUrl() -> URLRequest
+    func lookupUrl() -> URLRequest?
 }
 
 struct DefaultDefintion : DefinitionModel{
     let word : String
     
-    func lookupUrl() -> URLRequest {
+    func lookupUrl() -> URLRequest? {
         let settings = Settings()
-        let url = settings.getDefinitionUrl(word: word)
-        return URLRequest(url: URL(string: url)!)
+        if let address = settings.getDefinitionUrl(word: word).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+           let url = URL(string: address) {
+                return URLRequest(url: url)
+        }
+        return nil
     }
 }
 
@@ -32,9 +35,12 @@ struct ContextDefintion : DefinitionModel{
     let word : String
     let provider : DefinitionProviders
     
-    func lookupUrl() -> URLRequest {
-        let address = getAddress()
-        return URLRequest(url: URL(string: address)!)
+    func lookupUrl() -> URLRequest? {
+        if let address = getAddress().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+            let url = URL(string: address) {
+            return URLRequest(url: url)
+        }
+        return nil
     }
     
     private func getAddress() -> String {

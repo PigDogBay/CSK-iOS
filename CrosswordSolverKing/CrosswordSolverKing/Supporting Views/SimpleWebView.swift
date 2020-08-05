@@ -10,18 +10,22 @@ import SwiftUI
 import WebKit
 
 struct SimpleWebView : View {
-    let urlRequest : URLRequest
+    let urlRequest : URLRequest?
     @State private var isLoading = true
     var body: some View {
         ZStack(){
-            WebViewRepresentable(urlRequest: urlRequest,isLoading: $isLoading)
-            VStack {
-                ActivityIndicatorRepresentable(isLoading: $isLoading)
-                if isLoading {
-                    Text("Loading..")
-                } else {
-                    Text("").hidden()
+            if urlRequest != nil {
+                WebViewRepresentable(urlRequest: urlRequest!,isLoading: $isLoading)
+                VStack {
+                    ActivityIndicatorRepresentable(isLoading: $isLoading)
+                    if isLoading {
+                        Text("Loading..")
+                    } else {
+                        Text("").hidden()
+                    }
                 }
+            } else {
+                Text("Unable to load")
             }
         }
     }
