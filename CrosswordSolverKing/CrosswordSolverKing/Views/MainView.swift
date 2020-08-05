@@ -29,7 +29,7 @@ struct MainView: View {
         return List {
             ForEach(viewModel.model.matches, id: \.self) {match in
                 NavigationLink(destination: DefinitionView(model: DefaultDefintion(word: match))){
-                    Text(self.viewModel.format(match: match))
+                    MatchRow(match: match, formatter: self.viewModel.model.wordFormatter)
                         .contextMenu{
                             Button(action: {self.viewModel.contextMenu(word: match, provider: .Collins) }){Text("Collins")}
                             Button(action: {self.viewModel.contextMenu(word: match, provider: .Dictionary) }){Text("Dictionary.com")}
