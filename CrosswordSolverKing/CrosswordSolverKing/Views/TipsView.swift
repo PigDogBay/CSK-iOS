@@ -20,6 +20,9 @@ struct TipsView: View {
             NavigationLink(destination: FilterHelpView()){
                 FilterRow()
             }
+            NavigationLink(destination: DefintionHelpView()){
+                DefinitionRow()
+            }
             NavigationLink(destination: AboutView(viewModel: aboutVM)){
                 AboutRow()
             }

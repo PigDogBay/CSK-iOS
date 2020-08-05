@@ -25,8 +25,10 @@
 		004AF96624B4CC3C00C9780F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004AF96524B4CC3C00C9780F /* Settings.swift */; };
 		004D88B924D9775E00C6FDA3 /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004D88B824D9775E00C6FDA3 /* SearchBarViewModel.swift */; };
 		00532D7E24DACB0900F8141B /* MatchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00532D7D24DACB0900F8141B /* MatchRow.swift */; };
+		00532D8224DB0F5300F8141B /* DefinitionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00532D8124DB0F5300F8141B /* DefinitionRow.swift */; };
 		005D83BD24B8925E00EA5FFD /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 005D83BC24B8925E00EA5FFD /* words.txt */; };
 		00A458A724B9C7B900240913 /* DefinitionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A458A624B9C7B900240913 /* DefinitionViewModel.swift */; };
+		00B2029324DB11A8008E8F2C /* DefintionHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B2029224DB11A8008E8F2C /* DefintionHelpView.swift */; };
 		00C3585024A0EEF800D09C75 /* GADBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */; };
 		00C71C3D24AF7B1900FA3969 /* EUAgreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C71C3C24AF7B1900FA3969 /* EUAgreeView.swift */; };
 		00C7D74A24BDC25E00353176 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C7D74924BDC25E00353176 /* SplashScreen.swift */; };
@@ -112,8 +114,10 @@
 		004AF96524B4CC3C00C9780F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		004D88B824D9775E00C6FDA3 /* SearchBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModel.swift; sourceTree = "<group>"; };
 		00532D7D24DACB0900F8141B /* MatchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRow.swift; sourceTree = "<group>"; };
+		00532D8124DB0F5300F8141B /* DefinitionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionRow.swift; sourceTree = "<group>"; };
 		005D83BC24B8925E00EA5FFD /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 		00A458A624B9C7B900240913 /* DefinitionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionViewModel.swift; sourceTree = "<group>"; };
+		00B2029224DB11A8008E8F2C /* DefintionHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefintionHelpView.swift; sourceTree = "<group>"; };
 		00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADBannerViewController.swift; sourceTree = "<group>"; };
 		00C71C3C24AF7B1900FA3969 /* EUAgreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUAgreeView.swift; sourceTree = "<group>"; };
 		00C7D74924BDC25E00353176 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 				00C7D74924BDC25E00353176 /* SplashScreen.swift */,
 				0021164724C5CFF50033F3EB /* TipsView.swift */,
 				0047249324D1C1DF00CAF363 /* FilterHelpView.swift */,
+				00B2029224DB11A8008E8F2C /* DefintionHelpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				00F2BCD424D07E28006B448D /* RateRow.swift */,
 				00F2BCD624D07E50006B448D /* TellFriendRow.swift */,
 				0047249124D1BC0200CAF363 /* FilterRow.swift */,
+				00532D8124DB0F5300F8141B /* DefinitionRow.swift */,
 				00532D7D24DACB0900F8141B /* MatchRow.swift */,
 			);
 			path = "Supporting Views";
@@ -607,8 +613,10 @@
 				003F58C524C72EC2002BADC6 /* AboutRow.swift in Sources */,
 				0047249424D1C1DF00CAF363 /* FilterHelpView.swift in Sources */,
 				00F2BCD724D07E50006B448D /* TellFriendRow.swift in Sources */,
+				00532D8224DB0F5300F8141B /* DefinitionRow.swift in Sources */,
 				00F2850524991065004C9B75 /* HelpView.swift in Sources */,
 				0033162224B340D700DBBF32 /* EUConsent.swift in Sources */,
+				00B2029324DB11A8008E8F2C /* DefintionHelpView.swift in Sources */,
 				00F2850C24991065004C9B75 /* AboutView.swift in Sources */,
 				0021164624C5CA670033F3EB /* TipRow.swift in Sources */,
 				00F2850B24991065004C9B75 /* DefinitionView.swift in Sources */,
