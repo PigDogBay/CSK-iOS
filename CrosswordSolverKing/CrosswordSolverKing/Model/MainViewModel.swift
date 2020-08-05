@@ -146,10 +146,6 @@ class MainViewModel : ObservableObject {
         }
     }
     
-    func format(match : String) -> String {
-        return model.wordFormatter.format(match)
-    }
-    
     func contextMenu(word : String, provider : DefinitionProviders){
         self.contextDefinitionWord = word
         self.contextDefinitionProvider = provider
