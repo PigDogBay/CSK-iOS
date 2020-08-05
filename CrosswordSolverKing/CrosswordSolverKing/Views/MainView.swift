@@ -74,7 +74,7 @@ struct MainView: View {
                             self.statusSection
                             self.listSection
                             //Triggered from the context menu on a match
-                            NavigationLink("Lookup", destination: DefinitionView(model: self.viewModel.createDefinitionViewModel()), isActive: self.$viewModel.isDefinitionViewActive)
+                            NavigationLink(destination: DefinitionView(model: self.viewModel.createDefinitionViewModel()), isActive: self.$viewModel.isDefinitionViewActive){EmptyView()}
                         }
                         if !self.euConsent.showEUConsent{
                             if self.viewModel.isPortrait {
