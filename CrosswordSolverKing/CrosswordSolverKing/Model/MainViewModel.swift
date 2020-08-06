@@ -8,6 +8,7 @@
 
 import UIKit
 import Combine
+import SwiftUtils
 
 enum MainScreens {
     case Splash, Tips, Matches
@@ -22,6 +23,7 @@ class MainViewModel : ObservableObject {
     private static let MAX_UPDATES = 60
     
     let model : Model
+    let ratings = Ratings(appId: Strings.appId)
     private var disposables = Set<AnyCancellable>()
     private var isShowing = true
     private var orientationState : OrientationChangeStates = .NoChange
@@ -83,6 +85,8 @@ class MainViewModel : ObservableObject {
         isShowing = true
         model.applyFilters()
         applyOrientationChanges()
+        //Good time to ask, app may be at start up or the user has just returned from another view
+        ratings.requestRating()
     }
     
     ///App life cycle function: called when the app goes into the background
