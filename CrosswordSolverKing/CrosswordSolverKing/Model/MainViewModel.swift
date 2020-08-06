@@ -76,17 +76,25 @@ class MainViewModel : ObservableObject {
     
     func onAppear(){
         isShowing = true
-        //May have appeared from the filter screen, so apply any filters
+        applySettings()
         model.applyFilters()
         applyOrientationChanges()
     }
     
     func splashScreenAppeared(){
         if model.appState == .uninitialized {
+            applySettings()
             model.loadWordList(name: Settings().wordList)
         }
     }
-    
+
+    private func applySettings(){
+        let settings = Settings()
+        model.wordFormatter.highlightColor = settings.highlight
+        model.resultsLimit = settings.resultsLimit
+        model.wordSearch.findSubAnagrams = settings.showSubAnagrams
+    }
+
     ///Ad banner will need reloading if the orientation changed when the view was not showing
     private func applyOrientationChanges(){
         switch orientationState {

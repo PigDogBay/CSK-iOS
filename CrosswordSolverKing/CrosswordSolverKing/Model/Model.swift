@@ -28,22 +28,20 @@ class Model : ObservableObject,WordListCallback {
     let wordList = WordList()
     let wordSearch : WordSearch
     let wordFormatter = WordFormatter()
-    
+    var resultsLimit = 5000
+    let filters = Filters()
+
     private let scheduler = DispatchQueue.global(qos: .background)
     private var disposables = Set<AnyCancellable>()
     //Cannot place the search futures in a set as they will never be removed, since only one search at a time, can just use a property to store its reference
     private var temporaryDisposable : AnyCancellable?
     private let passthrough = PassthroughSubject<String,Never>()
-    private var resultsLimit = 5000
     //Background queue only - stops the search when the results limit is hit
     private var matchesCount = 0
 
-    let filters = Filters()
-
     init(){
         self.wordSearch = WordSearch(wordList: self.wordList)
-        applySettings()
-        
+
         passthrough
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: {self.matches.append($0)})
@@ -71,15 +69,6 @@ class Model : ObservableObject,WordListCallback {
                     self.appState = .error
                 }},  receiveValue: { self.wordList.wordlist = $0})
 
-    }
-
-    private func applySettings(){
-        let settings = Settings()
-        self.wordFormatter.highlightColor = settings.highlight
-        self.resultsLimit = settings.resultsLimit
-        self.wordSearch.findCodewords = true
-        self.wordSearch.findThreeWordAnagrams = true
-        self.wordSearch.findSubAnagrams = settings.showSubAnagrams
     }
 
     private func loadPublisher(wordListName : String) -> Future<[String], AppErrors> {
