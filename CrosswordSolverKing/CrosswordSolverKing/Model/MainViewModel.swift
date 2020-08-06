@@ -81,6 +81,13 @@ class MainViewModel : ObservableObject {
         applyOrientationChanges()
     }
     
+    func onResignActive(){
+        model.stopSearch()
+    }
+    func onDidBecomeActive(){
+        
+    }
+    
     func splashScreenAppeared(){
         if model.appState == .uninitialized {
             applySettings()
