@@ -19,7 +19,7 @@ enum AppErrors : Error {
     case loadError
 }
 
-class Model : ObservableObject,WordListCallback {
+class Model : WordListCallback {
     
     @Published var query = ""
     @Published var matches : [String] = []

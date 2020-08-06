@@ -70,7 +70,7 @@ struct MainView: View {
                     VStack(){
                         SearchBarView(model: self.viewModel.model)
                         if self.viewModel.screen == .Tips {
-                            TipsView(aboutVM: self.aboutVM)
+                            TipsView(model: self.viewModel.model, aboutVM: self.aboutVM)
                         } else {
                             self.statusSection
                             self.listSection
@@ -101,6 +101,6 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         let vm = MainViewModel()
-        return MainView(viewModel: vm).environmentObject(vm.model)
+        return MainView(viewModel: vm)
     }
 }

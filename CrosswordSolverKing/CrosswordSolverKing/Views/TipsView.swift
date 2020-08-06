@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct TipsView: View {
-    @EnvironmentObject var model : Model
+    let model : Model
     @ObservedObject var aboutVM : AboutViewModel
 
     var body: some View {
@@ -51,6 +51,6 @@ struct LinkedTipRow : View {
 
 struct TipsView_Previews: PreviewProvider {
     static var previews: some View {
-        TipsView(aboutVM: AboutViewModel()).environmentObject(MainViewModel())
+        TipsView(model: Model(), aboutVM: AboutViewModel())
     }
 }
