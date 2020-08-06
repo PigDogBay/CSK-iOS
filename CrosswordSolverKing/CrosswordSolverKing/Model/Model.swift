@@ -138,6 +138,7 @@ class Model : WordListCallback {
     
     func reset(){
         if self.appState == .ready || self.appState == .finished {
+            matches.removeAll()
             query = ""
             filters.reset()
         } else {
