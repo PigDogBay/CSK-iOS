@@ -87,39 +87,6 @@ class MainViewModel : ObservableObject {
         //Good time to ask, app may be at start up or the user has just returned from another view
         ratings.requestRating()
     }
-    
-    ///App life cycle function: called when the app goes into the background
-    func onResignActive(){
-        model.stopSearch()
-    }
-
-    ///App life cycle function: called when the app becomes active again, eg user launches the app or presses back to CSK from system settings
-    func onDidBecomeActive(){
-        if wordListName != "" {
-            //check if need to change the word list
-            if wordListName != Settings().wordList {
-                model.appState = .uninitialized
-                model.query = ""
-                model.filters.reset()
-            }
-        }
-        //User may have changed the app settings
-        applySettings()
-    }
-    
-    func splashScreenAppeared(){
-        if model.appState == .uninitialized {
-            model.loadWordList(name: Settings().wordList)
-        }
-    }
-
-    private func applySettings(){
-        let settings = Settings()
-        self.wordListName = settings.wordList
-        model.wordFormatter.highlightColor = settings.highlight
-        model.resultsLimit = settings.resultsLimit
-        model.wordSearch.findSubAnagrams = settings.showSubAnagrams
-    }
 
     ///Ad banner will need reloading if the orientation changed when the view was not showing
     private func applyOrientationChanges(){

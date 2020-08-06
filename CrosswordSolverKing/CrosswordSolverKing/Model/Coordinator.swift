@@ -26,6 +26,9 @@ class Coordinator : ObservableObject {
     private var showMePressed = false
     private var showMeExample = ""
 
+    ///Holds the current word list name, is used to check if a new word list needs to be loaded
+    private var wordListName = ""
+
 
     init(){
         model = Model()
@@ -40,10 +43,36 @@ class Coordinator : ObservableObject {
         showMeExample = example
     }
 
+    ///App life cycle function: called when the app goes into the background
+    func onResignActive(){
+        model.stopSearch()
+    }
+
+    ///App life cycle function: called when the app becomes active again, eg user launches the app or presses back to CSK from system settings
+    func onDidBecomeActive(){
+        if wordListName != "" {
+            //check if need to change the word list
+            if wordListName != Settings().wordList {
+                model.appState = .uninitialized
+                model.query = ""
+                model.matches.removeAll()
+                model.filters.reset()
+            }
+        }
+        applySettings()
+    }
+    
+    private func applySettings(){
+        wordListName = settings.wordList
+        model.wordFormatter.highlightColor = settings.highlight
+        model.resultsLimit = settings.resultsLimit
+        model.wordSearch.findSubAnagrams = settings.showSubAnagrams
+    }
+
     func onAppear(screen : AppScreens){
         switch screen {
         case .Splash:
-            break
+            splashEntered()
         case .Main:
             mainEntered()
         case .About:
@@ -81,6 +110,12 @@ class Coordinator : ObservableObject {
         if showMePressed {
             showMePressed = false
             model.query = showMeExample
+        }
+    }
+    
+    private func splashEntered(){
+        if model.appState == .uninitialized {
+            model.loadWordList(name: Settings().wordList)
         }
     }
 }
