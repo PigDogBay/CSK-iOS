@@ -10,7 +10,7 @@ import Foundation
 import SwiftUtils
 
 enum AppScreens {
-    case Main, About, Filter
+    case Splash, Main, About, Filter, Help
 }
 
 ///Deals with interactions between views and holds shared observed variables
@@ -23,6 +23,10 @@ class Coordinator : ObservableObject {
     @Published var showMeRelevantAds = true
     @Published var isAdReloadRequired = false
 
+    private var showMePressed = false
+    private var showMeExample = ""
+
+
     init(){
         model = Model()
         ratings = Ratings(appId: Strings.appId)
@@ -30,18 +34,38 @@ class Coordinator : ObservableObject {
         settings = Settings()
         showMeRelevantAds = !settings.useNonPersonalizedAds
     }
-    
+
+    func showHelpExample(example : String){
+        showMePressed = true
+        showMeExample = example
+    }
+
     func onAppear(screen : AppScreens){
-        
+        switch screen {
+        case .Splash:
+            break
+        case .Main:
+            mainEntered()
+        case .About:
+            break
+        case .Filter:
+            break
+        case .Help:
+            break
+        }
     }
     
     func onDisappear(screen : AppScreens){
         switch screen {
+        case .Splash:
+            break
         case .Main:
             break
         case .About:
             aboutExited()
         case .Filter:
+            break
+        case .Help:
             break
         }
     }
@@ -51,5 +75,12 @@ class Coordinator : ObservableObject {
             isAdReloadRequired = true
         }
         settings.useNonPersonalizedAds = !showMeRelevantAds
+    }
+    
+    private func mainEntered(){
+        if showMePressed {
+            showMePressed = false
+            model.query = showMeExample
+        }
     }
 }

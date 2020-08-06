@@ -64,7 +64,12 @@ struct MainView: View {
     var body: some View {
         if viewModel.screen == .Splash {
             SplashScreen()
-                .onAppear(perform: viewModel.splashScreenAppeared)
+                .onAppear{
+                    self.coordinator.onAppear(screen: .Splash)
+                    self.viewModel.splashScreenAppeared()}
+                .onDisappear{
+                    self.coordinator.onDisappear(screen: .Splash)
+            }
         } else {
             NavigationView {
                 GeometryReader { geo in
@@ -87,8 +92,14 @@ struct MainView: View {
                         }
                     }
                 }
-                .onAppear(perform: viewModel.onAppear)
-                .onDisappear(perform: viewModel.onDisappear)
+                .onAppear{
+                    self.coordinator.onAppear(screen: .Main)
+                    self.viewModel.onAppear()
+                }
+                .onDisappear{
+                    self.coordinator.onDisappear(screen: .Main)
+                    self.viewModel.onDisappear()
+                }
                 .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}
                 .navigationBarTitle(Text("CSK"), displayMode: .inline)
                 .navigationBarHidden(false)

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct HelpView: View {
+    @EnvironmentObject var coordinator : Coordinator
     @ObservedObject var viewModel : HelpViewModel
     
     var body: some View {
@@ -38,7 +39,7 @@ struct HelpView: View {
                     .padding(.bottom, 8)
                 HStack {
                     Spacer()
-                    Button(action: viewModel.showMe){
+                    Button(action: {self.viewModel.showMe(coordinator: self.coordinator)}){
                         Text("Show Me")
                     }
                 }
@@ -57,8 +58,9 @@ struct HelpView: View {
             }
             .padding()
         }
+        .onAppear{self.coordinator.onAppear(screen: .Help)}
         .onDisappear{
-            self.viewModel.onDisappear()
+            self.coordinator.onDisappear(screen: .Help)
         }
         .navigationBarTitle(Text("Help"), displayMode: .inline)
     }
@@ -66,6 +68,6 @@ struct HelpView: View {
 
 struct HelpView_Previews: PreviewProvider {
     static var previews: some View {
-        HelpView(viewModel: HelpViewModel(tip: tipsData[0], model: Model()))
+        HelpView(viewModel: HelpViewModel(tip: tipsData[0]))
     }
 }
