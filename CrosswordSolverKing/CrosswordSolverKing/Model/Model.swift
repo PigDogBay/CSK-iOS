@@ -57,7 +57,11 @@ class Model : ObservableObject,WordListCallback {
             .sink(receiveValue: {self.search(searchQuery: $0)})
             .store(in: &disposables)
 
-        temporaryDisposable = loadPublisher()
+    }
+    
+    func loadWordList(name : String) {
+        self.appState = .uninitialized
+        temporaryDisposable = loadPublisher(wordListName: name)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: {
                 switch $0 {
@@ -66,6 +70,7 @@ class Model : ObservableObject,WordListCallback {
                 case .failure( _):
                     self.appState = .error
                 }},  receiveValue: { self.wordList.wordlist = $0})
+
     }
 
     private func applySettings(){
@@ -77,10 +82,10 @@ class Model : ObservableObject,WordListCallback {
         self.wordSearch.findSubAnagrams = settings.showSubAnagrams
     }
 
-    func loadPublisher() -> Future<[String], AppErrors> {
+    private func loadPublisher(wordListName : String) -> Future<[String], AppErrors> {
         return Future<[String],AppErrors> { promise  in
             self.scheduler.async {
-                if let path = Bundle.main.path(forResource: "words", ofType: "txt"),
+                if let path = Bundle.main.path(forResource: wordListName, ofType: "txt"),
                    let content = try? String(contentsOfFile: path, encoding: String.Encoding.utf8)
                 {
                     let words = content.components(separatedBy: "\n")

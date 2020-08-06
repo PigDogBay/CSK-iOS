@@ -81,6 +81,12 @@ class MainViewModel : ObservableObject {
         applyOrientationChanges()
     }
     
+    func splashScreenAppeared(){
+        if model.appState == .uninitialized {
+            model.loadWordList(name: Settings().wordList)
+        }
+    }
+    
     ///Ad banner will need reloading if the orientation changed when the view was not showing
     private func applyOrientationChanges(){
         switch orientationState {
