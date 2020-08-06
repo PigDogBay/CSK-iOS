@@ -12,16 +12,9 @@ import MessageUI
 import SwiftUtils
 
 class AboutViewModel : ObservableObject {
-    @Published var showMeRelevantAds = true
-    @Published var isAdReloadRequired = false
     @Published var result: Result<MFMailComposeResult, Error>? = nil
     @Published var isMailVCPressented = false
     @Published var showNoEmailAlert = false
-    
-    init(){
-        let settings = Settings()
-        showMeRelevantAds = !settings.useNonPersonalizedAds
-    }
     
     func showPrivacyPolicy(){
         UIApplication.shared.open(URL(string: Strings.privacyURL)!, options: [:])
@@ -43,13 +36,5 @@ class AboutViewModel : ObservableObject {
         } else {
             showNoEmailAlert = true
         }
-    }
-
-    func viewDisappear() {
-        let settings = Settings()
-        if settings.useNonPersonalizedAds == showMeRelevantAds {
-            isAdReloadRequired = true
-        }
-        settings.useNonPersonalizedAds = !showMeRelevantAds
     }
 }

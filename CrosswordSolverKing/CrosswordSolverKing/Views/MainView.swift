@@ -10,10 +10,9 @@ import SwiftUI
 import GoogleMobileAds
 
 struct MainView: View {
-    let coordinator : Coordinator
+    @ObservedObject private var coordinator : Coordinator
     @ObservedObject private var viewModel : MainViewModel
     @ObservedObject private var euConsent = EUConsent()
-    @ObservedObject private var aboutVM = AboutViewModel()
     
     init(coordinator : Coordinator){
         self.coordinator = coordinator
@@ -55,7 +54,7 @@ struct MainView: View {
     private func adSection(gadSize : GADAdSize) -> some View {
         HStack {
             Spacer()
-            GADBannerViewController(viewModel: aboutVM, gadSize: gadSize)
+            GADBannerViewController(gadSize: gadSize)
                 .frame(width: gadSize.size.width, height: gadSize.size.height)
             Spacer()
         }
@@ -72,7 +71,7 @@ struct MainView: View {
                     VStack(){
                         SearchBarView(model: self.viewModel.model)
                         if self.viewModel.screen == .Tips {
-                            TipsView(model: self.viewModel.model, aboutVM: self.aboutVM)
+                            TipsView()
                         } else {
                             self.statusSection
                             self.listSection

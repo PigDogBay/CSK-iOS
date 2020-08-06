@@ -9,13 +9,12 @@
 import SwiftUI
 
 struct TipsView: View {
-    let model : Model
-    @ObservedObject var aboutVM : AboutViewModel
+    @EnvironmentObject var coordinator : Coordinator
 
     var body: some View {
         List {
             ForEach(tipsData) { tip in
-                LinkedTipRow(viewModel: HelpViewModel(tip: tip, model: self.model))
+                LinkedTipRow(viewModel: HelpViewModel(tip: tip, model: self.coordinator.model))
             }
             NavigationLink(destination: FilterHelpView()){
                 FilterRow()
@@ -23,7 +22,7 @@ struct TipsView: View {
             NavigationLink(destination: DefintionHelpView()){
                 DefinitionRow()
             }
-            NavigationLink(destination: AboutView(viewModel: aboutVM)){
+            NavigationLink(destination: AboutView()){
                 AboutRow()
             }
             SettingsRow()
@@ -51,6 +50,6 @@ struct LinkedTipRow : View {
 
 struct TipsView_Previews: PreviewProvider {
     static var previews: some View {
-        TipsView(model: Model(), aboutVM: AboutViewModel())
+        TipsView().environmentObject(Coordinator())
     }
 }

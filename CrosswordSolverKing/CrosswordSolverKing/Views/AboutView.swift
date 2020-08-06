@@ -10,7 +10,8 @@ import SwiftUI
 
 struct AboutView: View {
     
-    @ObservedObject var viewModel : AboutViewModel
+    @EnvironmentObject var coordinator : Coordinator
+    @ObservedObject var viewModel = AboutViewModel()
 
     private var infoSection: some View {
         VStack(alignment: .leading, spacing: 8){
@@ -67,8 +68,8 @@ struct AboutView: View {
             }
             Text("This app will use your data to tailor ads to you. Our partners will collect data and use an unique identifier on your device to show you ads. You select here if we can continue to use your data to tailor ads for you.")
                 .font(.body)
-            Toggle(isOn: $viewModel.showMeRelevantAds) {
-                if viewModel.showMeRelevantAds {
+            Toggle(isOn: $coordinator.showMeRelevantAds) {
+                if coordinator.showMeRelevantAds {
                     Text("Show me relevant ads")
                 } else {
                     Text("Show me ads that are less relevant")
@@ -102,7 +103,8 @@ struct AboutView: View {
                 helpOutSection
             }.padding(.top, 16)
         }.navigationBarTitle(Text("About"), displayMode: .inline)
-        .onDisappear(perform: viewModel.viewDisappear)
+            .onAppear(perform: {self.coordinator.onAppear(screen: .About)})
+            .onDisappear(perform: {self.coordinator.onDisappear(screen: .About)})
     }
 }
 
@@ -116,6 +118,6 @@ struct AboutButtonMod : ViewModifier {
 
 struct AboutView_Previews: PreviewProvider {
     static var previews: some View {
-        AboutView(viewModel: AboutViewModel())
+        AboutView().environmentObject(Coordinator())
     }
 }
