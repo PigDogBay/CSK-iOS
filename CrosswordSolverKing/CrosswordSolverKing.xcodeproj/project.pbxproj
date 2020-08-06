@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00187E2924DBE92B0021A55E /* sowpods.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00187E2824DBE92B0021A55E /* sowpods.txt */; };
 		00187E2B24DBE9330021A55E /* twl.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00187E2A24DBE9330021A55E /* twl.txt */; };
+		00187E2E24DC36E20021A55E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00187E2D24DC36E20021A55E /* Coordinator.swift */; };
 		0021164624C5CA670033F3EB /* TipRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0021164524C5CA670033F3EB /* TipRow.swift */; };
 		0021164824C5CFF50033F3EB /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0021164724C5CFF50033F3EB /* TipsView.swift */; };
 		0021164A24C5D0360033F3EB /* TipsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0021164924C5D0360033F3EB /* TipsData.swift */; };
@@ -100,6 +101,7 @@
 /* Begin PBXFileReference section */
 		00187E2824DBE92B0021A55E /* sowpods.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; path = sowpods.txt; sourceTree = "<group>"; };
 		00187E2A24DBE9330021A55E /* twl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; path = twl.txt; sourceTree = "<group>"; };
+		00187E2D24DC36E20021A55E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		0021164524C5CA670033F3EB /* TipRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipRow.swift; sourceTree = "<group>"; };
 		0021164724C5CFF50033F3EB /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 		0021164924C5D0360033F3EB /* TipsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsData.swift; sourceTree = "<group>"; };
@@ -282,16 +284,16 @@
 			children = (
 				00F2850024991065004C9B75 /* AboutView.swift */,
 				00F284FF24991065004C9B75 /* DefinitionView.swift */,
-				00F284FE24991065004C9B75 /* FiltersView.swift */,
-				00F284F924991065004C9B75 /* HelpView.swift */,
-				00F284FB24991065004C9B75 /* MainView.swift */,
+				00B2029224DB11A8008E8F2C /* DefintionHelpView.swift */,
 				00FCDDD924ADED1B00E4CFD3 /* EUAdChoiceView.swift */,
 				00C71C3C24AF7B1900FA3969 /* EUAgreeView.swift */,
 				0033162324B3488B00DBBF32 /* EUConsentView.swift */,
+				0047249324D1C1DF00CAF363 /* FilterHelpView.swift */,
+				00F284FE24991065004C9B75 /* FiltersView.swift */,
+				00F284F924991065004C9B75 /* HelpView.swift */,
+				00F284FB24991065004C9B75 /* MainView.swift */,
 				00C7D74924BDC25E00353176 /* SplashScreen.swift */,
 				0021164724C5CFF50033F3EB /* TipsView.swift */,
-				0047249324D1C1DF00CAF363 /* FilterHelpView.swift */,
-				00B2029224DB11A8008E8F2C /* DefintionHelpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -299,22 +301,22 @@
 		00F284F324990E8C004C9B75 /* Supporting Views */ = {
 			isa = PBXGroup;
 			children = (
-				00F284F724991065004C9B75 /* FilterPicker.swift */,
-				00F284FD24991065004C9B75 /* SearchBarView.swift */,
-				00F284F824991065004C9B75 /* SimpleWebView.swift */,
-				00F284FC24991065004C9B75 /* TextFilterRow.swift */,
-				00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */,
-				0047248F24D1A13A00CAF363 /* ActivityViewController.swift */,
-				00F2BCD224D0786A006B448D /* MailView.swift */,
-				0021164524C5CA670033F3EB /* TipRow.swift */,
 				003F58C424C72EC2002BADC6 /* AboutRow.swift */,
-				003F58C624C734FE002BADC6 /* SettingsRow.swift */,
-				00F2BCCE24D05F30006B448D /* FeedbackRow.swift */,
-				00F2BCD424D07E28006B448D /* RateRow.swift */,
-				00F2BCD624D07E50006B448D /* TellFriendRow.swift */,
-				0047249124D1BC0200CAF363 /* FilterRow.swift */,
+				0047248F24D1A13A00CAF363 /* ActivityViewController.swift */,
 				00532D8124DB0F5300F8141B /* DefinitionRow.swift */,
+				00F2BCCE24D05F30006B448D /* FeedbackRow.swift */,
+				00F284F724991065004C9B75 /* FilterPicker.swift */,
+				0047249124D1BC0200CAF363 /* FilterRow.swift */,
+				00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */,
+				00F2BCD224D0786A006B448D /* MailView.swift */,
 				00532D7D24DACB0900F8141B /* MatchRow.swift */,
+				00F2BCD424D07E28006B448D /* RateRow.swift */,
+				00F284FD24991065004C9B75 /* SearchBarView.swift */,
+				003F58C624C734FE002BADC6 /* SettingsRow.swift */,
+				00F284F824991065004C9B75 /* SimpleWebView.swift */,
+				00F2BCD624D07E50006B448D /* TellFriendRow.swift */,
+				00F284FC24991065004C9B75 /* TextFilterRow.swift */,
+				0021164524C5CA670033F3EB /* TipRow.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -324,16 +326,17 @@
 			children = (
 				00469B5C24B74EE1000DBAF4 /* AboutViewModel.swift */,
 				00F284F024990D1B004C9B75 /* Ads.swift */,
-				00F2850224991065004C9B75 /* Model.swift */,
-				00469B5A24B73DFC000DBAF4 /* MainViewModel.swift */,
-				0033162124B340D700DBBF32 /* EUConsent.swift */,
-				004AF96524B4CC3C00C9780F /* Settings.swift */,
+				00187E2D24DC36E20021A55E /* Coordinator.swift */,
 				00A458A624B9C7B900240913 /* DefinitionViewModel.swift */,
+				0033162124B340D700DBBF32 /* EUConsent.swift */,
 				00F2850124991065004C9B75 /* Filters.swift */,
-				0021164924C5D0360033F3EB /* TipsData.swift */,
 				003F58C224C71895002BADC6 /* HelpViewModel.swift */,
-				00F2BCDA24D083A0006B448D /* Strings.swift */,
+				00469B5A24B73DFC000DBAF4 /* MainViewModel.swift */,
+				00F2850224991065004C9B75 /* Model.swift */,
 				004D88B824D9775E00C6FDA3 /* SearchBarViewModel.swift */,
+				004AF96524B4CC3C00C9780F /* Settings.swift */,
+				00F2BCDA24D083A0006B448D /* Strings.swift */,
+				0021164924C5D0360033F3EB /* TipsData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 			files = (
 				00F284F124990D1B004C9B75 /* Ads.swift in Sources */,
 				0033162424B3488B00DBBF32 /* EUConsentView.swift in Sources */,
+				00187E2E24DC36E20021A55E /* Coordinator.swift in Sources */,
 				003F58C324C71895002BADC6 /* HelpViewModel.swift in Sources */,
 				00F2850724991065004C9B75 /* MainView.swift in Sources */,
 				00F284B924990437004C9B75 /* AppDelegate.swift in Sources */,

@@ -100,7 +100,7 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        let vm = MainViewModel()
+        let vm = MainViewModel(model: Model())
         return MainView(viewModel: vm)
     }
 }
