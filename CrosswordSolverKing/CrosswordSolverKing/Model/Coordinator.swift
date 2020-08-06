@@ -17,11 +17,11 @@ enum AppScreens {
 class Coordinator : ObservableObject {
     let model : Model
     let ratings : Ratings
-    let mainVM : MainViewModel
     let settings : Settings
 
     @Published var showMeRelevantAds = true
     @Published var isAdReloadRequired = false
+    @Published var isPortrait = true
 
     private var showMePressed = false
     private var showMeExample = ""
@@ -33,7 +33,6 @@ class Coordinator : ObservableObject {
     init(){
         model = Model()
         ratings = Ratings(appId: Strings.appId)
-        mainVM = MainViewModel(model: model)
         settings = Settings()
         showMeRelevantAds = !settings.useNonPersonalizedAds
     }

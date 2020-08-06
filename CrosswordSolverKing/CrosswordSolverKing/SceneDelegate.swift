@@ -32,7 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     func windowScene(_ windowScene: UIWindowScene, didUpdate previousCoordinateSpace: UICoordinateSpace, interfaceOrientation previousInterfaceOrientation: UIInterfaceOrientation, traitCollection previousTraitCollection: UITraitCollection) {
         //Post orientation changes so that the adaptive ad banner can resize itself
-        coordinator.mainVM.onOrientationChange(isPortrait: windowScene.interfaceOrientation.isPortrait)
+        coordinator.isPortrait = windowScene.interfaceOrientation.isPortrait
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -64,7 +64,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
 

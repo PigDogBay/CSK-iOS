@@ -29,15 +29,14 @@ class MainViewModel : ObservableObject {
     private var orientationState : OrientationChangeStates = .NoChange
     private var contextDefinitionProvider : DefinitionProviders = .Default
     private var contextDefinitionWord = "crossword"
-    private var wordListName = ""
 
     @Published var screen : MainScreens = .Splash
     @Published var topLeftButton = ""
     @Published var isPortrait = true
     @Published var isDefinitionViewActive = false
     
-    init(model : Model){
-        self.model = model
+    init(coordinator : Coordinator){
+        self.model = coordinator.model
         //The screen state needs to update when appState changes or when query changes from an empty string. So to merge the publishers
         //I will need to transform them to publishers that return the same type.
         let appStatePublisher = model.$appState
@@ -69,13 +68,18 @@ class MainViewModel : ObservableObject {
             .filter{_ in self.model.appState == .searching && self.model.matches.count < MainViewModel.MAX_UPDATES}
             .sink(receiveValue: {_ in self.objectWillChange.send()})
             .store(in: &disposables)
+        
+        coordinator.$isPortrait
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: {value in self.onOrientationChange(isPortrait: value)})
+            .store(in: &disposables)
+
     }
     
     ///Called when the NavigationView disappears the main view
     ///Notes it is NOT called when the app goes into the background
     func onDisappear(){
         isShowing = false
-        model.stopSearch()
     }
     
     ///Called when the NavigationView shows the main view

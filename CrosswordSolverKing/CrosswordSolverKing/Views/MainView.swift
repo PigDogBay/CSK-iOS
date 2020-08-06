@@ -16,7 +16,7 @@ struct MainView: View {
     
     init(coordinator : Coordinator){
         self.coordinator = coordinator
-        self.viewModel = coordinator.mainVM
+        self.viewModel = MainViewModel(coordinator: coordinator)
         //Enable clear button on the text field
         //https://stackoverflow.com/questions/58200555/swiftui-add-clearbutton-to-textfield
         UITextField.appearance().clearButtonMode = .whileEditing
