@@ -10,12 +10,14 @@ import SwiftUI
 import GoogleMobileAds
 
 struct MainView: View {
+    let coordinator : Coordinator
     @ObservedObject private var viewModel : MainViewModel
     @ObservedObject private var euConsent = EUConsent()
     @ObservedObject private var aboutVM = AboutViewModel()
     
-    init(viewModel : MainViewModel){
-        self.viewModel = viewModel
+    init(coordinator : Coordinator){
+        self.coordinator = coordinator
+        self.viewModel = coordinator.mainVM
         //Enable clear button on the text field
         //https://stackoverflow.com/questions/58200555/swiftui-add-clearbutton-to-textfield
         UITextField.appearance().clearButtonMode = .whileEditing
@@ -100,7 +102,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        let vm = MainViewModel(model: Model())
-        return MainView(viewModel: vm)
+        return MainView(coordinator: Coordinator())
     }
 }
