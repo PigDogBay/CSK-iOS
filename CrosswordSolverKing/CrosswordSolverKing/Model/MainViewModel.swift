@@ -27,6 +27,7 @@ class MainViewModel : ObservableObject {
     private var orientationState : OrientationChangeStates = .NoChange
     private var contextDefinitionProvider : DefinitionProviders = .Default
     private var contextDefinitionWord = "crossword"
+    private var wordListName = ""
 
     @Published var screen : MainScreens = .Splash
     @Published var topLeftButton = ""
@@ -69,34 +70,49 @@ class MainViewModel : ObservableObject {
             .store(in: &disposables)
     }
     
+    ///Called when the NavigationView disappears the main view
+    ///Notes it is NOT called when the app goes into the background
     func onDisappear(){
         isShowing = false
         model.stopSearch()
     }
     
+    ///Called when the NavigationView shows the main view
+    ///Note it is NOT called when the app becomes active from the background
     func onAppear(){
         isShowing = true
-        applySettings()
         model.applyFilters()
         applyOrientationChanges()
     }
     
+    ///App life cycle function: called when the app goes into the background
     func onResignActive(){
         model.stopSearch()
     }
+
+    ///App life cycle function: called when the app becomes active again, eg user launches the app or presses back to CSK from system settings
     func onDidBecomeActive(){
-        
+        if wordListName != "" {
+            //check if need to change the word list
+            if wordListName != Settings().wordList {
+                model.appState = .uninitialized
+                model.query = ""
+                model.filters.reset()
+            }
+        }
+        //User may have changed the app settings
+        applySettings()
     }
     
     func splashScreenAppeared(){
         if model.appState == .uninitialized {
-            applySettings()
             model.loadWordList(name: Settings().wordList)
         }
     }
 
     private func applySettings(){
         let settings = Settings()
+        self.wordListName = settings.wordList
         model.wordFormatter.highlightColor = settings.highlight
         model.resultsLimit = settings.resultsLimit
         model.wordSearch.findSubAnagrams = settings.showSubAnagrams
