@@ -24,8 +24,6 @@ class Filters : ObservableObject {
     @Published var moreThan = 0
     @Published var equalTo = 0
     
-    var isSearchRequired = false
-
     var filterCount : Int {
         var count = 0
         if moreThan != 0 { count = count + 1}
@@ -41,11 +39,6 @@ class Filters : ObservableObject {
         if pattern != "" { count = count + 1}
         if regExp != "" { count = count + 1}
         return count
-    }
-    
-    func viewAppear(){
-        //Always perform a new search when the filters have been shown
-        isSearchRequired = true
     }
     
     func reset() {

@@ -103,13 +103,6 @@ class Model : WordListCallback {
             .sink(receiveCompletion: {_ in },  receiveValue: { self.appState = $0})
     }
     
-    func applyFilters(){
-        if filters.isSearchRequired{
-            filters.isSearchRequired = false
-            search(searchQuery: query)
-        }
-    }
-    
     private func searchPublisher(query : String, searchType : SearchType, callback : WordListCallback) -> Future<AppStates, Never> {
         return Future<AppStates, Never> { promise in
             self.scheduler.async {

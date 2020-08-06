@@ -23,7 +23,6 @@ class MainViewModel : ObservableObject {
     private static let MAX_UPDATES = 60
     
     let model : Model
-    let ratings = Ratings(appId: Strings.appId)
     private var disposables = Set<AnyCancellable>()
     private var isShowing = true
     private var orientationState : OrientationChangeStates = .NoChange
@@ -86,10 +85,7 @@ class MainViewModel : ObservableObject {
     ///Note it is NOT called when the app becomes active from the background
     func onAppear(){
         isShowing = true
-        model.applyFilters()
         applyOrientationChanges()
-        //Good time to ask, app may be at start up or the user has just returned from another view
-        ratings.requestRating()
     }
 
     ///Ad banner will need reloading if the orientation changed when the view was not showing

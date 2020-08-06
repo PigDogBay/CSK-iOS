@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct FiltersView: View {
+    @EnvironmentObject var coordinator : Coordinator
     @ObservedObject var filters : Filters
 
     private let numberFilters = ["No filter", "1 letter", "2 letters", "3 letters", "4 letters", "5 letters", "6 letters", "7 letters", "8 letters", "9 letters", "10 letters", "11 letters", "12 letters", "13 letters", "14 letters", "15 letters", "16 letters", "17 letters", "18 letters", "19 letters", "20 letters"]
@@ -58,12 +59,13 @@ struct FiltersView: View {
             prefixSuffixFilters
             expertFilters
             sizeFilters
-        }.onAppear(perform: filters.viewAppear)
-        .navigationBarTitle(Text("Filters"), displayMode: .inline)
-        .navigationBarItems(trailing: Button(action: filters.reset){ Text("Reset")})
-        .gesture(DragGesture().onChanged { _ in
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
-        })
+        }.onAppear{self.coordinator.onAppear(screen: .Filter)}
+            .onDisappear{self.coordinator.onDisappear(screen: .Filter)}
+            .navigationBarTitle(Text("Filters"), displayMode: .inline)
+            .navigationBarItems(trailing: Button(action: filters.reset){ Text("Reset")})
+            .gesture(DragGesture().onChanged { _ in
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
+            })
     }
 }
 

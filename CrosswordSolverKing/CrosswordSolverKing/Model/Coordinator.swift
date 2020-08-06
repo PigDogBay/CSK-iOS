@@ -25,6 +25,7 @@ class Coordinator : ObservableObject {
 
     private var showMePressed = false
     private var showMeExample = ""
+    private var isFilterSearchRequired = false
 
     ///Holds the current word list name, is used to check if a new word list needs to be loaded
     private var wordListName = ""
@@ -77,7 +78,7 @@ class Coordinator : ObservableObject {
         case .About:
             break
         case .Filter:
-            break
+            isFilterSearchRequired = true
         case .Help:
             break
         }
@@ -104,11 +105,17 @@ class Coordinator : ObservableObject {
         }
         settings.useNonPersonalizedAds = !showMeRelevantAds
     }
-    
+   
     private func mainEntered(){
         if showMePressed {
             showMePressed = false
             model.query = showMeExample
+        } else if isFilterSearchRequired {
+            isFilterSearchRequired = false
+            model.search(searchQuery: model.query)
+        } else {
+            //Good time to ask
+            ratings.requestRating()
         }
     }
     
