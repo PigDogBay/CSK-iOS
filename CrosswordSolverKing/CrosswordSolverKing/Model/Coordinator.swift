@@ -71,7 +71,6 @@ class Coordinator : ObservableObject {
     }
 
     func onAppear(screen : AppScreens){
-        print("Screen \(screen)")
         currentScreen = screen
         switch screen {
         case .Splash:
