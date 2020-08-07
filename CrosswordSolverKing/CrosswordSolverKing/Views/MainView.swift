@@ -18,10 +18,6 @@ struct MainView: View {
         UITextField.appearance().clearButtonMode = .whileEditing
     }
     
-    private var statusSection : some View {
-        return Text(viewModel.getStatusText())
-    }
-    
     private var listSection : some View {
         return List {
             ForEach(viewModel.model.matches, id: \.self) {match in
@@ -54,7 +50,7 @@ struct MainView: View {
             if self.viewModel.showTips {
                 TipsView()
             } else {
-                self.statusSection
+                Text(viewModel.status)
                 self.listSection
                 //Triggered from the context menu on a match
                 NavigationLink(destination: DefinitionView(model: self.viewModel.createDefinitionViewModel()), isActive: self.$viewModel.isDefinitionViewActive){EmptyView()}

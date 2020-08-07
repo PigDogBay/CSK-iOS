@@ -6,9 +6,8 @@
 //  Copyright © 2020 Mark Bailey. All rights reserved.
 //
 
-import UIKit
+import SwiftUI
 import Combine
-import SwiftUtils
 
 class MainViewModel : ObservableObject {
     private static let MAX_UPDATES = 60
@@ -21,21 +20,17 @@ class MainViewModel : ObservableObject {
     @Published var showTips = true
     @Published var topLeftButton = ""
     @Published var isDefinitionViewActive = false
+    @Published var status = ""
 
     init(model : Model){
         self.model = model
-        showTips = model.appState == .ready
-        topLeftButton = getTopLeftButtonText(appState: model.appState)
+        onAppState(newState: model.appState)
         
         model.$appState
+            .dropFirst()
             .removeDuplicates()
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue:{appState in self.showTips = self.model.appState == .ready})
-            .store(in: &disposables)
-        
-        model.$appState
-            .receive(on: DispatchQueue.main)
-            .sink(receiveValue: {value in self.topLeftButton = self.getTopLeftButtonText(appState: value)})
+            .sink(receiveValue:{appState in self.onAppState(newState: appState)})
             .store(in: &disposables)
         
         //The view does not observe changes in the model, so need to listen for new matches
@@ -47,31 +42,49 @@ class MainViewModel : ObservableObject {
             .store(in: &disposables)
     }
     
-    func getStatusText() -> String{
-        switch model.appState {
+    private func onAppState(newState : AppStates){
+        switch newState {
         case .uninitialized:
-            return "Loading"
+            topLeftButton = ""
+            showTips = true
+            status = ""
         case .ready:
-            return ""
+            topLeftButton = ""
+            showTips = true
+            status = ""
         case .searching:
-            if model.filters.filterCount > 1 {
-                return "Searching (\(model.filters.filterCount) Filters Active)"
-            }
-            if model.filters.filterCount > 0 {
-                return "Searching (\(model.filters.filterCount) Filter Active)"
-            }
-            return "Searching"
+            topLeftButton = "Stop"
+            showTips = false
+            status = getSearchingStatusText()
         case .finished:
-            if model.query == "" {
-                return ""
-            }
-            if model.filters.filterCount > 0 {
-                return "Matches: \(model.matches.count) Filters: \(model.filters.filterCount)"
-            }
-            return "Matches: \(model.matches.count)"
+            topLeftButton = "Reset"
+            showTips = false
+            status = getFinishedStatusText()
         case .error:
-            return "Restart the app"
+            topLeftButton = ""
+            showTips = false
+            status = "Restart the app"
         }
+    }
+    
+    private func getSearchingStatusText() -> String{
+        if model.filters.filterCount > 1 {
+            return "Searching (\(model.filters.filterCount) Filters Active)"
+        }
+        if model.filters.filterCount > 0 {
+            return "Searching (\(model.filters.filterCount) Filter Active)"
+        }
+        return "Searching"
+    }
+    
+    private func getFinishedStatusText() -> String{
+        if model.query == "" {
+            return ""
+        }
+        if model.filters.filterCount > 0 {
+            return "Matches: \(model.matches.count) Filters: \(model.filters.filterCount)"
+        }
+        return "Matches: \(model.matches.count)"
     }
     
     func contextMenu(word : String, provider : DefinitionProviders){
@@ -82,13 +95,5 @@ class MainViewModel : ObservableObject {
     
     func createDefinitionViewModel() -> DefinitionModel {
         return ContextDefintion(word: contextDefinitionWord, provider: contextDefinitionProvider)
-    }
-    
-    private func getTopLeftButtonText(appState : AppStates) -> String {
-        if appState == .searching {
-            return "Stop"
-        } else {
-            return "Reset"
-        }
     }
 }
