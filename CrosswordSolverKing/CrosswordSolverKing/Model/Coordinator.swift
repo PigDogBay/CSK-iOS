@@ -22,8 +22,6 @@ class Coordinator : ObservableObject {
     @Published var showSplash = true
 
     private var disposables = Set<AnyCancellable>()
-    private var showMePressed = false
-    private var showMeExample = ""
 
     ///Holds the current word list name, is used to check if a new word list needs to be loaded
     private var wordListName = ""
@@ -50,8 +48,8 @@ class Coordinator : ObservableObject {
     }
 
     func showHelpExample(example : String){
-        showMePressed = true
-        showMeExample = example
+        model.reset()
+        model.query = example
     }
 
     ///App life cycle function: called when the app goes into the background
@@ -80,15 +78,9 @@ class Coordinator : ObservableObject {
         model.wordSearch.findSubAnagrams = settings.showSubAnagrams
     }
 
-   
     func mainEntered(){
-        if showMePressed {
-            showMePressed = false
-            model.query = showMeExample
-        } else {
-            //Good time to ask
-            ratings.requestRating()
-        }
+        //Good time to ask
+        ratings.requestRating()
     }
     
     func splashEntered(){
