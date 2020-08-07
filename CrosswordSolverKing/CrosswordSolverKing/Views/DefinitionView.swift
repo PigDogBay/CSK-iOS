@@ -9,10 +9,13 @@
 import SwiftUI
 
 struct DefinitionView: View {
+    @EnvironmentObject var coordinator : Coordinator
     let model : DefinitionModel
     var body: some View {
         SimpleWebView(urlRequest: model.lookupUrl())
             .navigationBarTitle(Text(model.word), displayMode: .inline)
+            .onAppear(perform: {self.coordinator.onAppear(screen: .Definition)})
+            .onDisappear(perform: {self.coordinator.onDisappear(screen: .Definition)})
     }
 }
 

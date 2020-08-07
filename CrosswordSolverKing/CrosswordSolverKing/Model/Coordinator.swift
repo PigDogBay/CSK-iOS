@@ -10,7 +10,7 @@ import Foundation
 import SwiftUtils
 
 enum AppScreens {
-    case Splash, Main, About, Filter, Help
+    case Splash, Main, About, Filter, Help, Definition, DefinitionHelp, EUConsent, FilterHelp
 }
 
 ///Deals with interactions between views and holds shared observed variables
@@ -23,6 +23,7 @@ class Coordinator : ObservableObject {
     @Published var isAdReloadRequired = false
     @Published var isPortrait = true
 
+    private var currentScreen : AppScreens = .Splash
     private var showMePressed = false
     private var showMeExample = ""
     private var isFilterSearchRequired = false
@@ -70,6 +71,8 @@ class Coordinator : ObservableObject {
     }
 
     func onAppear(screen : AppScreens){
+        print("Screen \(screen)")
+        currentScreen = screen
         switch screen {
         case .Splash:
             splashEntered()
@@ -80,6 +83,14 @@ class Coordinator : ObservableObject {
         case .Filter:
             isFilterSearchRequired = true
         case .Help:
+            break
+        case .Definition:
+            break
+        case .DefinitionHelp:
+            break
+        case .EUConsent:
+            break
+        case .FilterHelp:
             break
         }
     }
@@ -95,6 +106,14 @@ class Coordinator : ObservableObject {
         case .Filter:
             break
         case .Help:
+            break
+        case .Definition:
+            break
+        case .DefinitionHelp:
+            break
+        case .EUConsent:
+            break
+        case .FilterHelp:
             break
         }
     }

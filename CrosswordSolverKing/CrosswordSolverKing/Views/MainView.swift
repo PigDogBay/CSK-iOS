@@ -64,8 +64,6 @@ struct MainView: View {
     var body: some View {
         if viewModel.screen == .Splash {
             SplashScreen()
-                .onAppear{self.coordinator.onAppear(screen: .Splash)}
-                .onDisappear{self.coordinator.onDisappear(screen: .Splash)}
         } else {
             NavigationView {
                 GeometryReader { geo in

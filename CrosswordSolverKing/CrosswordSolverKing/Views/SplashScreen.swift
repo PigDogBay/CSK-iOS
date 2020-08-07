@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct SplashScreen: View {
+    @EnvironmentObject var coordinator : Coordinator
     var body: some View {
         VStack {
             Spacer()
@@ -19,8 +20,9 @@ struct SplashScreen: View {
                 .multilineTextAlignment(.center)
                 .font(.footnote)
             .padding(32)
-            
         }
+        .onAppear(perform: {self.coordinator.onAppear(screen: .Splash)})
+        .onDisappear(perform: {self.coordinator.onDisappear(screen: .Splash)})
     }
 }
 

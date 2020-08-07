@@ -27,6 +27,7 @@ struct FilterSectionView: View {
 }
 
 struct FilterHelpView: View {
+    @EnvironmentObject var coordinator : Coordinator
     var body: some View {
         Form {
             HStack {
@@ -48,6 +49,8 @@ struct FilterHelpView: View {
             FilterSectionView(title: "WORD SIZE", description: "Only allow words that are equal to, smaller than or greater than the specified size.\n\nThese filters are useful for anagram searches when you need to find words of a certain length.")
         }
         .navigationBarTitle(Text("Help"), displayMode: .inline)
+        .onAppear(perform: {self.coordinator.onAppear(screen: .FilterHelp)})
+        .onDisappear(perform: {self.coordinator.onDisappear(screen: .FilterHelp)})
     }}
 
 struct FilterHelpView_Previews: PreviewProvider {

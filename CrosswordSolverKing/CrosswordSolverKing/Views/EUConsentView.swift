@@ -10,14 +10,19 @@ import SwiftUI
 
 
 struct EUConsentView: View {
+    @EnvironmentObject var coordinator : Coordinator
     @ObservedObject var euConsent : EUConsent
 
     @ViewBuilder
     var body: some View {
         if euConsent.showAdChoice {
             EUAdChoiceView(euConsent: euConsent)
+                .onAppear(perform: {self.coordinator.onAppear(screen: .EUConsent)})
+                .onDisappear(perform: {self.coordinator.onDisappear(screen: .EUConsent)})
         } else {
             EUAgreeView(euConsent: euConsent)
+                .onAppear(perform: {self.coordinator.onAppear(screen: .EUConsent)})
+                .onDisappear(perform: {self.coordinator.onDisappear(screen: .EUConsent)})
         }
     }
 }
