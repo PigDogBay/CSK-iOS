@@ -16,7 +16,9 @@ struct RootView: View {
         if coordinator.showSplash {
             SplashScreen()
         } else {
-            MainView(coordinator: coordinator)
+            NavigationView {
+                MainView(coordinator: coordinator)
+            }.navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }
