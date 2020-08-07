@@ -49,9 +49,11 @@ struct GADBannerViewController: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ uiViewController: UIViewController, context: Context){
+        print("GAD Update")
         if coordinator.isAdReloadRequired {
             if uiViewController.view.subviews.count>0 {
                 if let bannerView = uiViewController.view.subviews[0] as? GADBannerView {
+                    print("Reloading the ad")
                     bannerView.load(Ads.createRequest())
                 }
             }

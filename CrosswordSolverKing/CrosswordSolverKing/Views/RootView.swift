@@ -7,18 +7,40 @@
 //
 
 import SwiftUI
+import GoogleMobileAds
 
 struct RootView: View {
     @EnvironmentObject var coordinator : Coordinator
-    
+    @ObservedObject private var euConsent = EUConsent()
+
+    private func adSection(gadSize : GADAdSize) -> some View {
+        HStack {
+            Spacer()
+            GADBannerViewController(gadSize: gadSize)
+                .frame(width: gadSize.size.width, height: gadSize.size.height)
+            Spacer()
+        }
+    }
+
     @ViewBuilder
     var body: some View {
         if coordinator.showSplash {
             SplashScreen()
         } else {
-            NavigationView {
-                MainView(coordinator: coordinator)
-            }.navigationViewStyle(StackNavigationViewStyle())
+            GeometryReader { geo in
+                VStack(){
+                    NavigationView {
+                        MainView(coordinator: self.coordinator)
+                    }.navigationViewStyle(StackNavigationViewStyle())
+                    if !self.euConsent.showEUConsent{
+                        if self.coordinator.isPortrait {
+                            self.adSection(gadSize: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(geo.size.width))
+                        } else {
+                            self.adSection(gadSize: GADLandscapeAnchoredAdaptiveBannerAdSizeWithWidth(geo.size.width))
+                        }
+                    }
+                }
+            }
         }
     }
 }

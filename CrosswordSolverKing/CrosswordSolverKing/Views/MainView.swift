@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import GoogleMobileAds
 
 struct MainView: View {
     @ObservedObject private var coordinator : Coordinator
@@ -16,7 +15,7 @@ struct MainView: View {
     
     init(coordinator : Coordinator){
         self.coordinator = coordinator
-        self.viewModel = MainViewModel(coordinator: coordinator)
+        self.viewModel = MainViewModel(model: coordinator.model)
         //Enable clear button on the text field
         //https://stackoverflow.com/questions/58200555/swiftui-add-clearbutton-to-textfield
         UITextField.appearance().clearButtonMode = .whileEditing
@@ -51,44 +50,24 @@ struct MainView: View {
         })
     }
 
-    private func adSection(gadSize : GADAdSize) -> some View {
-        HStack {
-            Spacer()
-            GADBannerViewController(gadSize: gadSize)
-                .frame(width: gadSize.size.width, height: gadSize.size.height)
-            Spacer()
-        }
-    }
-    
     @ViewBuilder
     var body: some View {
-        GeometryReader { geo in
-            VStack(){
-                SearchBarView(model: self.viewModel.model)
-                if self.viewModel.showTips {
-                    TipsView()
-                } else {
-                    self.statusSection
-                    self.listSection
-                    //Triggered from the context menu on a match
-                    NavigationLink(destination: DefinitionView(model: self.viewModel.createDefinitionViewModel()), isActive: self.$viewModel.isDefinitionViewActive){EmptyView()}
-                }
-                if !self.euConsent.showEUConsent{
-                    if self.viewModel.isPortrait {
-                        self.adSection(gadSize: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(geo.size.width))
-                    } else {
-                        self.adSection(gadSize: GADLandscapeAnchoredAdaptiveBannerAdSizeWithWidth(geo.size.width))
-                    }
-                }
+        VStack(){
+            SearchBarView(model: self.viewModel.model)
+            if self.viewModel.showTips {
+                TipsView()
+            } else {
+                self.statusSection
+                self.listSection
+                //Triggered from the context menu on a match
+                NavigationLink(destination: DefinitionView(model: self.viewModel.createDefinitionViewModel()), isActive: self.$viewModel.isDefinitionViewActive){EmptyView()}
             }
         }
         .onAppear{
             self.coordinator.onAppear(screen: .Main)
-            self.viewModel.onAppear()
         }
         .onDisappear{
             self.coordinator.onDisappear(screen: .Main)
-            self.viewModel.onDisappear()
         }
         .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}
         .navigationBarTitle(Text("CSK"), displayMode: .inline)
