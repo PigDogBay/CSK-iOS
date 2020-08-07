@@ -11,7 +11,6 @@ import SwiftUI
 struct MainView: View {
     @ObservedObject private var coordinator : Coordinator
     @ObservedObject private var viewModel : MainViewModel
-    @ObservedObject private var euConsent = EUConsent()
     
     init(coordinator : Coordinator){
         self.coordinator = coordinator
@@ -63,8 +62,6 @@ struct MainView: View {
                 NavigationLink(destination: DefinitionView(model: self.viewModel.createDefinitionViewModel()), isActive: self.$viewModel.isDefinitionViewActive){EmptyView()}
             }
         }
-        .onAppear(perform: self.coordinator.mainEntered)
-        .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}
         .navigationBarTitle(Text("CSK"), displayMode: .inline)
         .navigationBarHidden(false)
         .navigationBarItems(leading: Button(action: viewModel.model.reset){Text(viewModel.topLeftButton)},

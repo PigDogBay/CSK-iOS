@@ -32,6 +32,8 @@ struct RootView: View {
                 VStack(){
                     NavigationView {
                         MainView(coordinator: self.coordinator)
+                            .onAppear(perform: self.coordinator.mainEntered)
+                            .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}
                     }.navigationViewStyle(StackNavigationViewStyle())
                     if !self.euConsent.showEUConsent{
                         if self.coordinator.isPortrait {
