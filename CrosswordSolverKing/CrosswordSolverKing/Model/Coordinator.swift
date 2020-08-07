@@ -21,7 +21,7 @@ class Coordinator : ObservableObject {
     let settings : Settings
 
     @Published var showMeRelevantAds = true
-    @Published var isAdReloadRequired = false
+    var isAdReloadRequired = false
     @Published var isPortrait = true
     @Published var showSplash = true
 
@@ -45,6 +45,13 @@ class Coordinator : ObservableObject {
             .removeDuplicates()
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: {value in self.showSplash = .uninitialized == value})
+            .store(in: &disposables)
+        
+        //Refresh the ad if the user changes the ad prefence
+        $showMeRelevantAds
+            .dropFirst()
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: {value in self.adPreferencesChanged(value: value)})
             .store(in: &disposables)
     }
 
@@ -110,7 +117,7 @@ class Coordinator : ObservableObject {
         case .Main:
             break
         case .About:
-            aboutExited()
+            break
         case .Filter:
             break
         case .Help:
@@ -124,13 +131,6 @@ class Coordinator : ObservableObject {
         case .FilterHelp:
             break
         }
-    }
-    
-    private func aboutExited(){
-        if settings.useNonPersonalizedAds == showMeRelevantAds {
-            isAdReloadRequired = true
-        }
-        settings.useNonPersonalizedAds = !showMeRelevantAds
     }
    
     private func mainEntered(){
@@ -151,4 +151,10 @@ class Coordinator : ObservableObject {
             model.loadWordList(name: Settings().wordList)
         }
     }
+    
+    private func adPreferencesChanged(value : Bool){
+        settings.useNonPersonalizedAds = !value
+        isAdReloadRequired = true
+    }
+    
 }
