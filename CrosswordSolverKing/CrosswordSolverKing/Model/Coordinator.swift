@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUtils
+import Combine
 
 enum AppScreens {
     case Splash, Main, About, Filter, Help, Definition, DefinitionHelp, EUConsent, FilterHelp
@@ -22,7 +23,9 @@ class Coordinator : ObservableObject {
     @Published var showMeRelevantAds = true
     @Published var isAdReloadRequired = false
     @Published var isPortrait = true
+    @Published var showSplash = true
 
+    private var disposables = Set<AnyCancellable>()
     private var currentScreen : AppScreens = .Splash
     private var showMePressed = false
     private var showMeExample = ""
@@ -37,6 +40,12 @@ class Coordinator : ObservableObject {
         ratings = Ratings(appId: Strings.appId)
         settings = Settings()
         showMeRelevantAds = !settings.useNonPersonalizedAds
+        
+        model.$appState
+            .removeDuplicates()
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: {value in self.showSplash = .uninitialized == value})
+            .store(in: &disposables)
     }
 
     func showHelpExample(example : String){

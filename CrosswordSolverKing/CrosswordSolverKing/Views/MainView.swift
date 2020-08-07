@@ -62,45 +62,41 @@ struct MainView: View {
     
     @ViewBuilder
     var body: some View {
-        if viewModel.screen == .Splash {
-            SplashScreen()
-        } else {
-            NavigationView {
-                GeometryReader { geo in
-                    VStack(){
-                        SearchBarView(model: self.viewModel.model)
-                        if self.viewModel.screen == .Tips {
-                            TipsView()
+        NavigationView {
+            GeometryReader { geo in
+                VStack(){
+                    SearchBarView(model: self.viewModel.model)
+                    if self.viewModel.showTips {
+                        TipsView()
+                    } else {
+                        self.statusSection
+                        self.listSection
+                        //Triggered from the context menu on a match
+                        NavigationLink(destination: DefinitionView(model: self.viewModel.createDefinitionViewModel()), isActive: self.$viewModel.isDefinitionViewActive){EmptyView()}
+                    }
+                    if !self.euConsent.showEUConsent{
+                        if self.viewModel.isPortrait {
+                            self.adSection(gadSize: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(geo.size.width))
                         } else {
-                            self.statusSection
-                            self.listSection
-                            //Triggered from the context menu on a match
-                            NavigationLink(destination: DefinitionView(model: self.viewModel.createDefinitionViewModel()), isActive: self.$viewModel.isDefinitionViewActive){EmptyView()}
-                        }
-                        if !self.euConsent.showEUConsent{
-                            if self.viewModel.isPortrait {
-                                self.adSection(gadSize: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(geo.size.width))
-                            } else {
-                                self.adSection(gadSize: GADLandscapeAnchoredAdaptiveBannerAdSizeWithWidth(geo.size.width))
-                            }
+                            self.adSection(gadSize: GADLandscapeAnchoredAdaptiveBannerAdSizeWithWidth(geo.size.width))
                         }
                     }
                 }
-                .onAppear{
-                    self.coordinator.onAppear(screen: .Main)
-                    self.viewModel.onAppear()
-                }
-                .onDisappear{
-                    self.coordinator.onDisappear(screen: .Main)
-                    self.viewModel.onDisappear()
-                }
-                .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}
-                .navigationBarTitle(Text("CSK"), displayMode: .inline)
-                .navigationBarHidden(false)
-                .navigationBarItems(leading: Button(action: viewModel.model.reset){Text(viewModel.topLeftButton)},
-                                    trailing: NavigationLink(destination: FiltersView(filters: viewModel.model.filters)){Text("Filters")})
-            }.navigationViewStyle(StackNavigationViewStyle())
-        }
+            }
+            .onAppear{
+                self.coordinator.onAppear(screen: .Main)
+                self.viewModel.onAppear()
+            }
+            .onDisappear{
+                self.coordinator.onDisappear(screen: .Main)
+                self.viewModel.onDisappear()
+            }
+            .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}
+            .navigationBarTitle(Text("CSK"), displayMode: .inline)
+            .navigationBarHidden(false)
+            .navigationBarItems(leading: Button(action: viewModel.model.reset){Text(viewModel.topLeftButton)},
+                                trailing: NavigationLink(destination: FiltersView(filters: viewModel.model.filters)){Text("Filters")})
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

@@ -134,6 +134,7 @@ class Model : WordListCallback {
             matches.removeAll()
             query = ""
             filters.reset()
+            appState = .ready
         } else {
             stopSearch()
         }

@@ -10,6 +10,7 @@
 		00187E2924DBE92B0021A55E /* sowpods.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00187E2824DBE92B0021A55E /* sowpods.txt */; };
 		00187E2B24DBE9330021A55E /* twl.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00187E2A24DBE9330021A55E /* twl.txt */; };
 		00187E2E24DC36E20021A55E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00187E2D24DC36E20021A55E /* Coordinator.swift */; };
+		001DEBC424DD359D00F3AFAC /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001DEBC324DD359D00F3AFAC /* RootView.swift */; };
 		0021164624C5CA670033F3EB /* TipRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0021164524C5CA670033F3EB /* TipRow.swift */; };
 		0021164824C5CFF50033F3EB /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0021164724C5CFF50033F3EB /* TipsView.swift */; };
 		0021164A24C5D0360033F3EB /* TipsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0021164924C5D0360033F3EB /* TipsData.swift */; };
@@ -102,6 +103,7 @@
 		00187E2824DBE92B0021A55E /* sowpods.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; path = sowpods.txt; sourceTree = "<group>"; };
 		00187E2A24DBE9330021A55E /* twl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; path = twl.txt; sourceTree = "<group>"; };
 		00187E2D24DC36E20021A55E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		001DEBC324DD359D00F3AFAC /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		0021164524C5CA670033F3EB /* TipRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipRow.swift; sourceTree = "<group>"; };
 		0021164724C5CFF50033F3EB /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 		0021164924C5D0360033F3EB /* TipsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsData.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				00F284FE24991065004C9B75 /* FiltersView.swift */,
 				00F284F924991065004C9B75 /* HelpView.swift */,
 				00F284FB24991065004C9B75 /* MainView.swift */,
+				001DEBC324DD359D00F3AFAC /* RootView.swift */,
 				00C7D74924BDC25E00353176 /* SplashScreen.swift */,
 				0021164724C5CFF50033F3EB /* TipsView.swift */,
 			);
@@ -631,6 +634,7 @@
 				00B2029324DB11A8008E8F2C /* DefintionHelpView.swift in Sources */,
 				00F2850C24991065004C9B75 /* AboutView.swift in Sources */,
 				0021164624C5CA670033F3EB /* TipRow.swift in Sources */,
+				001DEBC424DD359D00F3AFAC /* RootView.swift in Sources */,
 				00F2850B24991065004C9B75 /* DefinitionView.swift in Sources */,
 				00532D7E24DACB0900F8141B /* MatchRow.swift in Sources */,
 				00F2BCDB24D083A0006B448D /* Strings.swift in Sources */,
