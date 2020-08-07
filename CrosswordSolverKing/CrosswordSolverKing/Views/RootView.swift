@@ -21,29 +21,32 @@ struct RootView: View {
             Spacer()
         }
     }
-
+    private var contentSection : some View {
+        GeometryReader { geo in
+            VStack(){
+                NavigationView {
+                    MainView(coordinator: self.coordinator)
+                        .onAppear(perform: self.coordinator.mainEntered)
+                }.navigationViewStyle(StackNavigationViewStyle())
+                if !self.euConsent.showEUConsent{
+                    if self.coordinator.isPortrait {
+                        self.adSection(gadSize: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(geo.size.width))
+                    } else {
+                        self.adSection(gadSize: GADLandscapeAnchoredAdaptiveBannerAdSizeWithWidth(geo.size.width))
+                    }
+                }
+            }
+        }
+    }
+    
     @ViewBuilder
     var body: some View {
         if coordinator.showSplash {
             SplashScreen()
                 .onAppear(perform: coordinator.splashEntered)
         } else {
-            GeometryReader { geo in
-                VStack(){
-                    NavigationView {
-                        MainView(coordinator: self.coordinator)
-                            .onAppear(perform: self.coordinator.mainEntered)
-                            .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}
-                    }.navigationViewStyle(StackNavigationViewStyle())
-                    if !self.euConsent.showEUConsent{
-                        if self.coordinator.isPortrait {
-                            self.adSection(gadSize: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(geo.size.width))
-                        } else {
-                            self.adSection(gadSize: GADLandscapeAnchoredAdaptiveBannerAdSizeWithWidth(geo.size.width))
-                        }
-                    }
-                }
-            }
+            contentSection
+                .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}
         }
     }
 }
