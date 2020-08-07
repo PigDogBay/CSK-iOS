@@ -25,7 +25,7 @@ struct RootView: View {
         GeometryReader { geo in
             VStack(){
                 NavigationView {
-                    MainView(coordinator: self.coordinator)
+                    MainView(model: self.coordinator.model)
                         .onAppear(perform: self.coordinator.mainEntered)
                 }.navigationViewStyle(StackNavigationViewStyle())
                 if !self.euConsent.showEUConsent{

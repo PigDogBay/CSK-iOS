@@ -9,12 +9,10 @@
 import SwiftUI
 
 struct MainView: View {
-    @ObservedObject private var coordinator : Coordinator
     @ObservedObject private var viewModel : MainViewModel
     
-    init(coordinator : Coordinator){
-        self.coordinator = coordinator
-        self.viewModel = MainViewModel(model: coordinator.model)
+    init(model : Model){
+        self.viewModel = MainViewModel(model: model)
         //Enable clear button on the text field
         //https://stackoverflow.com/questions/58200555/swiftui-add-clearbutton-to-textfield
         UITextField.appearance().clearButtonMode = .whileEditing
@@ -71,6 +69,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        return MainView(coordinator: Coordinator())
+        return MainView(model : Model())
     }
 }
