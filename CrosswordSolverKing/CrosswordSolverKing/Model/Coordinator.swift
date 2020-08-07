@@ -10,10 +10,6 @@ import Foundation
 import SwiftUtils
 import Combine
 
-enum AppScreens {
-    case Splash, Main, About, Filter, Help, Definition, DefinitionHelp, EUConsent, FilterHelp
-}
-
 ///Deals with interactions between views and holds shared observed variables
 class Coordinator : ObservableObject {
     let model : Model
@@ -26,10 +22,8 @@ class Coordinator : ObservableObject {
     @Published var showSplash = true
 
     private var disposables = Set<AnyCancellable>()
-    private var currentScreen : AppScreens = .Splash
     private var showMePressed = false
     private var showMeExample = ""
-    private var isFilterSearchRequired = false
 
     ///Holds the current word list name, is used to check if a new word list needs to be loaded
     private var wordListName = ""
@@ -86,70 +80,25 @@ class Coordinator : ObservableObject {
         model.wordSearch.findSubAnagrams = settings.showSubAnagrams
     }
 
-    func onAppear(screen : AppScreens){
-        currentScreen = screen
-        switch screen {
-        case .Splash:
-            splashEntered()
-        case .Main:
-            mainEntered()
-        case .About:
-            break
-        case .Filter:
-            isFilterSearchRequired = true
-        case .Help:
-            break
-        case .Definition:
-            break
-        case .DefinitionHelp:
-            break
-        case .EUConsent:
-            break
-        case .FilterHelp:
-            break
-        }
-    }
-    
-    func onDisappear(screen : AppScreens){
-        switch screen {
-        case .Splash:
-            break
-        case .Main:
-            break
-        case .About:
-            break
-        case .Filter:
-            break
-        case .Help:
-            break
-        case .Definition:
-            break
-        case .DefinitionHelp:
-            break
-        case .EUConsent:
-            break
-        case .FilterHelp:
-            break
-        }
-    }
    
-    private func mainEntered(){
+    func mainEntered(){
         if showMePressed {
             showMePressed = false
             model.query = showMeExample
-        } else if isFilterSearchRequired {
-            isFilterSearchRequired = false
-            model.search(searchQuery: model.query)
         } else {
             //Good time to ask
             ratings.requestRating()
         }
     }
     
-    private func splashEntered(){
+    func splashEntered(){
         if model.appState == .uninitialized {
             model.loadWordList(name: Settings().wordList)
         }
+    }
+    
+    func filterExited(){
+        model.search(searchQuery: model.query)
     }
     
     private func adPreferencesChanged(value : Bool){

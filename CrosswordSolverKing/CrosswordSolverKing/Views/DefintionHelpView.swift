@@ -33,7 +33,6 @@ struct HelpSectionView: View {
 }
 
 struct DefintionHelpView: View {
-    @EnvironmentObject var coordinator : Coordinator
     var body: some View {
         Form {
             HStack {
@@ -53,8 +52,6 @@ struct DefintionHelpView: View {
             HelpSectionView(title: "Settings", icon: "gear", description: "Change the default look up website in the settings")
         }
         .navigationBarTitle(Text("Help"), displayMode: .inline)
-        .onAppear(perform: {self.coordinator.onAppear(screen: .DefinitionHelp)})
-        .onDisappear(perform: {self.coordinator.onDisappear(screen: .DefinitionHelp)})
     }
     
 }

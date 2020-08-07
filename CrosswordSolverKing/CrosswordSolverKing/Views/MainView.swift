@@ -63,12 +63,7 @@ struct MainView: View {
                 NavigationLink(destination: DefinitionView(model: self.viewModel.createDefinitionViewModel()), isActive: self.$viewModel.isDefinitionViewActive){EmptyView()}
             }
         }
-        .onAppear{
-            self.coordinator.onAppear(screen: .Main)
-        }
-        .onDisappear{
-            self.coordinator.onDisappear(screen: .Main)
-        }
+        .onAppear(perform: self.coordinator.mainEntered)
         .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}
         .navigationBarTitle(Text("CSK"), displayMode: .inline)
         .navigationBarHidden(false)

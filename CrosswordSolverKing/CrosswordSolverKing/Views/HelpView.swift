@@ -58,10 +58,6 @@ struct HelpView: View {
             }
             .padding()
         }
-        .onAppear{self.coordinator.onAppear(screen: .Help)}
-        .onDisappear{
-            self.coordinator.onDisappear(screen: .Help)
-        }
         .navigationBarTitle(Text("Help"), displayMode: .inline)
     }
 }

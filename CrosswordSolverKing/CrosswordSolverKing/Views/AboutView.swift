@@ -103,8 +103,6 @@ struct AboutView: View {
                 helpOutSection
             }.padding(.top, 16)
         }.navigationBarTitle(Text("About"), displayMode: .inline)
-            .onAppear(perform: {self.coordinator.onAppear(screen: .About)})
-            .onDisappear(perform: {self.coordinator.onDisappear(screen: .About)})
     }
 }
 

@@ -26,6 +26,7 @@ struct RootView: View {
     var body: some View {
         if coordinator.showSplash {
             SplashScreen()
+                .onAppear(perform: coordinator.splashEntered)
         } else {
             GeometryReader { geo in
                 VStack(){

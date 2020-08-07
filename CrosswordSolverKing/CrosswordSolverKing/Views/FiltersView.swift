@@ -59,8 +59,7 @@ struct FiltersView: View {
             prefixSuffixFilters
             expertFilters
             sizeFilters
-        }.onAppear{self.coordinator.onAppear(screen: .Filter)}
-            .onDisappear{self.coordinator.onDisappear(screen: .Filter)}
+        }.onDisappear{self.coordinator.filterExited()}
             .navigationBarTitle(Text("Filters"), displayMode: .inline)
             .navigationBarItems(trailing: Button(action: filters.reset){ Text("Reset")})
             .gesture(DragGesture().onChanged { _ in
