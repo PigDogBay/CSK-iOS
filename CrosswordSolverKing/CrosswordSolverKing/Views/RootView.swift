@@ -26,6 +26,7 @@ struct RootView: View {
             VStack(){
                 NavigationView {
                     MainView(model: self.coordinator.model)
+                        .onDisappear(perform: self.coordinator.mainExited)
                         .onAppear(perform: self.coordinator.mainEntered)
                 }.navigationViewStyle(StackNavigationViewStyle())
                 if !self.euConsent.showEUConsent{

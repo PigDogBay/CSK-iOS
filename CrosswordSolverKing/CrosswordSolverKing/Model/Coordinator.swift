@@ -83,6 +83,10 @@ class Coordinator : ObservableObject {
         ratings.requestRating()
     }
     
+    func mainExited(){
+        model.stopSearch()
+    }
+    
     func splashEntered(){
         if model.appState == .uninitialized {
             model.loadWordList(name: Settings().wordList)
