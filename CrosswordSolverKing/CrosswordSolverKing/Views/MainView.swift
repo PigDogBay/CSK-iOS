@@ -48,10 +48,10 @@ struct MainView: View {
         VStack(){
             SearchBarView(model: self.viewModel.model)
             if self.viewModel.showTips {
-                TipsView()
+                TipsView().animation(.linear).transition(.slide)
             } else {
                 Text(viewModel.status)
-                self.listSection
+                self.listSection.animation(.linear).transition(.slide)
                 //Triggered from the context menu on a match
                 NavigationLink(destination: DefinitionView(model: self.viewModel.createDefinitionViewModel()), isActive: self.$viewModel.isDefinitionViewActive){EmptyView()}
             }
