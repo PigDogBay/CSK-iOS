@@ -22,8 +22,8 @@ enum AppErrors : Error {
 class Model : WordListCallback {
     
     @Published var query = ""
-    @Published var matches : [String] = []
     @Published var appState = AppStates.uninitialized
+    var matches : [String] = []
 
     let wordList = WordList()
     let wordSearch : WordSearch
