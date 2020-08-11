@@ -17,10 +17,13 @@ class Coordinator : ObservableObject {
     let settings : Settings
 
     @Published var showMeRelevantAds = true
-    var isAdReloadRequired = false
     @Published var isPortrait = true
     @Published var showSplash = true
+    @Published var isDefinitionViewActive = false
 
+    var isAdReloadRequired = false
+    private var contextDefinitionProvider : DefinitionProviders = .Default
+    private var contextDefinitionWord = "crossword"
     private var disposables = Set<AnyCancellable>()
 
     ///Holds the current word list name, is used to check if a new word list needs to be loaded
@@ -102,4 +105,13 @@ class Coordinator : ObservableObject {
         isAdReloadRequired = true
     }
     
+    func contextMenu(word : String, provider : DefinitionProviders){
+        self.contextDefinitionWord = word
+        self.contextDefinitionProvider = provider
+        self.isDefinitionViewActive = true
+    }
+    
+    func createDefinitionViewModel() -> DefinitionModel {
+        return ContextDefintion(word: contextDefinitionWord, provider: contextDefinitionProvider)
+    }
 }

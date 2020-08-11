@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var coordinator : Coordinator
     @ObservedObject private var viewModel : MainViewModel
     
     init(model : Model){
@@ -24,16 +25,16 @@ struct MainView: View {
                 NavigationLink(destination: DefinitionView(model: DefaultDefintion(word: match))){
                     MatchRow(match: match, formatter: self.viewModel.model.wordFormatter)
                         .contextMenu{
-                            Button(action: {self.viewModel.contextMenu(word: match, provider: .Collins) }){Text("Collins")}
-                            Button(action: {self.viewModel.contextMenu(word: match, provider: .Dictionary) }){Text("Dictionary.com")}
-                            Button(action: {self.viewModel.contextMenu(word: match, provider: .GoogleDefinition) }){Text("Google Definition")}
-                            Button(action: {self.viewModel.contextMenu(word: match, provider: .Lexico) }){Text("Lexico")}
-                            Button(action: {self.viewModel.contextMenu(word: match, provider: .MerriamWebster) }){Text("Merriam-Webster")}
-                            Button(action: {self.viewModel.contextMenu(word: match, provider: .MWThesaurus) }){Text("M-W Thesaurus")}
-                            Button(action: {self.viewModel.contextMenu(word: match, provider: .Thesaurus) }){Text("Thesaurus.com")}
-                            Button(action: {self.viewModel.contextMenu(word: match, provider: .Wikipedia) }){Text("Wikipedia")}
-                            Button(action: {self.viewModel.contextMenu(word: match, provider: .Wiktionary) }){Text("Wiktionary")}
-                            Button(action: {self.viewModel.contextMenu(word: match, provider: .WordGameDictionary) }){Text("Word Game Dictionary")}
+                            Button(action: {self.coordinator.contextMenu(word: match, provider: .Collins) }){Text("Collins")}
+                            Button(action: {self.coordinator.contextMenu(word: match, provider: .Dictionary) }){Text("Dictionary.com")}
+                            Button(action: {self.coordinator.contextMenu(word: match, provider: .GoogleDefinition) }){Text("Google Definition")}
+                            Button(action: {self.coordinator.contextMenu(word: match, provider: .Lexico) }){Text("Lexico")}
+                            Button(action: {self.coordinator.contextMenu(word: match, provider: .MerriamWebster) }){Text("Merriam-Webster")}
+                            Button(action: {self.coordinator.contextMenu(word: match, provider: .MWThesaurus) }){Text("M-W Thesaurus")}
+                            Button(action: {self.coordinator.contextMenu(word: match, provider: .Thesaurus) }){Text("Thesaurus.com")}
+                            Button(action: {self.coordinator.contextMenu(word: match, provider: .Wikipedia) }){Text("Wikipedia")}
+                            Button(action: {self.coordinator.contextMenu(word: match, provider: .Wiktionary) }){Text("Wiktionary")}
+                            Button(action: {self.coordinator.contextMenu(word: match, provider: .WordGameDictionary) }){Text("Word Game Dictionary")}
                         }
                 }
             }
@@ -53,7 +54,7 @@ struct MainView: View {
                 Text(viewModel.status)
                 self.listSection.animation(.linear).transition(.slide)
                 //Triggered from the context menu on a match
-                NavigationLink(destination: DefinitionView(model: self.viewModel.createDefinitionViewModel()), isActive: self.$viewModel.isDefinitionViewActive){EmptyView()}
+                NavigationLink(destination: DefinitionView(model: self.coordinator.createDefinitionViewModel()), isActive: self.$coordinator.isDefinitionViewActive){EmptyView()}
             }
         }
         .navigationBarTitle(Text("CSK"), displayMode: .inline)

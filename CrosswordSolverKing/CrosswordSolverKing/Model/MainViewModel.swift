@@ -14,12 +14,9 @@ class MainViewModel : ObservableObject {
     
     let model : Model
     private var disposables = Set<AnyCancellable>()
-    private var contextDefinitionProvider : DefinitionProviders = .Default
-    private var contextDefinitionWord = "crossword"
 
     @Published var showTips = true
     @Published var topLeftButton = ""
-    @Published var isDefinitionViewActive = false
     @Published var status = ""
 
     init(model : Model){
@@ -85,15 +82,5 @@ class MainViewModel : ObservableObject {
             return "Matches: \(model.matches.count) Filters: \(model.filters.filterCount)"
         }
         return "Matches: \(model.matches.count)"
-    }
-    
-    func contextMenu(word : String, provider : DefinitionProviders){
-        self.contextDefinitionWord = word
-        self.contextDefinitionProvider = provider
-        self.isDefinitionViewActive = true
-    }
-    
-    func createDefinitionViewModel() -> DefinitionModel {
-        return ContextDefintion(word: contextDefinitionWord, provider: contextDefinitionProvider)
     }
 }
