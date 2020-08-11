@@ -8,6 +8,7 @@
 
 import Foundation
 struct Strings {
+    static let appName = "Crossword Solver King"
     static var version : String {Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String }
     static let appId = "id1503152101"
     static let privacyURL = "https://pigdogbay.blogspot.co.uk/2018/05/privacy-policy.html"

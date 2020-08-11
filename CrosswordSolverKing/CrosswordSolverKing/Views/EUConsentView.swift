@@ -29,7 +29,7 @@ struct EUConsentTitle : View {
             Image("EUConsentIcon")
                 .clipShape(Circle())
                 .shadow(radius: 10)
-            Text("Crossword Solver King")
+            Text(Strings.appName)
                 .font(.title)
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)

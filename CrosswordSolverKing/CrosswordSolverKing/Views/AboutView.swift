@@ -12,11 +12,25 @@ struct AboutView: View {
     
     @EnvironmentObject var coordinator : Coordinator
     @ObservedObject var viewModel = AboutViewModel()
+    
+    private var title : some View {
+        HStack {
+            Image("EUConsentIcon")
+                .resizable()
+                .frame(width: 30, height: 30)
+                .clipShape(Circle())
+                .shadow(radius: 5)
+            Text(Strings.appName)
+                .font(.headline)
+                .multilineTextAlignment(.center)
+            Spacer()
+        }
+
+    }
 
     private var infoSection: some View {
         VStack(alignment: .leading, spacing: 8){
-            Text("INFO")
-                .font(.headline)
+            title
             Text("Version v\(Strings.version)")
                 .font(.body)
             Text(Strings.webAddress)
