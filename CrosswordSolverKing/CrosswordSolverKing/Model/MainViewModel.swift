@@ -26,7 +26,7 @@ class MainViewModel : ObservableObject {
             .dropFirst()
             .removeDuplicates()
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue:{appState in self.onAppState(newState: appState)})
+            .sink(receiveValue:{[weak self] appState in self?.onAppState(newState: appState)})
             .store(in: &disposables)
     }
     
