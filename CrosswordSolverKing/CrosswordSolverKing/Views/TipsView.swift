@@ -27,6 +27,7 @@ struct TipsView: View {
             FeedbackRow()
             RateRow()
             TellFriendRow()
+//            AutomatedTestRow()
         }.gesture(DragGesture().onChanged { _ in
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
         })

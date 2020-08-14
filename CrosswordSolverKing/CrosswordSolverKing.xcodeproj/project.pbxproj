@@ -62,6 +62,7 @@
 		00F2BCD524D07E28006B448D /* RateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2BCD424D07E28006B448D /* RateRow.swift */; };
 		00F2BCD724D07E50006B448D /* TellFriendRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2BCD624D07E50006B448D /* TellFriendRow.swift */; };
 		00F2BCDB24D083A0006B448D /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2BCDA24D083A0006B448D /* Strings.swift */; };
+		00F2C48E24E6DC17004855E4 /* AutomatedTestRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2C48D24E6DC17004855E4 /* AutomatedTestRow.swift */; };
 		00F2F05324E5533200372C9E /* AutoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2F05224E5533200372C9E /* AutoTest.swift */; };
 		00FCDDDA24ADED1B00E4CFD3 /* EUAdChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCDDD924ADED1B00E4CFD3 /* EUAdChoiceView.swift */; };
 		188C7991FCB1ED87CE84FA7D /* Pods_CrosswordSolverKing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 723306CF63335F496D980B5E /* Pods_CrosswordSolverKing.framework */; };
@@ -161,6 +162,7 @@
 		00F2BCD424D07E28006B448D /* RateRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateRow.swift; sourceTree = "<group>"; };
 		00F2BCD624D07E50006B448D /* TellFriendRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellFriendRow.swift; sourceTree = "<group>"; };
 		00F2BCDA24D083A0006B448D /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		00F2C48D24E6DC17004855E4 /* AutomatedTestRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatedTestRow.swift; sourceTree = "<group>"; };
 		00F2F05224E5533200372C9E /* AutoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoTest.swift; sourceTree = "<group>"; };
 		00FCDDD924ADED1B00E4CFD3 /* EUAdChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUAdChoiceView.swift; sourceTree = "<group>"; };
 		0C580F06C4B150EBC842D918 /* Pods_CrosswordSolverKingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CrosswordSolverKingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -308,6 +310,7 @@
 			children = (
 				003F58C424C72EC2002BADC6 /* AboutRow.swift */,
 				0047248F24D1A13A00CAF363 /* ActivityViewController.swift */,
+				00F2C48D24E6DC17004855E4 /* AutomatedTestRow.swift */,
 				00532D8124DB0F5300F8141B /* DefinitionRow.swift */,
 				00F2BCCE24D05F30006B448D /* FeedbackRow.swift */,
 				00F284F724991065004C9B75 /* FilterPicker.swift */,
@@ -618,6 +621,7 @@
 				00F2BCD324D0786A006B448D /* MailView.swift in Sources */,
 				00F284BB24990437004C9B75 /* SceneDelegate.swift in Sources */,
 				0021164A24C5D0360033F3EB /* TipsData.swift in Sources */,
+				00F2C48E24E6DC17004855E4 /* AutomatedTestRow.swift in Sources */,
 				00F2850D24991065004C9B75 /* Filters.swift in Sources */,
 				00F2850E24991065004C9B75 /* Model.swift in Sources */,
 				00A458A724B9C7B900240913 /* DefinitionViewModel.swift in Sources */,

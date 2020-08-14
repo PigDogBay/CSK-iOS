@@ -11,9 +11,17 @@ import Combine
 import SwiftUtils
 
 class AutoTest {
+    private static var instance : AutoTest?
     private let model : Model
     private var disposables = Set<AnyCancellable>()
     private let randomQuery = RandomQuery()
+    
+    static func start(coordinator : Coordinator){
+        if instance == nil {
+            instance = AutoTest(model: coordinator.model)
+            coordinator.model.reset()
+        }
+    }
 
     init(model : Model){
         self.model = model
@@ -27,7 +35,6 @@ class AutoTest {
     }
     
     private func onAppState(newState : AppStates){
-        print("AutoState \(newState)")
         switch newState {
         case .uninitialized:
             break
