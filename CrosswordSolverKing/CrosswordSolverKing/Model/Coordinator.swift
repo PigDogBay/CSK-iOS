@@ -38,8 +38,10 @@ class Coordinator : ObservableObject {
         
         model.$appState
             .removeDuplicates()
+            .map{$0 == .uninitialized}
+            .filter{$0 != self.showSplash}
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue: {value in self.showSplash = .uninitialized == value})
+            .sink(receiveValue: {value in self.showSplash = value})
             .store(in: &disposables)
         
         //Refresh the ad if the user changes the ad prefence
