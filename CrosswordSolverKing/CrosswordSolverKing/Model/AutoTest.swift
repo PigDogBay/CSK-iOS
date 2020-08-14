@@ -8,10 +8,12 @@
 
 import Foundation
 import Combine
+import SwiftUtils
 
 class AutoTest {
     private let model : Model
     private var disposables = Set<AnyCancellable>()
+    private let randomQuery = RandomQuery()
 
     init(model : Model){
         self.model = model
@@ -31,7 +33,7 @@ class AutoTest {
             break
         case .ready:
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self.model.query = "scrabb++"
+                self.model.query = self.randomQuery.query()
             }
         case .searching:
             break
