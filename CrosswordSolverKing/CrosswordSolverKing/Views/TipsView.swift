@@ -9,8 +9,13 @@
 import SwiftUI
 
 struct TipsView: View {
+    @ObservedObject var filters : Filters
+
     var body: some View {
         List {
+            if filters.filterCount>0 {
+                FilterWarningRow(filterCount: filters.filterCount)
+            }
             ForEach(tipsData) { tip in
                 LinkedTipRow(viewModel: HelpViewModel(tip: tip))
             }
@@ -49,6 +54,6 @@ struct LinkedTipRow : View {
 
 struct TipsView_Previews: PreviewProvider {
     static var previews: some View {
-        TipsView().environmentObject(Coordinator())
+        TipsView(filters: Filters()).environmentObject(Coordinator())
     }
 }

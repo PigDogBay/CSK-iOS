@@ -49,7 +49,7 @@ struct MainView: View {
         VStack(){
             SearchBarView(model: self.viewModel.model)
             if self.viewModel.showTips {
-                TipsView().animation(.linear).transition(.slide)
+                TipsView(filters: coordinator.model.filters).animation(.linear).transition(.slide)
             } else {
                 Text(viewModel.status)
                 self.listSection.animation(.linear).transition(.slide)
