@@ -48,7 +48,7 @@ struct DefintionHelpView: View {
             HelpSectionView(title: "Look up", icon: "book", description: "Tap on a result to look up it's defintion on the web.")
             HelpSectionView(title: "Speak", icon: "speaker.3", description: "Tap on the speaker icon for the app to say the word.")
             HelpSectionView(title: "Copy", icon: "doc.on.doc", description: "Tap on the copy icon to copy the word onto the clipboard. You can then paste the word into other apps.")
-            HelpSectionView(title: "Long Press", icon: "hand.point.right", description: "Touch and hold a word to bring up a menu to choose which website to look up the word.")
+            HelpSectionView(title: "Long Press", icon: "hand.point.right", description: "Touch and hold a word to bring up a menu to choose which website to look up the word.\n\nIf you are stuck on a crossword, enter the clue and look it up on the M-W Thesaurus for suggestions.")
             HelpSectionView(title: "Settings", icon: "gear", description: "Change the default look up website in the settings")
         }
         .navigationBarTitle(Text("Help"), displayMode: .inline)
