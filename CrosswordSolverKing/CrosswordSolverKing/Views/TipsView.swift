@@ -14,7 +14,9 @@ struct TipsView: View {
     var body: some View {
         List {
             if filters.filterCount>0 {
-                FilterWarningRow(filterCount: filters.filterCount)
+                NavigationLink(destination: FiltersView(filters: self.filters)){
+                    FilterWarningRow(filterCount: filters.filterCount)
+                }
             }
             ForEach(tipsData) { tip in
                 LinkedTipRow(viewModel: HelpViewModel(tip: tip))
