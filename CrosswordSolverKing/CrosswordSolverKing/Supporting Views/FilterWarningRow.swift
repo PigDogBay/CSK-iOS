@@ -25,7 +25,7 @@ struct FilterWarningRow: View {
                 if filterCount == 1 {
                     Text("You have one filter active").font(.footnote)
                 } else {
-                    Text("\(self.filterCount) filters are active")
+                    Text("\(self.filterCount) filters are active").font(.footnote)
                 }
             }
             Spacer()
