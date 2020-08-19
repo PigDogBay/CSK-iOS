@@ -18,7 +18,7 @@ struct FilterWarningRow: View {
                 .foregroundColor(Color.red)
                 .rotationEffect(.degrees(isJiggling ? -15: 15))
                 //                .scaleEffect(isJiggling ? 0.75 : 1.25)
-                .animation(Animation.linear(duration: 0.2).repeatForever(autoreverses: true))
+                .animation(Animation.easeInOut(duration: 0.2).repeatForever(autoreverses: true))
                 .padding(8)
             VStack(alignment: .leading){
                 Text("Active Filters").font(.title)
