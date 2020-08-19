@@ -834,7 +834,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.00.00;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pigdogbay.CrosswordSolverKing;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pigdogbay.csk;
 				PRODUCT_NAME = "Crossword Solver King";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -857,7 +857,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.00.00;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pigdogbay.CrosswordSolverKing;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pigdogbay.csk;
 				PRODUCT_NAME = "Crossword Solver King";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
