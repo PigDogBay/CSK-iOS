@@ -19,8 +19,8 @@ struct Ads
         requestConfiguration.maxAdContentRating = .matureAudience
         requestConfiguration.testDeviceIdentifiers = [
             (kGADSimulatorID as! String),
-            "1d0dd7e23d31eae8a3e9ad16a8c9b3b4",//iPad
-            "a4b042150b6cace14cc182d6bf254d09"//iPod Touch
+            "0200fa505875358d7e2d07bc993bd27f",//iPad
+            "0ead52ca5eafcbe25f3b929cda2cdbf1"//iPod Touch
            ]
         GADMobileAds.sharedInstance().start(completionHandler: nil)
     }
