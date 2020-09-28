@@ -11,7 +11,6 @@ import GoogleMobileAds
 
 struct RootView: View {
     @EnvironmentObject var coordinator : Coordinator
-    @ObservedObject private var euConsent = EUConsent()
 
     private func adSection(gadSize : GADAdSize) -> some View {
         HStack {
@@ -29,12 +28,10 @@ struct RootView: View {
                         .onDisappear(perform: self.coordinator.mainExited)
                         .onAppear(perform: self.coordinator.mainEntered)
                 }.navigationViewStyle(StackNavigationViewStyle())
-                if !self.euConsent.showEUConsent{
-                    if self.coordinator.isPortrait {
-                        self.adSection(gadSize: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(geo.size.width))
-                    } else {
-                        self.adSection(gadSize: GADLandscapeAnchoredAdaptiveBannerAdSizeWithWidth(geo.size.width))
-                    }
+                if self.coordinator.isPortrait {
+                    self.adSection(gadSize: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(geo.size.width))
+                } else {
+                    self.adSection(gadSize: GADLandscapeAnchoredAdaptiveBannerAdSizeWithWidth(geo.size.width))
                 }
             }
         }
@@ -47,7 +44,6 @@ struct RootView: View {
                 .onAppear(perform: coordinator.splashEntered)
         } else {
             contentSection
-                .sheet(isPresented: self.$euConsent.showEUConsent){EUConsentView(euConsent: self.euConsent)}
         }
     }
 }
