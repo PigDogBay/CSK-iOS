@@ -43,11 +43,11 @@ class Coordinator : ObservableObject {
             .sink(receiveValue: {value in self.showSplash = value})
             .store(in: &disposables)
         
-        //Refresh the ad if the user changes the ad prefence
+        //Save user ad preference
         $showMeRelevantAds
             .dropFirst()
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue: {value in self.adPreferencesChanged(value: value)})
+            .sink(receiveValue: {value in self.settings.useNonPersonalizedAds = !value})
             .store(in: &disposables)
     }
 
@@ -99,10 +99,6 @@ class Coordinator : ObservableObject {
     
     func filterExited(){
         model.search(searchQuery: model.query)
-    }
-    
-    private func adPreferencesChanged(value : Bool){
-        settings.useNonPersonalizedAds = !value
     }
     
     func contextMenu(word : String, provider : DefinitionProviders){
