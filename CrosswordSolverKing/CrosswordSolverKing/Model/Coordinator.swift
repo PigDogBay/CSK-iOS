@@ -21,7 +21,6 @@ class Coordinator : ObservableObject {
     @Published var showSplash = true
     @Published var isDefinitionViewActive = false
 
-    var isAdReloadRequired = false
     private var contextDefinitionProvider : DefinitionProviders = .Default
     private var contextDefinitionWord = "crossword"
     private var disposables = Set<AnyCancellable>()
@@ -104,7 +103,6 @@ class Coordinator : ObservableObject {
     
     private func adPreferencesChanged(value : Bool){
         settings.useNonPersonalizedAds = !value
-        isAdReloadRequired = true
     }
     
     func contextMenu(word : String, provider : DefinitionProviders){
