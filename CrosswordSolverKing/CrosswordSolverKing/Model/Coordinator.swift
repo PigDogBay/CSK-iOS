@@ -52,7 +52,6 @@ class Coordinator : ObservableObject {
     }
 
     func showHelpExample(example : String){
-        model.reset()
         model.query = example
     }
 
