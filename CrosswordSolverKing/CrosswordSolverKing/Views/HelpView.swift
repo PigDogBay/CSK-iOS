@@ -41,7 +41,7 @@ struct HelpView: View {
                     Spacer()
                     Button(action: {self.viewModel.showMe(coordinator: self.coordinator)}){
                         Text("Show Me")
-                    }
+                    }.buttonStyle(BorderlessButtonStyle())
                 }
             }
             .padding(8)
