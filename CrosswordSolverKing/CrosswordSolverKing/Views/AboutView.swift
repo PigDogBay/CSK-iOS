@@ -39,7 +39,8 @@ struct AboutView: View {
                 Text(Strings.emailAddress)
                     .font(.body)
                     .underline()
-            }
+            }.buttonStyle(BorderlessButtonStyle())
+
             Text("©MPD Bailey Technology 2020")
                 .font(.body)
         }
@@ -61,7 +62,7 @@ struct AboutView: View {
                 Button(action: viewModel.showPrivacyPolicy){
                     Text("PRIVACY POLICY")
                         .modifier(AboutButtonMod())
-                }
+                }.buttonStyle(BorderlessButtonStyle())
             }
         }
     }
@@ -78,7 +79,7 @@ struct AboutView: View {
                 Button(action: viewModel.showGooglePrivacyPolicy){
                     Text("FIND OUT MORE")
                         .modifier(AboutButtonMod())
-                }
+                }.buttonStyle(BorderlessButtonStyle())
             }
             Text("This app will use your data to tailor ads to you. Our partners will collect data and use an unique identifier on your device to show you ads. You select here if we can continue to use your data to tailor ads for you.")
                 .font(.body)
@@ -102,7 +103,8 @@ struct AboutView: View {
                 Button(action: viewModel.rate){
                     Text("RATE")
                         .modifier(AboutButtonMod())
-                }.padding(.leading, 16)
+                }.buttonStyle(BorderlessButtonStyle())
+                .padding(.leading, 16)
             }
         }
     }
