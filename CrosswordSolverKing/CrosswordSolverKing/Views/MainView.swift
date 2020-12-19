@@ -52,7 +52,7 @@ struct MainView: View {
                 TipsView(filters: coordinator.model.filters).animation(.linear).transition(.slide)
             } else {
                 Text(viewModel.status)
-                self.listSection.animation(.linear).transition(.slide)
+                self.listSection
                 //Triggered from the context menu on a match
                 NavigationLink(destination: DefinitionView(model: self.coordinator.createDefinitionViewModel()), isActive: self.$coordinator.isDefinitionViewActive){EmptyView()}
             }
