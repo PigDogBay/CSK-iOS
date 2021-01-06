@@ -65,15 +65,25 @@
 		<dict>
 			<key>Titles</key>
 			<array>
-				<string>180k words - TWL (US Scrabble)</string>
-				<string>270k words - SOWPODS (World Scrabble)</string>
-				<string>310k words - SCOWL</string>
+				<string>US Scrabble (180k words)</string>
+				<string>World Scrabble (270k words)</string>
+				<string>English (310k words)</string>
+                <string>Deutsch (200k wörter)</string>
+                <string>Español (380k palabras)</string>
+                <string>Français (270k mots)</string>
+                <string>Italiano (250k parole)</string>
+                <string>Português (210k palavras)</string>
 			</array>
 			<key>Values</key>
 			<array>
 				<string>twl</string>
 				<string>sowpods</string>
 				<string>words</string>
+                <string>wordlist-de</string>
+                <string>wordlist-es</string>
+                <string>wordlist-fr</string>
+                <string>wordlist-it</string>
+                <string>wordlist-pt</string>
 			</array>
 			<key>Type</key>
 			<string>PSMultiValueSpecifier</string>

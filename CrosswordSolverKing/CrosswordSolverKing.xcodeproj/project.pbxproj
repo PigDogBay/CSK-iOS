@@ -31,6 +31,11 @@
 		00532D7E24DACB0900F8141B /* MatchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00532D7D24DACB0900F8141B /* MatchRow.swift */; };
 		00532D8224DB0F5300F8141B /* DefinitionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00532D8124DB0F5300F8141B /* DefinitionRow.swift */; };
 		005D83BD24B8925E00EA5FFD /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 005D83BC24B8925E00EA5FFD /* words.txt */; };
+		008D827C25A5D9DF001A6782 /* wordlist-de.txt in Resources */ = {isa = PBXBuildFile; fileRef = 008D827B25A5D9DF001A6782 /* wordlist-de.txt */; };
+		008D828325A5D9EB001A6782 /* wordlist-es.txt in Resources */ = {isa = PBXBuildFile; fileRef = 008D827F25A5D9EB001A6782 /* wordlist-es.txt */; };
+		008D828425A5D9EB001A6782 /* wordlist-pt.txt in Resources */ = {isa = PBXBuildFile; fileRef = 008D828025A5D9EB001A6782 /* wordlist-pt.txt */; };
+		008D828525A5D9EB001A6782 /* wordlist-fr.txt in Resources */ = {isa = PBXBuildFile; fileRef = 008D828125A5D9EB001A6782 /* wordlist-fr.txt */; };
+		008D828625A5D9EB001A6782 /* wordlist-it.txt in Resources */ = {isa = PBXBuildFile; fileRef = 008D828225A5D9EB001A6782 /* wordlist-it.txt */; };
 		00A458A724B9C7B900240913 /* DefinitionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A458A624B9C7B900240913 /* DefinitionViewModel.swift */; };
 		00B2029324DB11A8008E8F2C /* DefintionHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B2029224DB11A8008E8F2C /* DefintionHelpView.swift */; };
 		00C3585024A0EEF800D09C75 /* GADBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */; };
@@ -127,6 +132,11 @@
 		00532D7D24DACB0900F8141B /* MatchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRow.swift; sourceTree = "<group>"; };
 		00532D8124DB0F5300F8141B /* DefinitionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionRow.swift; sourceTree = "<group>"; };
 		005D83BC24B8925E00EA5FFD /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; path = words.txt; sourceTree = "<group>"; };
+		008D827B25A5D9DF001A6782 /* wordlist-de.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "wordlist-de.txt"; sourceTree = "<group>"; };
+		008D827F25A5D9EB001A6782 /* wordlist-es.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "wordlist-es.txt"; sourceTree = "<group>"; };
+		008D828025A5D9EB001A6782 /* wordlist-pt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "wordlist-pt.txt"; sourceTree = "<group>"; };
+		008D828125A5D9EB001A6782 /* wordlist-fr.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "wordlist-fr.txt"; sourceTree = "<group>"; };
+		008D828225A5D9EB001A6782 /* wordlist-it.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "wordlist-it.txt"; sourceTree = "<group>"; };
 		00A458A624B9C7B900240913 /* DefinitionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionViewModel.swift; sourceTree = "<group>"; };
 		00B2029224DB11A8008E8F2C /* DefintionHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefintionHelpView.swift; sourceTree = "<group>"; };
 		00C3584F24A0EEF800D09C75 /* GADBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADBannerViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +249,11 @@
 				00187E2824DBE92B0021A55E /* sowpods.txt */,
 				00187E2A24DBE9330021A55E /* twl.txt */,
 				005D83BC24B8925E00EA5FFD /* words.txt */,
+				008D827B25A5D9DF001A6782 /* wordlist-de.txt */,
+				008D827F25A5D9EB001A6782 /* wordlist-es.txt */,
+				008D828125A5D9EB001A6782 /* wordlist-fr.txt */,
+				008D828225A5D9EB001A6782 /* wordlist-it.txt */,
+				008D828025A5D9EB001A6782 /* wordlist-pt.txt */,
 				00469B5724B736BA000DBAF4 /* Settings.bundle */,
 				00F284B824990437004C9B75 /* AppDelegate.swift */,
 				00F284BA24990437004C9B75 /* SceneDelegate.swift */,
@@ -478,11 +493,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				008D828425A5D9EB001A6782 /* wordlist-pt.txt in Resources */,
+				008D827C25A5D9DF001A6782 /* wordlist-de.txt in Resources */,
 				00469B5824B736BA000DBAF4 /* Settings.bundle in Resources */,
 				00F284C524990438004C9B75 /* LaunchScreen.storyboard in Resources */,
 				00F284C224990438004C9B75 /* Preview Assets.xcassets in Resources */,
 				00187E2924DBE92B0021A55E /* sowpods.txt in Resources */,
+				008D828525A5D9EB001A6782 /* wordlist-fr.txt in Resources */,
 				00187E2B24DBE9330021A55E /* twl.txt in Resources */,
+				008D828625A5D9EB001A6782 /* wordlist-it.txt in Resources */,
+				008D828325A5D9EB001A6782 /* wordlist-es.txt in Resources */,
 				005D83BD24B8925E00EA5FFD /* words.txt in Resources */,
 				00F284BF24990438004C9B75 /* Assets.xcassets in Resources */,
 				003F58BF24C6EBAD002BADC6 /* tips.json in Resources */,
