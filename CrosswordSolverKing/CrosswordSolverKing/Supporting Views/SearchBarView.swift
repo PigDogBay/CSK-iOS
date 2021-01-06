@@ -24,7 +24,7 @@ struct SearchBarView : View {
             .padding()
             .font(.system(.title, design: .monospaced))
             .frame(height: 60)
-            .keyboardType(.emailAddress)
+            .keyboardType(.webSearch)
             .disableAutocorrection(true)
             .autocapitalization(.none)
             .textFieldStyle(RoundedBorderTextFieldStyle())
