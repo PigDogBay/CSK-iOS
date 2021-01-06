@@ -2588,6 +2588,7 @@ interpretableness
 interprofessional
 interramification
 interrelationship
+intersectionality
 interstimulations
 intersubjectively
 intersubjectivity
@@ -21494,6 +21495,7 @@ supersensitive
 supersexuality
 supersonically
 superspectacle
+superspreaders
 superstimulate
 superstrengths
 superstructing
@@ -26710,6 +26712,7 @@ domiciliation
 domineeringly
 donalsonville
 donnishnesses
+doomscrolling
 doomwatchings
 doorsteppings
 doppelgangers
@@ -30621,6 +30624,7 @@ microphyllous
 microphysical
 micropipettes
 microplankton
+microplastics
 microporosity
 microprinting
 microprograms
@@ -36035,6 +36039,7 @@ supersensible
 supersensibly
 supersessions
 superspecials
+superspreader
 superstardoms
 superstations
 superstitions
@@ -42797,6 +42802,7 @@ delinquently
 deliquescent
 deliquescing
 delitescence
+deliverables
 deliverances
 delocalising
 delocalizing
@@ -48625,6 +48631,7 @@ kickstarting
 kiddiewinkie
 killikinicks
 kilocalories
+kilocoulombs
 kilometrical
 kinaestheses
 kinaesthesia
@@ -50475,6 +50482,7 @@ musicologist
 muskellunges
 mussitations
 mustermaster
+muswellbrook
 mutabilities
 mutagenicity
 mutagenising
@@ -52820,6 +52828,7 @@ phosphorizes
 phosphoruses
 photoactinic
 photobiology
+photobombing
 photocathode
 photochemist
 photochromic
@@ -61686,6 +61695,7 @@ anthracitic
 anthracnose
 anthracoses
 anthracosis
+anthropause
 anthropical
 anthropoids
 antialcohol
@@ -63426,6 +63436,7 @@ bloatedness
 blockboards
 blockbusted
 blockbuster
+blockchains
 blockheaded
 blockhouses
 blokishness
@@ -66161,6 +66172,7 @@ consummator
 consumption
 consumptive
 contactable
+contactless
 containable
 containment
 contaminant
@@ -67394,7 +67406,6 @@ deification
 deinonychus
 deinotheres
 deistically
-dekagrammes
 delaminated
 delaminates
 delassement
@@ -71664,10 +71675,12 @@ gibbousness
 gibsonville
 giddinesses
 giftwrapped
+gigagrammes
 gigahertzes
 gigantesque
 giganticide
 gigantology
+gigapascals
 gigmanities
 gilliflower
 gillnetters
@@ -72456,6 +72469,7 @@ hatchettite
 hatefulness
 hatemongers
 hatlessness
+hattiesburg
 hattieville
 haubergeons
 haughtiness
@@ -73162,6 +73176,7 @@ housewifery
 houseworker
 houstonians
 houstonites
+hoverboards
 hovercrafts
 hovertrains
 howardstown
@@ -74367,6 +74382,7 @@ inspissated
 inspissates
 inspissator
 instability
+installable
 installants
 installment
 instalments
@@ -75176,9 +75192,11 @@ kilimanjaro
 killifishes
 killikinick
 kilocalorie
+kilocoulomb
 kilogausses
 kilogrammes
 kilohertzes
+kilonewtons
 kiloparsecs
 kilopascals
 kimberlites
@@ -76428,6 +76446,7 @@ martyrizing
 martyrology
 marvelously
 marxianisms
+maryborough
 maryknoller
 marylanders
 maryolaters
@@ -76606,6 +76625,7 @@ mefloquines
 megacephaly
 megagametes
 megagausses
+megagrammes
 megahertzes
 megaloblast
 megalomania
@@ -76614,6 +76634,7 @@ megalopolis
 megalosaurs
 meganewtons
 megaparsecs
+megapascals
 megaphoning
 megapolises
 megaproject
@@ -76937,6 +76958,7 @@ microfloras
 microfossil
 microfungus
 microgamete
+microgramme
 micrographs
 micrography
 microgroove
@@ -81022,6 +81044,7 @@ photoactive
 photoagings
 photobathic
 photobiotic
+photobombed
 photochromy
 photocopied
 photocopier
@@ -81735,6 +81758,7 @@ portakabins
 portamentos
 porteresses
 porterhouse
+porterville
 portionable
 portionists
 portionless
@@ -89041,6 +89065,8 @@ transmuters
 transmuting
 transpadane
 transparent
+transphobia
+transphobic
 transpierce
 transpiring
 transplants
@@ -91181,6 +91207,7 @@ warrantless
 warrantying
 warrensburg
 warrenville
+warrnambool
 washability
 washaterias
 washerwoman
@@ -91728,6 +91755,7 @@ zelophobias
 zelophobics
 zemindaries
 zeolitiform
+zephyrhills
 zeptosecond
 zestfulness
 zeuglodonts
@@ -91754,6 +91782,7 @@ zoographers
 zoographies
 zoographist
 zoomagnetic
+zoombombing
 zoometrical
 zoomorphies
 zoomorphism
@@ -94359,6 +94388,7 @@ bailieship
 bailiwicks
 bailliages
 bairnliest
+bairnsdale
 baisemains
 baitfishes
 bakeapples
@@ -94882,6 +94912,7 @@ belleville
 bellflower
 bellhanger
 bellibones
+bellingham
 bellinzona
 bellocking
 bellpushes
@@ -95170,6 +95201,7 @@ bimetallic
 bimodality
 binational
 binaurally
+binghamton
 binoculars
 binomially
 binominals
@@ -95442,6 +95474,7 @@ blockaders
 blockading
 blockboard
 blockbusts
+blockchain
 blockheads
 blockholes
 blockhouse
@@ -96723,6 +96756,7 @@ carbonaras
 carbonated
 carbonates
 carbonator
+carbondale
 carbonette
 carbonised
 carboniser
@@ -99143,6 +99177,7 @@ cooperator
 cooperings
 cooptation
 cooptative
+cooranbong
 coordinate
 copacabana
 coparcener
@@ -100532,7 +100567,6 @@ deionizers
 deionizing
 dejectedly
 dejections
-dekagramme
 dekaliters
 dekalitres
 dekalogies
@@ -102642,6 +102676,7 @@ elbowchair
 elbowrooms
 elderberry
 eldercares
+eldersburg
 elderships
 eleaticism
 elecampane
@@ -104316,6 +104351,7 @@ farinosely
 farlington
 farmerette
 farmhouses
+farmington
 farmsteads
 farmworker
 farnarkels
@@ -106031,8 +106067,12 @@ gibraltars
 gibsonburg
 giftedness
 gigacycles
+gigagramme
 gigajoules
+gigameters
+gigametres
 gigantisms
+gigapascal
 gigapixels
 gigglesome
 gigglingly
@@ -108048,6 +108088,7 @@ houstonian
 houstonias
 houstonite
 houyhnhnms
+hoverboard
 hovercraft
 hoverflies
 hoveringly
@@ -110346,6 +110387,7 @@ kilolitres
 kilometers
 kilometres
 kilometric
+kilonewton
 kiloparsec
 kilopascal
 kimballton
@@ -112257,13 +112299,17 @@ megafaunas
 megaflorae
 megafloras
 megagamete
+megagramme
 megajoules
 megalithic
 megalitres
 megalopses
 megalosaur
+megameters
+megametres
 meganewton
 megaparsec
+megapascal
 megaphoned
 megaphones
 megaphonic
@@ -112714,6 +112760,7 @@ middlebrow
 middleburg
 middlemost
 middleport
+middletown
 middlingly
 mideastern
 midfielder
@@ -113595,6 +113642,7 @@ morphogens
 morphogeny
 morphology
 morrisdale
+morristown
 morselling
 mortadella
 mortalised
@@ -114315,6 +114363,7 @@ neutralize
 neutrettos
 neutrophil
 neverminds
+newborough
 newfangled
 newishness
 newmarkets
@@ -117431,6 +117480,7 @@ pesthouses
 pesticidal
 pesticides
 pestilence
+petajoules
 petalodies
 petaurists
 petcharies
@@ -117645,6 +117695,7 @@ phosphoryl
 phosphuret
 photically
 photoaging
+photobombs
 photocells
 photodiode
 photodrama
@@ -117959,6 +118010,7 @@ pitchwomen
 pitifuller
 pitilessly
 pittsburgh
+pittsfield
 pittsville
 pituitrins
 pityriases
@@ -120030,6 +120082,7 @@ quatrefoil
 quaveriest
 quaverings
 queachiest
+queanbeyan
 queasiness
 quebeckers
 quebrachos
@@ -123569,6 +123622,7 @@ shemozzles
 shenandoah
 shenanigan
 shepherded
+shepparton
 sherardise
 sherardize
 sherbrooke
@@ -127239,6 +127293,7 @@ tephigrams
 tephroites
 tepidarium
 tepidities
+terajoules
 terapixels
 teratogens
 teratogeny
@@ -128726,6 +128781,7 @@ ultravacua
 ultravirus
 ultroneous
 ululations
+ulverstone
 umbellated
 umbellifer
 umbellules
@@ -130878,6 +130934,7 @@ wanderjahr
 wanderlust
 wanderyear
 wandsworth
+wangaratta
 wanrestful
 wanthriven
 wantonised
@@ -134101,6 +134158,7 @@ asepalous
 asexually
 asgardian
 ashamedly
+asheville
 ashkenazi
 ashkenazy
 ashkhabad
@@ -136494,6 +136552,7 @@ boltholes
 boltonias
 boltropes
 boltzmann
+bomaderry
 bombarded
 bombarder
 bombardes
@@ -137278,6 +137337,7 @@ bumsucker
 bunchiest
 bunchings
 buncombes
+bundaberg
 bundesrat
 bundestag
 bundlings
@@ -137365,6 +137425,7 @@ bushwhack
 bushwoman
 bushwomen
 businessy
+busselton
 busticate
 bustiness
 bustlines
@@ -139256,6 +139317,7 @@ cirripeds
 cisalpine
 ciseleurs
 ciselures
+cisgender
 ciskeians
 cispadane
 cisplatin
@@ -139449,6 +139511,7 @@ cleverish
 clewiston
 clianthus
 clickable
+clickbait
 clicketed
 clickings
 clickless
@@ -139987,7 +140050,6 @@ colostomy
 colostral
 colostric
 colostrum
-colourado
 colourant
 coloureds
 colourers
@@ -142085,6 +142147,7 @@ deejaying
 deemsters
 deepeners
 deepening
+deepfakes
 deepfroze
 deepwater
 deerberry
@@ -145802,6 +145865,7 @@ exactions
 exactment
 exactness
 exactress
+exajoules
 exaltedly
 examinant
 examinate
@@ -146857,6 +146921,7 @@ fistnotes
 fistulate
 fistulose
 fistulous
+fitchburg
 fitnesses
 fittingly
 fittstown
@@ -148444,6 +148509,7 @@ geotactic
 geotherms
 geotropic
 geraldine
+geraldton
 geranials
 geraniols
 geraniums
@@ -148530,8 +148596,11 @@ giftwraps
 gigabytes
 gigacycle
 gigaflops
+gigagrams
 gigahertz
 gigajoule
+gigameter
+gigametre
 gigantean
 gigantism
 gigapixel
@@ -149144,6 +149213,7 @@ graylings
 graymails
 graysbies
 grayscale
+grayslake
 grayville
 graywacke
 graywater
@@ -150582,6 +150652,7 @@ hitlerian
 hitlerism
 hitlerite
 hitterdal
+hiveminds
 hivewards
 hizbollah
 hizbullah
@@ -151880,6 +151951,7 @@ influents
 influenza
 influxion
 infobahns
+infodemic
 infolders
 infolding
 infomania
@@ -152855,6 +152927,7 @@ johnathan
 johnathon
 johnboats
 johnsburg
+johnstown
 joineries
 jointedly
 jointings
@@ -154450,6 +154523,7 @@ livelongs
 liveloods
 liverleaf
 liverless
+livermore
 liverpool
 liverwort
 liveryman
@@ -154824,6 +154898,7 @@ lymeswold
 lymington
 lymphatic
 lymphomas
+lynchburg
 lynchings
 lynchpins
 lyndhurst
@@ -155723,11 +155798,14 @@ megafauna
 megaflops
 megaflora
 megagauss
+megagrams
 megahertz
 megajoule
 megaliths
 megalitre
 megalopic
+megameter
+megametre
 megaphone
 megaphyll
 megapixel
@@ -156669,6 +156747,7 @@ mitomycin
 mitraille
 mitrewort
 mitriform
+mittagong
 mixedness
 mixmaster
 mixtecans
@@ -156986,6 +157065,7 @@ moorcroft
 mooreland
 moorfowls
 moorlands
+mooroopna
 moorworts
 moosebird
 moosewood
@@ -161202,6 +161282,7 @@ pestilent
 pestology
 petabytes
 petahertz
+petajoule
 petalages
 petalisms
 petallike
@@ -161211,6 +161292,7 @@ petasoses
 petasuses
 petaurine
 petaurist
+petawatts
 petechiae
 petechial
 peterboro
@@ -161400,6 +161482,7 @@ phosphore
 phosphori
 phosphors
 photinias
+photobomb
 photocell
 photocopy
 photofits
@@ -161820,6 +161903,7 @@ planarity
 planation
 planchets
 planching
+plandemic
 planeload
 planeness
 planeside
@@ -172543,6 +172627,7 @@ terabytes
 teraflops
 teraglins
 terahertz
+terajoule
 terakihis
 teraphims
 terapixel
@@ -173552,6 +173637,7 @@ trappists
 traprocks
 trapstick
 trapuntos
+traralgon
 trashcans
 trashiest
 trashtrie
@@ -174179,6 +174265,7 @@ twighting
 twilights
 twillings
 twinberry
+twindemic
 twingeing
 twiningly
 twinklers
@@ -174276,6 +174363,7 @@ ulcerated
 ulcerates
 uliginose
 uliginous
+ulladulla
 ullswater
 ulmaceous
 ulotrichy
@@ -176768,6 +176856,7 @@ waterport
 watershed
 waterside
 waterskis
+watertown
 waterview
 waterways
 waterweed
@@ -177465,6 +177554,7 @@ wordplays
 wordpress
 wordsmith
 workadays
+workation
 workbench
 workboats
 workbooks
@@ -178957,6 +179047,7 @@ allusive
 alluvial
 alluvion
 alluvium
+allyship
 almagest
 almanack
 almanacs
@@ -179883,6 +179974,7 @@ armenoid
 armgaunt
 armguard
 armholes
+armidale
 armigero
 armigers
 armillae
@@ -182348,6 +182440,7 @@ blurbist
 blurrier
 blurrily
 blurring
+blursday
 blurters
 blurting
 blushers
@@ -186891,6 +186984,7 @@ coveters
 coveting
 covetise
 covetous
+covidiot
 covinous
 cowarded
 cowardly
@@ -188129,6 +188223,7 @@ deejayed
 deemster
 deepened
 deepener
+deepfake
 deepfelt
 deepmost
 deepness
@@ -191632,6 +191727,7 @@ exacting
 exaction
 exactors
 exahertz
+exajoule
 exalters
 exalting
 examined
@@ -194449,6 +194545,7 @@ giftwrap
 gigabits
 gigabyte
 gigaflop
+gigagram
 gigantes
 gigantic
 gigatons
@@ -194975,6 +195072,7 @@ gothites
 gouaches
 gougeres
 goujeers
+goulburn
 gouramis
 gourdier
 gourmand
@@ -195334,6 +195432,7 @@ growlery
 growlier
 growling
 grownups
+groyning
 grubbers
 grubbier
 grubbily
@@ -196650,6 +196749,7 @@ hittable
 hittites
 hiveless
 hivelike
+hivemind
 hiveward
 hiwassee
 hizzoner
@@ -198419,6 +198519,7 @@ jainists
 jakfruit
 jalapeno
 jalapins
+jalfrezi
 jalopies
 jaloused
 jalouses
@@ -198848,6 +198949,7 @@ kanarese
 kanazawa
 kandahar
 kangaroo
+kankakee
 kanorado
 kantelas
 kanteles
@@ -198875,6 +198977,7 @@ karlsbad
 karlstad
 karoshis
 karosses
+karratha
 karstify
 karthaus
 kartings
@@ -199140,6 +199243,7 @@ kinesics
 kinetics
 kinetins
 kinfolks
+kingaroy
 kingbird
 kingbolt
 kingcups
@@ -201870,6 +201974,7 @@ megadose
 megadyne
 megaflop
 megafogs
+megagram
 megahits
 megalith
 megalops
@@ -202632,6 +202737,7 @@ missions
 missises
 missives
 missorts
+missoula
 missound
 missouri
 missouts
@@ -203076,6 +203182,7 @@ moriarty
 moribund
 moriches
 moriscos
+morisset
 morlings
 mormaors
 mornings
@@ -203422,6 +203529,7 @@ musicked
 musicker
 musimons
 musingly
+muskegon
 musketry
 muskiest
 muskogee
@@ -207005,6 +207113,7 @@ petalous
 petaluma
 petanque
 petaries
+petawatt
 petchary
 petcocks
 petechia
@@ -215263,6 +215372,7 @@ soberize
 sobranje
 sobriety
 socagers
+socastee
 soccages
 sociable
 sociably
@@ -216337,6 +216447,7 @@ statvolt
 staubach
 staumrel
 stauning
+staunton
 stayaway
 staybolt
 stayings
@@ -220028,6 +220139,7 @@ tumulose
 tumulous
 tumulted
 tunbelly
+tuncurry
 tuneable
 tuneably
 tuneless
@@ -223359,6 +223471,7 @@ wodenism
 woefully
 wofuller
 woiwodes
+wokeness
 wolfcoal
 wolffian
 wolffish
@@ -226386,6 +226499,7 @@ ballets
 ballico
 ballier
 ballies
+ballina
 balling
 balliol
 ballium
@@ -230369,6 +230483,7 @@ chymify
 chymist
 chymous
 chypres
+chyrons
 chytrid
 ciboney
 ciboria
@@ -232299,6 +232414,7 @@ damsels
 damsons
 danazol
 danboro
+danbury
 dancers
 dancier
 dancing
@@ -232771,6 +232887,7 @@ delphin
 delphos
 deltaic
 deltoid
+deltona
 deluded
 deluder
 deludes
@@ -234500,6 +234617,7 @@ elitism
 elitist
 elixirs
 elkader
+elkhart
 elkhorn
 elkland
 elkmont
@@ -238487,6 +238605,7 @@ growler
 grownup
 growths
 growthy
+groyned
 groynes
 grozing
 grubbed
@@ -238995,6 +239114,7 @@ handsaw
 handsel
 handset
 handsom
+hanford
 hangars
 hangdog
 hangers
@@ -241788,6 +241908,7 @@ kempier
 kemping
 kemples
 kempner
+kempsey
 kempton
 kenches
 kendall
@@ -243276,6 +243397,7 @@ literal
 lithate
 lithely
 lithest
+lithgow
 lithias
 lithics
 lithify
@@ -244601,6 +244723,7 @@ meddled
 meddler
 meddles
 medevac
+medford
 mediacy
 medials
 medians
@@ -244996,6 +245119,7 @@ mildewy
 milding
 mildish
 mildred
+mildura
 mileage
 miletus
 milfoil
@@ -245663,6 +245787,7 @@ mortise
 morulae
 morular
 morulas
+morwell
 morwong
 mosaics
 mosaism
@@ -262163,6 +262288,7 @@ wobbled
 wobbler
 wobbles
 wobegon
+wodonga
 woeness
 woesome
 woeworn
@@ -262398,6 +262524,7 @@ wycombe
 wykeham
 wyncote
 wyndham
+wynyard
 wyocena
 wyoming
 wysiwyg
@@ -262550,6 +262677,7 @@ yemmers
 yenisei
 yenisey
 yenning
+yeppoon
 yerding
 yerevan
 yerking
@@ -263408,6 +263536,7 @@ alborn
 albugo
 albums
 alburg
+albury
 alcade
 alcaic
 alcide
@@ -263817,6 +263946,7 @@ anthon
 antiar
 antick
 antics
+antifa
 antigo
 anting
 antler
@@ -265026,6 +265156,7 @@ belles
 belloc
 bellow
 belmar
+beloit
 belone
 belong
 belons
@@ -265833,6 +265964,7 @@ bowmen
 bowned
 bownes
 bowpot
+bowral
 bowsaw
 bowsed
 bowser
@@ -266052,6 +266184,7 @@ broody
 brooke
 brooks
 brools
+broome
 brooms
 broomy
 broose
@@ -267259,6 +267392,7 @@ chyles
 chymes
 chymic
 chypre
+chyron
 ciales
 cibber
 cibolo
@@ -269627,6 +269761,7 @@ droopy
 dropsy
 drosky
 drossy
+drouin
 drouks
 drouth
 droved
@@ -269906,6 +270041,7 @@ echoey
 echoic
 echola
 echols
+echuca
 eckert
 eckley
 eckman
@@ -270079,6 +270215,7 @@ ellice
 elliot
 ellops
 elmier
+elmira
 elmora
 elmore
 elnath
@@ -272522,6 +272659,7 @@ gooily
 goolds
 gooley
 goolie
+goolwa
 goonda
 gooney
 goonie
@@ -275901,6 +276039,7 @@ latigo
 latina
 latino
 latins
+latinx
 latish
 latium
 latkes
@@ -278192,6 +278331,7 @@ muddle
 muddly
 mudeye
 mudged
+mudgee
 mudger
 mudges
 mudhen
@@ -278248,6 +278388,7 @@ mummer
 mummia
 mumped
 mumper
+muncie
 munday
 munden
 mundic
@@ -279888,6 +280029,7 @@ parkas
 parked
 parkee
 parker
+parkes
 parkie
 parkin
 parkis
@@ -287941,12 +288083,14 @@ unmixt
 unmold
 unmoor
 unmown
+unmute
 unnail
 unnest
 unopen
 unowed
 unpack
 unpaid
+unpave
 unpays
 unpegs
 unpens
@@ -292644,6 +292788,7 @@ coits
 coked
 coker
 cokes
+colac
 colas
 colby
 colds
@@ -298504,6 +298649,7 @@ mizar
 mizen
 mizzy
 mneme
+moama
 moans
 moapa
 moats
@@ -299188,6 +299334,7 @@ noway
 nowed
 nowel
 nowls
+nowra
 nowts
 nowty
 noxal
@@ -303229,6 +303376,7 @@ taras
 tardo
 tardy
 tared
+taree
 tares
 targe
 tarim
@@ -312513,7 +312661,6 @@ jaw
 jay
 jed
 jee
-jes
 jet
 jeu
 jew
