@@ -10,6 +10,12 @@ import Foundation
 import Combine
 import SwiftUtils
 
+/*
+In SceneDelegate.swift call
+ AutoTest.start(coordinator: coordinator)
+
+ after window.makeKeyAndVisible()
+ */
 class AutoTest {
     private static var instance : AutoTest?
     private let model : Model
@@ -47,9 +53,24 @@ class AutoTest {
         case .finished:
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.model.query = ""
+                //self.loadRandomWordlist()
             }
         case .error:
             print("AutoTest: App Error Detected")
+        }
+    }
+    
+    /*
+        Simulate the user changing the word list setting causing the app to restart and show the splash screen
+     */
+    private func loadRandomWordlist(){
+        let wordListNames = ["words","wordlist-de","wordlist-es","wordlist-fr","wordlist-it","wordlist-pt","twl","sowpods"]
+        if let wordList = wordListNames.randomElement(){
+            model.query = ""
+            model.matches.removeAll()
+            model.filters.reset()
+            //this will reset the app state to .uninitialized
+            model.loadWordList(name: wordList)
         }
     }
 }

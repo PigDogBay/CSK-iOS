@@ -352,6 +352,7 @@
 			children = (
 				00469B5C24B74EE1000DBAF4 /* AboutViewModel.swift */,
 				00F284F024990D1B004C9B75 /* Ads.swift */,
+				00F2F05224E5533200372C9E /* AutoTest.swift */,
 				00187E2D24DC36E20021A55E /* Coordinator.swift */,
 				00A458A624B9C7B900240913 /* DefinitionViewModel.swift */,
 				0033162124B340D700DBBF32 /* EUConsent.swift */,
@@ -363,7 +364,6 @@
 				004AF96524B4CC3C00C9780F /* Settings.swift */,
 				00F2BCDA24D083A0006B448D /* Strings.swift */,
 				0021164924C5D0360033F3EB /* TipsData.swift */,
-				00F2F05224E5533200372C9E /* AutoTest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
