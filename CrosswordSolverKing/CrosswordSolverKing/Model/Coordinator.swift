@@ -57,7 +57,7 @@ class Coordinator : ObservableObject {
             .sink(receiveValue: {value in self.adPreferencesChanged(value: value)})
             .store(in: &disposables)
         
-        //Refresh the ad if the screen rotates has rotated. Ignore any changes when the app goes into the background
+        //Refresh the ad if the screen has rotated. Ignore any changes when the app goes into the background
         $isPortrait
             .dropFirst()
             .filter{$0 != self.isPortrait && self.isActive}
