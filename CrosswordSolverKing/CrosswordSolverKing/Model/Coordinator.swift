@@ -21,6 +21,8 @@ class Coordinator : ObservableObject {
     @Published var showSplash = true
     @Published var isDefinitionViewActive = false
 
+    var isAdReloadRequired = false
+    private var isActive = false
     private var contextDefinitionProvider : DefinitionProviders = .Default
     private var contextDefinitionWord = "crossword"
     private var disposables = Set<AnyCancellable>()
@@ -43,11 +45,19 @@ class Coordinator : ObservableObject {
             .sink(receiveValue: {value in self.showSplash = value})
             .store(in: &disposables)
         
-        //Save user ad preference
+        //Refresh the ad if the user changes the ad prefence
         $showMeRelevantAds
             .dropFirst()
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue: {value in self.settings.useNonPersonalizedAds = !value})
+            .sink(receiveValue: {value in self.adPreferencesChanged(value: value)})
+            .store(in: &disposables)
+        
+        //Refresh the ad if the screen rotates has rotated. Ignore any changes when the app goes into the background
+        $isPortrait
+            .dropFirst()
+            .filter{$0 != self.isPortrait && self.isActive}
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: {value in self.isAdReloadRequired = true})
             .store(in: &disposables)
     }
 
@@ -57,11 +67,13 @@ class Coordinator : ObservableObject {
 
     ///App life cycle function: called when the app goes into the background
     func onResignActive(){
+        isActive = false
         model.stopSearch()
     }
 
     ///App life cycle function: called when the app becomes active again, eg user launches the app or presses back to CSK from system settings
     func onDidBecomeActive(){
+        isActive = true
         if wordListName != "" {
             //check if need to change the word list
             if wordListName != Settings().wordList {
@@ -106,6 +118,11 @@ class Coordinator : ObservableObject {
         self.isDefinitionViewActive = true
     }
     
+    private func adPreferencesChanged(value : Bool){
+        settings.useNonPersonalizedAds = !value
+        isAdReloadRequired = true
+    }
+
     func createDefinitionViewModel() -> DefinitionModel {
         return ContextDefintion(word: contextDefinitionWord, provider: contextDefinitionProvider)
     }

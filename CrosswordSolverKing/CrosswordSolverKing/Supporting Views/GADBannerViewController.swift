@@ -18,11 +18,13 @@ import GoogleMobileAds
 */
 struct GADBannerViewController: UIViewControllerRepresentable {
 
-    @State private var banner: GADBannerView = GADBannerView(adSize: kGADAdSizeBanner)
-
+    //Need to respond to user ad preference changes made in the AboutView
+    @EnvironmentObject var coordinator : Coordinator
+    
     func makeUIViewController(context: Context) -> UIViewController {
         let bannerSize = GADBannerViewController.getAdBannerSize()
         let viewController = UIViewController()
+        let banner = GADBannerView(adSize: bannerSize)
         banner.adSize = bannerSize
         banner.adUnitID = Ads.bannerAdId
         banner.rootViewController = viewController
@@ -33,9 +35,18 @@ struct GADBannerViewController: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ uiViewController: UIViewController, context: Context){
-        let bannerSize = GADBannerViewController.getAdBannerSize()
-        banner.frame = CGRect(origin: .zero, size: bannerSize.size)
-        banner.load(Ads.createRequest())
+        if coordinator.isAdReloadRequired {
+            coordinator.isAdReloadRequired = false
+            if uiViewController.view.subviews.count>0 {
+                if let banner = uiViewController.view.subviews[0] as? GADBannerView {
+                    //resize incase orientation has changed
+                    let bannerSize = GADBannerViewController.getAdBannerSize()
+                    banner.adSize = bannerSize
+                    uiViewController.view.frame = CGRect(origin: .zero, size: bannerSize.size)
+                    banner.load(Ads.createRequest())
+                }
+            }
+        }
     }
     
     /*
