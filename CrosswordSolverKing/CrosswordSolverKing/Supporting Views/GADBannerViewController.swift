@@ -35,8 +35,7 @@ struct GADBannerViewController: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ uiViewController: UIViewController, context: Context){
-        if coordinator.isAdReloadRequired {
-            coordinator.isAdReloadRequired = false
+        if coordinator.checkAdReloadRequired() {
             if uiViewController.view.subviews.count>0 {
                 if let banner = uiViewController.view.subviews[0] as? GADBannerView {
                     //resize incase orientation has changed

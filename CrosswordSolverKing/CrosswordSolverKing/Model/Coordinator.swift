@@ -22,8 +22,8 @@ class Coordinator : ObservableObject {
     @Published var isDefinitionViewActive = false
 
     //GADBannerVC will receive lots of change notifications, so only reload ad when
-    //the orientation changes or user changes ad preference
-    var isAdReloadRequired = false
+    //the orientation changes, multi-pane resize or user changes ad preference
+    private var isAdReloadRequired = false
     private var contextDefinitionProvider : DefinitionProviders = .Default
     private var contextDefinitionWord = "crossword"
     private var disposables = Set<AnyCancellable>()
@@ -119,6 +119,15 @@ class Coordinator : ObservableObject {
     private func adPreferencesChanged(value : Bool){
         settings.useNonPersonalizedAds = !value
         isAdReloadRequired = true
+    }
+    
+    /*
+     This function will clear the ad reload flag
+     */
+    func checkAdReloadRequired() -> Bool {
+        let tmp = isAdReloadRequired
+        isAdReloadRequired = false
+        return tmp
     }
 
     func createDefinitionViewModel() -> DefinitionModel {
