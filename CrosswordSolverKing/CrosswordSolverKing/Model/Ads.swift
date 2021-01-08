@@ -17,6 +17,7 @@ struct Ads
         let requestConfiguration = GADMobileAds.sharedInstance().requestConfiguration
         //app is rated 17+, so may as well allow mature ads
         requestConfiguration.maxAdContentRating = .matureAudience
+        //Admob SDK guide recommends removing this code for release builds
         #if DEBUG
         requestConfiguration.testDeviceIdentifiers = [
             (kGADSimulatorID as! String),
