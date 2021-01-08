@@ -24,10 +24,6 @@ class Coordinator : ObservableObject {
     //GADBannerVC will receive lots of change notifications, so only reload ad when
     //the orientation changes or user changes ad preference
     var isAdReloadRequired = false
-    //Prevents ad reloads when the user resigns the app
-    private var isActive = false
-    //Reload the ad if the user reactivates the app in a different orientation
-    private var isPortraitBeforeResign = true
     private var contextDefinitionProvider : DefinitionProviders = .Default
     private var contextDefinitionWord = "crossword"
     private var disposables = Set<AnyCancellable>()
@@ -60,7 +56,6 @@ class Coordinator : ObservableObject {
         //Refresh the ad if the screen has rotated. Ignore any changes when the app goes into the background
         $isPortrait
             .dropFirst()
-            .filter{$0 != self.isPortrait && self.isActive}
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: {value in self.isAdReloadRequired = true})
             .store(in: &disposables)
@@ -72,22 +67,11 @@ class Coordinator : ObservableObject {
 
     ///App life cycle function: called when the app goes into the background
     func onResignActive(){
-        //Ignore orientation changes to prevent unnecessary ad updates
-        isActive = false
-        //Remember current orientation incase we need to reload the ad when the app becomes active again
-        isPortraitBeforeResign = isPortrait
         model.stopSearch()
     }
 
     ///App life cycle function: called when the app becomes active again, eg user launches the app or presses back to CSK from system settings
     func onDidBecomeActive(){
-        isActive = true
-        if isPortraitBeforeResign != isPortrait && showSplash == false{
-            //The user resigned the app and re-opened it in a different orientation
-            //So need to reload the ad
-            isAdReloadRequired = true
-            self.objectWillChange.send()
-        }
         if wordListName != "" {
             //check if need to change the word list
             if wordListName != Settings().wordList {
