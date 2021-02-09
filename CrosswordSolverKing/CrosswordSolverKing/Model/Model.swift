@@ -15,18 +15,12 @@ enum AppStates
     case uninitialized,ready, searching, finished, error
 }
 
-enum AppErrors : Error {
-    case loadError
-}
-
 class Model : WordListCallback {
     
     @Published var query = ""
     @Published var appState = AppStates.uninitialized
     var matches : [String] = []
-
-    let wordList = WordList()
-    let wordSearch : WordSearch
+    let wordSearch = WordSearch()
     let wordFormatter = WordFormatter()
     var resultsLimit = 5000
     let filters = Filters()
@@ -40,8 +34,6 @@ class Model : WordListCallback {
     private var matchesCount = 0
 
     init(){
-        self.wordSearch = WordSearch(wordList: self.wordList)
-
         passthrough
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: {self.matches.append($0)})
@@ -49,39 +41,25 @@ class Model : WordListCallback {
 
         $query
             .dropFirst(1)
-            .handleEvents(receiveOutput: {_ in self.wordList.stopSearch()}) //cancel any existing searches if user still typing
+            .handleEvents(receiveOutput: {_ in self.wordSearch.stop()}) //cancel any existing searches if user still typing
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
             .filter{$0 == self.query && (self.appState == .ready || self.appState == .finished)} //ignore any intermediate searches
             .sink(receiveValue: {self.search(searchQuery: $0)})
             .store(in: &disposables)
-
     }
     
     func loadWordList(name : String) {
         self.appState = .uninitialized
         temporaryDisposable = loadPublisher(wordListName: name)
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: {
-                switch $0 {
-                case .finished:
-                    self.appState = .ready
-                case .failure( _):
-                    self.appState = .error
-                }},  receiveValue: { self.wordList.wordlist = $0})
-
+            .sink(receiveValue: { self.appState = $0 ? .ready : .error})
     }
 
-    private func loadPublisher(wordListName : String) -> Future<[String], AppErrors> {
-        return Future<[String],AppErrors> { promise  in
+    private func loadPublisher(wordListName : String) -> Future<Bool, Never> {
+        return Future<Bool,Never> { promise  in
             self.scheduler.async {
-                if let path = Bundle.main.path(forResource: wordListName, ofType: "txt"),
-                   let content = try? String(contentsOfFile: path, encoding: String.Encoding.utf8)
-                {
-                    let words = content.components(separatedBy: "\n")
-                    promise(.success(words))
-                } else {
-                    promise(.failure(.loadError))
-                }
+                let didLoad = self.wordSearch.loadDictionary(resource: wordListName)
+                promise(.success(didLoad))
             }
         }
     }
@@ -121,7 +99,7 @@ class Model : WordListCallback {
         //terminate runQuery() if results limit is hit
         matchesCount = matchesCount + 1
         if matchesCount == resultsLimit {
-            wordList.stopSearch()
+            wordSearch.stop()
         }
     }
 
@@ -141,6 +119,6 @@ class Model : WordListCallback {
     }
     
     func stopSearch(){
-        wordList.stopSearch()
+        wordSearch.stop()
     }
 }
