@@ -15,14 +15,13 @@ struct Ads
 
     static func setup(){
         let requestConfiguration = GADMobileAds.sharedInstance().requestConfiguration
-        //app is rated 17+, so may as well allow mature ads
         requestConfiguration.maxAdContentRating = .general
         //Admob SDK guide recommends removing this code for release builds
         #if DEBUG
         requestConfiguration.testDeviceIdentifiers = [
             (kGADSimulatorID),
-            "6af877373ece0e06c9fc7007cc41edf2",//iPad
-            "a4b042150b6cace14cc182d6bf254d09"//iPod Touch
+            "0200fa505875358d7e2d07bc993bd27f",//iPad
+            "0ead52ca5eafcbe25f3b929cda2cdbf1"//iPod Touch
            ]
         #endif
         GADMobileAds.sharedInstance().start(completionHandler: nil)
