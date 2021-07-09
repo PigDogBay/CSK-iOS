@@ -389,7 +389,6 @@
 			buildConfigurationList = 00F284DF24990438004C9B75 /* Build configuration list for PBXNativeTarget "CrosswordSolverKing" */;
 			buildPhases = (
 				1DB33F1E2BADA2F107AD2BB4 /* [CP] Check Pods Manifest.lock */,
-				28D592F2CC3DE939535AEEAE /* [CP] Prepare Artifacts */,
 				00F284B124990437004C9B75 /* Sources */,
 				00F284B224990437004C9B75 /* Frameworks */,
 				00F284B324990437004C9B75 /* Resources */,
@@ -429,7 +428,6 @@
 			buildConfigurationList = 00F284E524990438004C9B75 /* Build configuration list for PBXNativeTarget "CrosswordSolverKingUITests" */;
 			buildPhases = (
 				390B50C2D1D723ABF7E47656 /* [CP] Check Pods Manifest.lock */,
-				149FD8F4A34A25B8B2E71BF8 /* [CP] Prepare Artifacts */,
 				00F284D224990438004C9B75 /* Sources */,
 				00F284D324990438004C9B75 /* Frameworks */,
 				00F284D424990438004C9B75 /* Resources */,
@@ -543,23 +541,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CrosswordSolverKing-CrosswordSolverKingUITests/Pods-CrosswordSolverKing-CrosswordSolverKingUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		149FD8F4A34A25B8B2E71BF8 /* [CP] Prepare Artifacts */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CrosswordSolverKing-CrosswordSolverKingUITests/Pods-CrosswordSolverKing-CrosswordSolverKingUITests-artifacts-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Prepare Artifacts";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CrosswordSolverKing-CrosswordSolverKingUITests/Pods-CrosswordSolverKing-CrosswordSolverKingUITests-artifacts-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CrosswordSolverKing-CrosswordSolverKingUITests/Pods-CrosswordSolverKing-CrosswordSolverKingUITests-artifacts.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		1DB33F1E2BADA2F107AD2BB4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -580,23 +561,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		28D592F2CC3DE939535AEEAE /* [CP] Prepare Artifacts */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CrosswordSolverKing/Pods-CrosswordSolverKing-artifacts-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Prepare Artifacts";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CrosswordSolverKing/Pods-CrosswordSolverKing-artifacts-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CrosswordSolverKing/Pods-CrosswordSolverKing-artifacts.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2BCCE870A8BDC4E8376870EA /* [CP] Embed Pods Frameworks */ = {
