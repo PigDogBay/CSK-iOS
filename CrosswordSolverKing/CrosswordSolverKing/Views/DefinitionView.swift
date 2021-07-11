@@ -11,8 +11,7 @@ import SwiftUI
 struct DefinitionView: View {
     let model : DefinitionModel
     var body: some View {
-        SimpleWebView(urlRequest: model.lookupUrl())
-            .navigationBarTitle(Text(model.word), displayMode: .inline)
+        Text("Bye")
     }
 }
 
