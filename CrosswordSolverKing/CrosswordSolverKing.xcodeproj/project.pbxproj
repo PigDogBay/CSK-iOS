@@ -53,13 +53,11 @@
 		00F284EB249904A9004C9B75 /* SwiftUtils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 00F284E9249904A9004C9B75 /* SwiftUtils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		00F284F124990D1B004C9B75 /* Ads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284F024990D1B004C9B75 /* Ads.swift */; };
 		00F2850324991065004C9B75 /* FilterPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284F724991065004C9B75 /* FilterPicker.swift */; };
-		00F2850424991065004C9B75 /* SimpleWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284F824991065004C9B75 /* SimpleWebView.swift */; };
 		00F2850524991065004C9B75 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284F924991065004C9B75 /* HelpView.swift */; };
 		00F2850724991065004C9B75 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284FB24991065004C9B75 /* MainView.swift */; };
 		00F2850824991065004C9B75 /* TextFilterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284FC24991065004C9B75 /* TextFilterRow.swift */; };
 		00F2850924991065004C9B75 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284FD24991065004C9B75 /* SearchBarView.swift */; };
 		00F2850A24991065004C9B75 /* FiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284FE24991065004C9B75 /* FiltersView.swift */; };
-		00F2850B24991065004C9B75 /* DefinitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F284FF24991065004C9B75 /* DefinitionView.swift */; };
 		00F2850C24991065004C9B75 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2850024991065004C9B75 /* AboutView.swift */; };
 		00F2850D24991065004C9B75 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2850124991065004C9B75 /* Filters.swift */; };
 		00F2850E24991065004C9B75 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2850224991065004C9B75 /* Model.swift */; };
@@ -159,13 +157,11 @@
 		00F284E9249904A9004C9B75 /* SwiftUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F284F024990D1B004C9B75 /* Ads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ads.swift; sourceTree = "<group>"; };
 		00F284F724991065004C9B75 /* FilterPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterPicker.swift; sourceTree = "<group>"; };
-		00F284F824991065004C9B75 /* SimpleWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleWebView.swift; sourceTree = "<group>"; };
 		00F284F924991065004C9B75 /* HelpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		00F284FB24991065004C9B75 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		00F284FC24991065004C9B75 /* TextFilterRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFilterRow.swift; sourceTree = "<group>"; };
 		00F284FD24991065004C9B75 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		00F284FE24991065004C9B75 /* FiltersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersView.swift; sourceTree = "<group>"; };
-		00F284FF24991065004C9B75 /* DefinitionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefinitionView.swift; sourceTree = "<group>"; };
 		00F2850024991065004C9B75 /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		00F2850124991065004C9B75 /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		00F2850224991065004C9B75 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -306,7 +302,6 @@
 			isa = PBXGroup;
 			children = (
 				00F2850024991065004C9B75 /* AboutView.swift */,
-				00F284FF24991065004C9B75 /* DefinitionView.swift */,
 				00B2029224DB11A8008E8F2C /* DefintionHelpView.swift */,
 				00FCDDD924ADED1B00E4CFD3 /* EUAdChoiceView.swift */,
 				00C71C3C24AF7B1900FA3969 /* EUAgreeView.swift */,
@@ -339,7 +334,6 @@
 				00F2BCD424D07E28006B448D /* RateRow.swift */,
 				00F284FD24991065004C9B75 /* SearchBarView.swift */,
 				003F58C624C734FE002BADC6 /* SettingsRow.swift */,
-				00F284F824991065004C9B75 /* SimpleWebView.swift */,
 				00F2BCD624D07E50006B448D /* TellFriendRow.swift */,
 				00F284FC24991065004C9B75 /* TextFilterRow.swift */,
 				0021164524C5CA670033F3EB /* TipRow.swift */,
@@ -667,14 +661,12 @@
 				00F2850C24991065004C9B75 /* AboutView.swift in Sources */,
 				0021164624C5CA670033F3EB /* TipRow.swift in Sources */,
 				001DEBC424DD359D00F3AFAC /* RootView.swift in Sources */,
-				00F2850B24991065004C9B75 /* DefinitionView.swift in Sources */,
 				00532D7E24DACB0900F8141B /* MatchRow.swift in Sources */,
 				00F2BCDB24D083A0006B448D /* Strings.swift in Sources */,
 				00F2850924991065004C9B75 /* SearchBarView.swift in Sources */,
 				00C7D74A24BDC25E00353176 /* SplashScreen.swift in Sources */,
 				00F2BCD524D07E28006B448D /* RateRow.swift in Sources */,
 				004AF96624B4CC3C00C9780F /* Settings.swift in Sources */,
-				00F2850424991065004C9B75 /* SimpleWebView.swift in Sources */,
 				004D88B924D9775E00C6FDA3 /* SearchBarViewModel.swift in Sources */,
 				00F2850324991065004C9B75 /* FilterPicker.swift in Sources */,
 				00469B5B24B73DFC000DBAF4 /* MainViewModel.swift in Sources */,
