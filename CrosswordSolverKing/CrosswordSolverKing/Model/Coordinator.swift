@@ -117,7 +117,7 @@ class Coordinator : ObservableObject {
         }
     }
     
-    func contextMenu(word : String, provider : DefinitionProviders){
+    func lookUpWord(word : String, provider : DefinitionProviders){
         let defModel = ContextDefintion(word : word, provider: provider)
         if let url = defModel.lookupUrl(){
             showWebPage(address: url)
@@ -138,10 +138,6 @@ class Coordinator : ObservableObject {
         return tmp
     }
 
-    func createDefinitionViewModel() -> DefinitionModel {
-        return ContextDefintion(word: contextDefinitionWord, provider: contextDefinitionProvider)
-    }
-    
     func showWebPage(address : String) {
         if let url = URL(string: address) {
             UIApplication.shared.open(url, options: [:])

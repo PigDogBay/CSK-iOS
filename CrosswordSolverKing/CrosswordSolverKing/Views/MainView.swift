@@ -24,16 +24,16 @@ struct MainView: View {
             ForEach(viewModel.model.matches, id: \.self) {match in
                 MatchRow(match: match, formatter: self.viewModel.model.wordFormatter)
                     .contextMenu{
-                        Button(action: {self.coordinator.contextMenu(word: match, provider: .Collins) }){Text("Collins")}
-                        Button(action: {self.coordinator.contextMenu(word: match, provider: .Dictionary) }){Text("Dictionary.com")}
-                        Button(action: {self.coordinator.contextMenu(word: match, provider: .GoogleDefinition) }){Text("Google Definition")}
-                        Button(action: {self.coordinator.contextMenu(word: match, provider: .Lexico) }){Text("Lexico")}
-                        Button(action: {self.coordinator.contextMenu(word: match, provider: .MerriamWebster) }){Text("Merriam-Webster")}
-                        Button(action: {self.coordinator.contextMenu(word: match, provider: .MWThesaurus) }){Text("M-W Thesaurus")}
-                        Button(action: {self.coordinator.contextMenu(word: match, provider: .Thesaurus) }){Text("Thesaurus.com")}
-                        Button(action: {self.coordinator.contextMenu(word: match, provider: .Wikipedia) }){Text("Wikipedia")}
-                        Button(action: {self.coordinator.contextMenu(word: match, provider: .Wiktionary) }){Text("Wiktionary")}
-                        Button(action: {self.coordinator.contextMenu(word: match, provider: .WordGameDictionary) }){Text("Word Game Dictionary")}
+                        Button(action: {self.coordinator.lookUpWord(word: match, provider: .Collins) }){Text("Collins")}
+                        Button(action: {self.coordinator.lookUpWord(word: match, provider: .Dictionary) }){Text("Dictionary.com")}
+                        Button(action: {self.coordinator.lookUpWord(word: match, provider: .GoogleDefinition) }){Text("Google Definition")}
+                        Button(action: {self.coordinator.lookUpWord(word: match, provider: .Lexico) }){Text("Lexico")}
+                        Button(action: {self.coordinator.lookUpWord(word: match, provider: .MerriamWebster) }){Text("Merriam-Webster")}
+                        Button(action: {self.coordinator.lookUpWord(word: match, provider: .MWThesaurus) }){Text("M-W Thesaurus")}
+                        Button(action: {self.coordinator.lookUpWord(word: match, provider: .Thesaurus) }){Text("Thesaurus.com")}
+                        Button(action: {self.coordinator.lookUpWord(word: match, provider: .Wikipedia) }){Text("Wikipedia")}
+                        Button(action: {self.coordinator.lookUpWord(word: match, provider: .Wiktionary) }){Text("Wiktionary")}
+                        Button(action: {self.coordinator.lookUpWord(word: match, provider: .WordGameDictionary) }){Text("Word Game Dictionary")}
                     }
                     .contentShape(Rectangle()) //Ensure row white space is tappable
                     .onTapGesture {self.coordinator.lookUpWord(word: match)}
