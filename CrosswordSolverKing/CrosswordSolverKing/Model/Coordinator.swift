@@ -15,11 +15,13 @@ class Coordinator : ObservableObject {
     let model : Model
     let ratings : Ratings
     let settings : Settings
+    let ads : Ads
 
     @Published var showMeRelevantAds = true
     @Published var isPortrait = true
     @Published var showSplash = true
     @Published var isDefinitionViewActive = false
+    @Published var showAd = false
 
     //GADBannerVC will receive lots of change notifications, so only reload ad when
     //the orientation changes, multi-pane resize or user changes ad preference
@@ -37,7 +39,16 @@ class Coordinator : ObservableObject {
         ratings = Ratings(appId: Strings.appId)
         settings = Settings()
         showMeRelevantAds = !settings.useNonPersonalizedAds
+        ads = Ads()
         
+        //ATT Request dialog shows on the queue default-qos
+        //Need to ensure showAd is set on queue main-thread
+        ads.$isAdsSetupFinished
+            .filter{$0}
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue:{_ in self.showAd = true})
+            .store(in: &disposables)
+
         model.$appState
             .removeDuplicates()
             .map{$0 == .uninitialized}
@@ -101,6 +112,7 @@ class Coordinator : ObservableObject {
     }
     
     func splashEntered(){
+        ads.requestIDFA()
         if model.appState == .uninitialized {
             model.loadWordList(name: Settings().wordList)
         }

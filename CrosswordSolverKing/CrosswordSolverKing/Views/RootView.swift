@@ -29,7 +29,9 @@ struct RootView: View {
                     .onDisappear(perform: self.coordinator.mainExited)
                     .onAppear(perform: self.coordinator.mainEntered)
             }.navigationViewStyle(StackNavigationViewStyle())
-            adSection()
+            if coordinator.showAd{
+                adSection()
+            }
         }
     }
     
