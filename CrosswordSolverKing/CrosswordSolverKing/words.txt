@@ -139613,6 +139613,7 @@ cloudlike
 cloudtown
 clouterly
 clovepink
+clownfish
 clownings
 cloyingly
 cloyments
@@ -173951,6 +173952,7 @@ trivalves
 trivially
 triweekly
 trobriand
+trocadero
 trochaics
 trochidae
 trochilic
@@ -182556,7 +182558,6 @@ bolixing
 bollards
 bollixed
 bollixes
-bollocks
 bolloxed
 bolloxes
 bollworm
@@ -191490,6 +191491,7 @@ estrogen
 estrones
 estruses
 esurient
+eswatini
 etacisms
 etaerios
 etageres
@@ -224433,6 +224435,7 @@ actinic
 actinon
 actions
 actives
+activex
 activin
 actorly
 actress
@@ -227962,7 +227965,6 @@ bolixed
 bolixes
 bollard
 bolling
-bollock
 bologna
 boloney
 bolshie
@@ -277692,6 +277694,7 @@ mesons
 messan
 messed
 messes
+messrs
 mestee
 mester
 mestom
@@ -297146,7 +297149,6 @@ kieth
 kieve
 kight
 kihei
-kikes
 kikoi
 kiley
 kilim
@@ -298660,6 +298662,7 @@ mobil
 moble
 mocha
 moche
+mochi
 mochs
 mochy
 mocks
@@ -299165,6 +299168,7 @@ ngoni
 nguni
 ngwee
 nicad
+nicam
 nicer
 niche
 nicht
@@ -305957,6 +305961,7 @@ barn
 barp
 barr
 bars
+bart
 base
 bash
 bask
@@ -308171,6 +308176,7 @@ ilks
 ills
 illy
 imam
+imax
 imid
 immy
 impi
@@ -308514,7 +308520,6 @@ kier
 kiev
 kiff
 kifs
-kike
 kila
 kild
 kill
@@ -309880,6 +309885,7 @@ pfft
 pfui
 phat
 phew
+phil
 phis
 phiz
 phoh
@@ -310441,6 +310447,7 @@ ruse
 rush
 rusk
 ruso
+russ
 rust
 ruta
 ruth
@@ -310872,7 +310879,6 @@ sped
 spek
 spet
 spew
-spic
 spie
 spif
 spik
@@ -311899,7 +311905,6 @@ yews
 yezd
 yezo
 ygoe
-yids
 yike
 yill
 yins
@@ -312189,6 +312194,7 @@ bit
 biz
 blu
 bly
+bmx
 boa
 bob
 bod
@@ -312614,6 +312620,7 @@ ice
 ich
 ick
 icy
+ida
 ide
 ido
 ids
@@ -312633,6 +312640,7 @@ inn
 ins
 ion
 ios
+iou
 ira
 ire
 irk
@@ -312864,6 +312872,7 @@ mou
 mow
 moy
 moz
+mrs
 mud
 mug
 mum
@@ -312956,6 +312965,7 @@ oil
 ois
 oka
 oke
+oks
 ola
 old
 ole
@@ -313383,6 +313393,7 @@ veg
 vet
 vex
 via
+vic
 vid
 vie
 vig
@@ -313390,6 +313401,7 @@ vim
 vin
 vis
 viv
+viz
 vly
 voe
 vol
@@ -313470,7 +313482,6 @@ yet
 yew
 yex
 ygo
-yid
 yin
 yip
 yob
