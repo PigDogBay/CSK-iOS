@@ -240,11 +240,11 @@
 		00F284B724990437004C9B75 /* CrosswordSolverKing */ = {
 			isa = PBXGroup;
 			children = (
-				00F17DCE26A848A800452020 /* small.txt */,
 				00F284BE24990438004C9B75 /* Assets.xcassets */,
 				00F284C324990438004C9B75 /* LaunchScreen.storyboard */,
 				00F284C624990438004C9B75 /* Info.plist */,
 				003F58BE24C6EBAD002BADC6 /* tips.json */,
+				00F17DCE26A848A800452020 /* small.txt */,
 				00187E2824DBE92B0021A55E /* sowpods.txt */,
 				00187E2A24DBE9330021A55E /* twl.txt */,
 				005D83BC24B8925E00EA5FFD /* words.txt */,
